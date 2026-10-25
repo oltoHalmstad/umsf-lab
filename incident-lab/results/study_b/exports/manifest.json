@@ -1,0 +1,110 @@
+{
+ "counters": {
+  "conflicts": 1,
+  "duplicates": 6,
+  "exportable_events": 0,
+  "exportable_physio": 2159,
+  "exportable_station": 0,
+  "lines": 2173,
+  "quarantined_identities": 1,
+  "rejected": 6,
+  "unique_events": 0,
+  "unique_identities": 2160
+ },
+ "exports": [
+  {
+   "bytes": 283225,
+   "path": "physio_2026-09-08.csv",
+   "records": 2159,
+   "sha256": "773ca71598712641f3684fb692bc1c1e962a33ec71ec7ce9e9ba085d973690ed"
+  },
+  {
+   "bytes": 706205,
+   "path": "physio_2026-09-08.jsonl",
+   "records": 2159,
+   "sha256": "92bc76eb49a1da489e8b1135e801d999699a75c45aff79913b15cc4444a53d04"
+  },
+  {
+   "bytes": 9801,
+   "path": "summaries_5min.json",
+   "records": 12,
+   "sha256": "ede74e611160a56e15be4125f363c9a6ccb44a941442b9d669ff04fd9f0030e2"
+  },
+  {
+   "bytes": 2456,
+   "path": "summaries_5min.csv",
+   "records": 12,
+   "sha256": "ad96052284b95092808ceeae4c6e33f4a14908f8f0c955164b6a69526ffe0e1e"
+  },
+  {
+   "bytes": 989,
+   "path": "quarantine_log.jsonl",
+   "records": 1,
+   "sha256": "ac26c4b7c7c89d0673c54b2f0924beada87e74da2bf00c76a4542194143ff097"
+  },
+  {
+   "bytes": 3131,
+   "path": "rejects_log.jsonl",
+   "records": 6,
+   "sha256": "ce3a927ce9d9a5d61854815a18358039b24962616e91433f2797c4223458d105"
+  }
+ ],
+ "generated_at": "2026-09-08T06:45:00Z",
+ "ingest_result": {
+  "conflict": 1,
+  "duplicate": 6,
+  "inserted": 2160,
+  "lines": 2173,
+  "rejected": 6
+ },
+ "notes": [
+  "Analytical exports contain only accepted, nonconflicting records; conflicted identities are excluded entirely and retained in quarantine_log.jsonl for audit.",
+  "The source JSONL may be a challenge stream with invalid lines; see rejects_log.jsonl.",
+  "Orderly SQLite close/reopen is tested; abrupt power loss is not."
+ ],
+ "package": "umsf-incident-dataset",
+ "package_version": "1.0.0",
+ "python": "3.13.16",
+ "schema_versions": {
+  "event": "ev-1.0",
+  "physio": "1.0",
+  "station": "st-1.0"
+ },
+ "seed": 82026,
+ "sizing": {
+  "MB_total": 51.84,
+  "bytes_per_s": 1800.0,
+  "bytes_total": 51840000.0,
+  "hours": 8.0,
+  "interval_s": 10,
+  "nodes": 12,
+  "note": "sizing calculation, not a network benchmark",
+  "record_bytes": 1500,
+  "records": 34560
+ },
+ "sources": [
+  {
+   "bytes": 710775,
+   "path": "study_b_input.jsonl",
+   "sha256": "4af0b0f8fb31dec0c5a143a78bf2605b1569d950fc29dfbb729fff4a38d86fa0"
+  }
+ ],
+ "sqlite": "3.45.1",
+ "sqlite_pragmas": {
+  "integrity_check": "ok",
+  "journal_mode": "wal",
+  "synchronous": "FULL"
+ },
+ "study": "B",
+ "timing_rules": {
+  "cutoff": "window_end (+grace 0 s) unless a fixed report cutoff is given; only arrivals with received_at <= cutoff are admitted; later first arrivals enter history only",
+  "daily_partition": "UTC date of measured_at (observed_at for events)",
+  "display_timezone": "Europe/Kyiv",
+  "feature_interval_s": 10,
+  "freshness_horizon_s": 60,
+  "good_quality_threshold": 0.6,
+  "storage_timezone": "UTC",
+  "summary_window_s": 300,
+  "window_alignment": "UTC epoch multiples of the window length"
+ }
+}

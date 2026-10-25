@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="872.399309pt" height="440.39952pt" viewBox="0 0 872.399309 440.39952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 440.39952 
+L 872.399309 440.39952 
+L 872.399309 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 169.803594 327.145441 
+L 864.86657 327.145441 
+L 864.86657 25.9875 
+L 169.803594 25.9875 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#pe1409e1880)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAABCYAAAHMCAYAAAAJTKl8AAAMEklEQVR4nO3asY2DQBRF0WXlBiiGriiHriiGkIBgtoR1YHRl+5wKXjajqz+d1xg/AMBLzctaT+AGx77VEwC+mvf1M/3WAwAAAIDvJUwAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgI0wAAAAAGWECAAAAyAgTAAAAQEaYAAAAADLCBAAAAJARJgAAAICMMAEAAABkhAkAAAAgM53XGPUIAACozMtaT+AGx77VE4AnuZgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABAZjqvMeoRAN9sXtZ6Ajc49q2eAADwFlxMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAAJnpvMaoR/B687LWE7jBsW/1BICv5n39TN5XgJaLCQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAzndcY9QjgOfOy1hO4wbFv9QQAAMi4mAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAyj3oA95iXtZ7ADY59qycAALwF/+HP5D/8mVxMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAICNMAAAAABlhAgAAAMgIEwAAAEBGmAAAAAAywgQAAACQESYAAACAjDABAAAAZIQJAAAAIPOYl7XewA2OfasnAAAAwL9cTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAAAZYQIAAADICBMAAABARpgAAAAAMsIEAAAAkBEmAAAAgIwwAQAAAGSECQAAACAjTAAAAACZP0cyMvqiF6brAAAAAElFTkSuQmCC" id="imagebc7a814692" transform="scale(1 -1) translate(0 -301.090909)" x="169.527273" y="-26.072247" width="695.127273" height="301.090909"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 208.418204 327.145441 
+L 208.418204 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m7c3da40947" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7c3da40947" x="208.418204" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(164.582725 420.189753) rotate(-40)">emergency coordinator</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 285.647423 327.145441 
+L 285.647423 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7c3da40947" x="285.647423" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(251.444474 404.024448) rotate(-40)">incident command</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 362.876643 327.145441 
+L 362.876643 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m7c3da40947" x="362.876643" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(312.500102 431.166959) rotate(-40)">incident coordination team</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 440.105862 327.145441 
+L 440.105862 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m7c3da40947" x="440.105862" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(397.579123 417.993428) rotate(-40)">infrastructure operator</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 517.335082 327.145441 
+L 517.335082 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m7c3da40947" x="517.335082" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(480.795758 407.945352) rotate(-40)">occupational health</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 594.564302 327.145441 
+L 594.564302 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m7c3da40947" x="594.564302" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(561.027572 402.9064) rotate(-40)">qualified assessor</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 671.793521 327.145441 
+L 671.793521 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m7c3da40947" x="671.793521" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(629.629516 417.384688) rotate(-40)">recovery management</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 749.022741 327.145441 
+L 749.022741 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m7c3da40947" x="749.022741" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(713.977802 405.437476) rotate(-40)">rescue coordinator</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <path d="M 826.251961 327.145441 
+L 826.251961 25.9875 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m7c3da40947" x="826.251961" y="327.145441" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(794.154318 400.491326) rotate(-40)">site safety officer</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_19">
+      <path d="M 169.803594 47.498782 
+L 864.86657 47.498782 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_20">
+      <defs>
+       <path id="m63c385b61b" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="47.498782" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="52.826907" transform="rotate(-0 162.803594 52.826907)">urgent personnel assistance</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_21">
+      <path d="M 169.803594 90.521345 
+L 864.86657 90.521345 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="90.521345" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="95.84947" transform="rotate(-0 162.803594 95.84947)">rescue task assignment</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_23">
+      <path d="M 169.803594 133.543908 
+L 864.86657 133.543908 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="133.543908" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="138.872033" transform="rotate(-0 162.803594 138.872033)">personnel accounting</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_25">
+      <path d="M 169.803594 176.566471 
+L 864.86657 176.566471 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="176.566471" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="181.894596" transform="rotate(-0 162.803594 181.894596)">structural access status</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_27">
+      <path d="M 169.803594 219.589034 
+L 864.86657 219.589034 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="219.589034" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="224.917159" transform="rotate(-0 162.803594 224.917159)">essential service preservation</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_29">
+      <path d="M 169.803594 262.611597 
+L 864.86657 262.611597 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="262.611597" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="267.939722" transform="rotate(-0 162.803594 267.939722)">recovery scheduling</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_31">
+      <path d="M 169.803594 305.63416 
+L 864.86657 305.63416 
+" clip-path="url(#pe1409e1880)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="#m63c385b61b" x="169.803594" y="305.63416" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="162.803594" y="310.962285" transform="rotate(-0 162.803594 310.962285)">physiological group warning</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 169.803594 327.145441 
+L 169.803594 25.9875 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 169.803594 327.145441 
+L 864.86657 327.145441 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 13.2px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="517.335082" y="19.9875" transform="rotate(-0 517.335082 19.9875)">Proposal domains and accepted role labels</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe1409e1880">
+   <rect x="169.803594" y="25.9875" width="695.062977" height="301.157941"/>
+  </clipPath>
+ </defs>
+</svg>

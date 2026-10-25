@@ -1,0 +1,79 @@
+{
+ "input_lines": 2173,
+ "unique_identities": 2160,
+ "duplicates": 6,
+ "conflicts": 1,
+ "rejected": 6,
+ "exported": 2159,
+ "summaries": 12,
+ "windows_per_site": {
+  "SITE-A": 6,
+  "SITE-B": 6
+ },
+ "expected_per_window": [
+  180
+ ],
+ "fresh_expected": [
+  36
+ ],
+ "fresh_good_range": [
+  33,
+  36
+ ],
+ "min_fresh_devices_good": 6,
+ "selfchecks_passed": 10,
+ "selfchecks_failed": 0,
+ "checks": [
+  {
+   "name": "parsing",
+   "passed": true,
+   "detail": "lines=2173 stored_identities=2160"
+  },
+  {
+   "name": "rejection_classes",
+   "passed": true,
+   "detail": "rejected=6 missing_classes=[]"
+  },
+  {
+   "name": "null_preservation",
+   "passed": true,
+   "detail": "null_quality=22 zero_quality=0"
+  },
+  {
+   "name": "deduplication",
+   "passed": true,
+   "detail": "duplicates=6 unique=2160"
+  },
+  {
+   "name": "conflict_quarantine",
+   "passed": true,
+   "detail": "conflicts=1 audit_rows=1"
+  },
+  {
+   "name": "export_excludes_conflict",
+   "passed": true,
+   "detail": "exported=2159 leaked=0"
+  },
+  {
+   "name": "time_cutoffs",
+   "passed": true,
+   "detail": "late_after_cutoff=18 expected=18 admitted=2141"
+  },
+  {
+   "name": "roster_denominators",
+   "passed": true,
+   "detail": "summaries=12 expected=180 fresh=36 roster_devices=6"
+  },
+  {
+   "name": "sqlite_orderly_reopen",
+   "passed": true,
+   "detail": "pragmas={'journal_mode': 'wal', 'synchronous': 'FULL', 'integrity_check': 'ok'}; orderly close/reopen only, not a power-loss test"
+  },
+  {
+   "name": "utc_storage_kyiv_display",
+   "passed": true,
+   "detail": "06:00Z -> 2026-09-08T09:00:00+03:00"
+  }
+ ],
+ "manifest_exports": 6
+}

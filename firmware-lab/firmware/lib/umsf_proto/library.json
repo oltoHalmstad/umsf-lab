@@ -1,0 +1,9 @@
+{
+  "name": "umsf_proto",
+  "version": "1.0.0",
+  "description": "UMSF protocol v1.0 frame codec, fragmentation, text log and JSON records (C99)",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "build": { "srcDir": "src", "includeDir": "src" }
+}

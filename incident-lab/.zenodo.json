@@ -1,0 +1,64 @@
+{
+  "upload_type": "software",
+  "title": "UMSF Incident Lab: standalone Colab notebook for evidence-aware multisensor analysis",
+  "version": "1.2.0",
+  "publication_date": "2026-10-14",
+  "creators": [
+    {
+      "name": "Torstensson, Olga",
+      "affiliation": "Halmstad University",
+      "orcid": "0009-0007-2169-6851"
+    },
+    {
+      "name": "Prokopovych-Tkachenko, Dmytro",
+      "affiliation": "University of Customs and Finance",
+      "orcid": "0000-0002-6590-3898"
+    },
+    {
+      "name": "Adilzhanova, Saltanat",
+      "affiliation": "Almaty Technological University",
+      "orcid": "0000-0003-1768-064X"
+    },
+    {
+      "name": "Tykhonenko, Mariia",
+      "affiliation": "University of Customs and Finance",
+      "orcid": "0009-0000-5192-3241"
+    },
+    {
+      "name": "Beketova, Gulzhanat",
+      "affiliation": "Almaty University of Energy and Communications",
+      "orcid": "0000-0001-7160-1514"
+    },
+    {
+      "name": "Sydybayeva, Madina",
+      "affiliation": "Satbayev University",
+      "orcid": "0000-0002-8950-5421"
+    }
+  ],
+  "description": "<p>Self-contained English Google Colab/Jupyter research notebook with embedded source, synthetic data and tests. After a three-cell setup, every analysis cell is self-sufficient: it can run alone, in any order or after a kernel restart. Provides reproducible Study A/B analyses, extensive visualizations, an offline interactive incident explorer, bench and protocol demonstrations, service-allocation and storage experiments, and exported figures/tables.</p><p>Notebook release 1.2.0 preserves analytical core 1.0.0. Study A/B are independent synthetic re-implementations tuned to supplied manuscript aggregates, not independent empirical validation. Stage 1 is a bench transcription with a synthetic HR test field; Stage 2 is a synthetic re-enactment. No human-subject data. No clinical, structural, gas-identification or certified safety claims. Authors and affiliations are retained from the source package.</p>",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "critical infrastructure",
+    "multisensor monitoring",
+    "incident support",
+    "data quality",
+    "monitoring coverage",
+    "evidence provenance",
+    "physiological monitoring",
+    "building-state monitoring",
+    "gas channel",
+    "BLE",
+    "SQLite",
+    "synthetic data",
+    "reproducibility",
+    "Google Colab",
+    "Jupyter notebook",
+    "visual analytics"
+  ],
+  "language": "eng",
+  "notes": "Research software accompanying a manuscript; not a medical device or a certified safety, alarm or structural-monitoring system. No actuation. Included data are synthetic or a supplied bench transcription; no human-subject data. Study A/B are independent re-implementations of documented designs. Demonstration keys are not operational provisioning; orderly SQLite reopening is not an abrupt power-loss test. Notebook and documentation language: English (eng). Local execution of all cells, sequentially and each cell alone in a fresh kernel, is verified; the hosted Google Colab interface has not been tested.",
+  "references": [
+    "Torstensson O., Prokopovych-Tkachenko D., Adilzhanova S., Tykhonenko M., Beketova G., Sydybayeva M. Evidence-Aware Multisensor Monitoring for Critical Infrastructure Incident Support: System architecture and preliminary verification using synthetic evaluations and bench demonstrations. Manuscript, 2026."
+  ]
+}

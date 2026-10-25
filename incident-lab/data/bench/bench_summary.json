@@ -1,0 +1,102 @@
+{
+ "stage1": {
+  "records": 13,
+  "sequence_continuous": true,
+  "duplicates": 0,
+  "span_s": 120,
+  "interval_s": [
+   10
+  ],
+  "temp_start": 21.81,
+  "temp_end": 22.19,
+  "temp_change": 0.38,
+  "ppg_ir_range": [
+   1181,
+   1224
+  ],
+  "motion_range": [
+   75,
+   102
+  ],
+  "hr_test_range": [
+   70,
+   76
+  ],
+  "flags": [
+   "TPM"
+  ],
+  "note": "descriptive channel outputs; HR values are synthetic test values"
+ },
+ "stage2": {
+  "label": "synthetic scenario re-enactment for pipeline testing; not original data",
+  "station_records": 179,
+  "events": {
+   "sos": 1,
+   "sos_reset": 1,
+   "impact_excursion": 1,
+   "loud_sound": 1,
+   "possible_impact_local": 1,
+   "gas_channel_alarm": 1,
+   "tilt_change": 1,
+   "link_loss": 1,
+   "link_restored": 1,
+   "presence": 2
+  },
+  "timeline": [
+   {
+    "from_s": 1,
+    "to_s": 59,
+    "phase": "background",
+    "description": "Overview and background state"
+   },
+   {
+    "from_s": 59,
+    "to_s": 83,
+    "phase": "manual_sos",
+    "description": "Activation, interface alarm, manual reset and operator event"
+   },
+   {
+    "from_s": 83,
+    "to_s": 99,
+    "phase": "mechanical_stimulus",
+    "description": "Impact on the assembly/support; impact and acoustic events"
+   },
+   {
+    "from_s": 99,
+    "to_s": 123,
+    "phase": "gas_sensitive_channel",
+    "description": "Lighter-related demonstration without reported ignition"
+   },
+   {
+    "from_s": 123,
+    "to_s": 150,
+    "phase": "orientation_change",
+    "description": "Manual inclination of the node (~63.3 deg)"
+   },
+   {
+    "from_s": 150,
+    "to_s": 174,
+    "phase": "loss_of_availability",
+    "description": "Power/communication loss (cause not independently measured)"
+   },
+   {
+    "from_s": 174,
+    "to_s": 200,
+    "phase": "motion_presence",
+    "description": "Infrared sensing; most recent presence indicators retained"
+   }
+  ],
+  "background": {
+   "vib_peak_g": 0.03,
+   "tilt_deg": 0.4,
+   "pressure_hpa": 1003.7,
+   "temp_c": 21.9,
+   "gas_v": 0.8,
+   "sound_index": 262
+  },
+  "outage_s": [
+   152,
+   171
+  ]
+ }
+}

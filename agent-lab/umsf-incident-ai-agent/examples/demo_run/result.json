@@ -1,0 +1,4937 @@
+{
+  "as_of": "2026-10-14T09:10:00Z",
+  "input_sha256": "1b9de68044812198b4f23efd73bacec7856fc646b6fcfc5d0265a91618a3fdb4",
+  "file_sha256": {
+    "manifest.json": "b772ecbec69c3f9c08f2aed7a7084d598ffed9284649fa81d93dcf26d62610b9",
+    "roster.json": "2d99371eb7096ebac866267e2d8267d6f0ca65230f74fb3fb87c08d7491c631d",
+    "physio.jsonl": "01a872f8d00af476a898b6898fd16d2c866b036347f80e56fe6777b01a1f8c9f",
+    "station.jsonl": "3e0d56ea9ea73267d4a61beaedcb8db0dac87ab8a14e17efdde05050e684b401",
+    "events.jsonl": "f487391620c54e2b68817f3b3ad921c778dda9b3591faf012d7ff9d08be9bf4f",
+    "assets.json": "14ea1a6e04c823101fe6f4c779bc0f7392890cd0443ba31b135250b0f0c92eb5",
+    "teams.json": "9938be013385fed7f55d34fc3b401b50ffd272483689b377d7e3292f60f472ab"
+  },
+  "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+  "data_origin": "synthetic",
+  "scenario_id": "umsf-p3-post-impact-demo-v1",
+  "dataset": {
+    "path": "examples/scenario_post_impact",
+    "zones": 6,
+    "workers": 12,
+    "stationary_nodes": 6,
+    "physio_records": 4709,
+    "station_records": 2415,
+    "events": 30,
+    "quarantined_identities": 1,
+    "rejected_lines": 0,
+    "duplicates_dropped": 1,
+    "warnings": [],
+    "data_origin": "synthetic",
+    "scenario_id": "umsf-p3-post-impact-demo-v1",
+    "quarantine": [
+      {
+        "kind": "physio.jsonl",
+        "identity": [
+          "UMSF-A",
+          "A02",
+          1,
+          18
+        ],
+        "line": 4712,
+        "reason": "conflicting payload under same identity"
+      },
+      {
+        "kind": "physio.jsonl",
+        "identity": [
+          "UMSF-A",
+          "A02",
+          1,
+          18
+        ],
+        "line": 206,
+        "reason": "original record of conflicted identity"
+      }
+    ]
+  },
+  "physiology": {
+    "params": {
+      "n_min": 3,
+      "c_min": 0.7,
+      "m_min": 2,
+      "theta": 0.5
+    },
+    "config": {
+      "features": {
+        "hr_bpm": 0.5,
+        "skin_temp_c": 0.5
+      },
+      "eps": {
+        "hr_bpm": 1.0,
+        "skin_temp_c": 0.1
+      },
+      "z_max": 6.0,
+      "tau": 3.0,
+      "rho": 0.6,
+      "L": 5,
+      "v_min": 3,
+      "window_s": 60,
+      "freshness_s": 60,
+      "quality_min": 0.8,
+      "min_records_per_window": 3,
+      "min_reference_windows": 8,
+      "motion_context_threshold_g": 0.15,
+      "accept_synthetic_hr": true
+    },
+    "baseline_end": "2026-10-14T08:30:00Z",
+    "zones": {
+      "Z1": {
+        "decision": {
+          "zone_id": "Z1",
+          "states": [
+            "insufficient_monitoring_evidence"
+          ],
+          "urgent": [],
+          "group": {
+            "zone_id": "Z1",
+            "N": 2,
+            "n": 2,
+            "m": 0,
+            "p": 0.0,
+            "C": 1.0,
+            "p_pct": 0.0,
+            "C_pct": 100.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": true,
+              "m>=m_min": false,
+              "p>=theta": false
+            },
+            "A": 0,
+            "gate_available": false,
+            "min_eligible_required": 3,
+            "min_flags_required": 2,
+            "flagged_workers": [],
+            "unavailable_workers": [],
+            "reason": "insufficient group evidence: eligible 2/2 (needs >= 3); available positive observations remain visible"
+          },
+          "label_en": "Insufficient group evidence",
+          "label_uk": "Недостатньо даних для групового висновку"
+        },
+        "feasibility": {
+          "roster_size": 2,
+          "min_eligible": 3,
+          "min_flags_at_min_eligible": null,
+          "feasible": false,
+          "effective_min_coverage_pct": null,
+          "coverage_condition_redundant": null,
+          "note": "requires 3 eligible workers but roster has 2: no group warning feasible"
+        }
+      },
+      "Z2": {
+        "decision": {
+          "zone_id": "Z2",
+          "states": [
+            "possible_group_event"
+          ],
+          "urgent": [],
+          "group": {
+            "zone_id": "Z2",
+            "N": 5,
+            "n": 4,
+            "m": 3,
+            "p": 0.75,
+            "C": 0.8,
+            "p_pct": 75.0,
+            "C_pct": 80.0,
+            "conditions": {
+              "n>=n_min": true,
+              "C>=C_min": true,
+              "m>=m_min": true,
+              "p>=theta": true
+            },
+            "A": 1,
+            "gate_available": true,
+            "min_eligible_required": 4,
+            "min_flags_required": 2,
+            "flagged_workers": [
+              "W03",
+              "W04",
+              "W06"
+            ],
+            "unavailable_workers": [
+              "W05"
+            ],
+            "reason": "all four conditions of Eq. (5) hold (m=3 >= 2)"
+          },
+          "label_en": "Possible group event",
+          "label_uk": "Можлива групова подія"
+        },
+        "feasibility": {
+          "roster_size": 5,
+          "min_eligible": 4,
+          "min_flags_at_min_eligible": 2,
+          "feasible": true,
+          "effective_min_coverage_pct": 80.0,
+          "coverage_condition_redundant": false,
+          "note": "group gate needs >= 4 eligible of 5 (effective coverage >= 80.0%) and >= 2 flags at n=4"
+        }
+      },
+      "Z3": {
+        "decision": {
+          "zone_id": "Z3",
+          "states": [
+            "insufficient_monitoring_evidence"
+          ],
+          "urgent": [],
+          "group": {
+            "zone_id": "Z3",
+            "N": 2,
+            "n": 2,
+            "m": 0,
+            "p": 0.0,
+            "C": 1.0,
+            "p_pct": 0.0,
+            "C_pct": 100.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": true,
+              "m>=m_min": false,
+              "p>=theta": false
+            },
+            "A": 0,
+            "gate_available": false,
+            "min_eligible_required": 3,
+            "min_flags_required": 2,
+            "flagged_workers": [],
+            "unavailable_workers": [],
+            "reason": "insufficient group evidence: eligible 2/2 (needs >= 3); available positive observations remain visible"
+          },
+          "label_en": "Insufficient group evidence",
+          "label_uk": "Недостатньо даних для групового висновку"
+        },
+        "feasibility": {
+          "roster_size": 2,
+          "min_eligible": 3,
+          "min_flags_at_min_eligible": null,
+          "feasible": false,
+          "effective_min_coverage_pct": null,
+          "coverage_condition_redundant": null,
+          "note": "requires 3 eligible workers but roster has 2: no group warning feasible"
+        }
+      },
+      "Z4": {
+        "decision": {
+          "zone_id": "Z4",
+          "states": [
+            "insufficient_monitoring_evidence"
+          ],
+          "urgent": [
+            {
+              "worker": "W10",
+              "event_id": "E013",
+              "event_type": "help_request",
+              "observed_at": "2026-10-14T08:37:05Z",
+              "zone_id": "Z4",
+              "ack_state": "unacknowledged"
+            }
+          ],
+          "group": {
+            "zone_id": "Z4",
+            "N": 2,
+            "n": 2,
+            "m": 0,
+            "p": 0.0,
+            "C": 1.0,
+            "p_pct": 0.0,
+            "C_pct": 100.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": true,
+              "m>=m_min": false,
+              "p>=theta": false
+            },
+            "A": 0,
+            "gate_available": false,
+            "min_eligible_required": 3,
+            "min_flags_required": 2,
+            "flagged_workers": [],
+            "unavailable_workers": [],
+            "reason": "insufficient group evidence: eligible 2/2 (needs >= 3); available positive observations remain visible"
+          },
+          "label_en": "Urgent individual assistance; no group trigger; insufficient group evidence",
+          "label_uk": "Термінова індивідуальна допомога; груповий тригер відсутній; недостатньо даних для групового висновку"
+        },
+        "feasibility": {
+          "roster_size": 2,
+          "min_eligible": 3,
+          "min_flags_at_min_eligible": null,
+          "feasible": false,
+          "effective_min_coverage_pct": null,
+          "coverage_condition_redundant": null,
+          "note": "requires 3 eligible workers but roster has 2: no group warning feasible"
+        }
+      },
+      "Z5": {
+        "decision": {
+          "zone_id": "Z5",
+          "states": [
+            "insufficient_monitoring_evidence"
+          ],
+          "urgent": [],
+          "group": {
+            "zone_id": "Z5",
+            "N": 1,
+            "n": 0,
+            "m": 0,
+            "p": null,
+            "C": 0.0,
+            "p_pct": null,
+            "C_pct": 0.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": false,
+              "m>=m_min": false,
+              "p>=theta": null
+            },
+            "A": 0,
+            "gate_available": false,
+            "min_eligible_required": 3,
+            "min_flags_required": null,
+            "flagged_workers": [],
+            "unavailable_workers": [
+              "W12"
+            ],
+            "reason": "insufficient group evidence: eligible 0/1 (needs >= 3); available positive observations remain visible"
+          },
+          "label_en": "Insufficient group evidence",
+          "label_uk": "Недостатньо даних для групового висновку"
+        },
+        "feasibility": {
+          "roster_size": 1,
+          "min_eligible": 3,
+          "min_flags_at_min_eligible": null,
+          "feasible": false,
+          "effective_min_coverage_pct": null,
+          "coverage_condition_redundant": null,
+          "note": "requires 3 eligible workers but roster has 1: no group warning feasible"
+        }
+      },
+      "Z6": {
+        "decision": {
+          "zone_id": "Z6",
+          "states": [
+            "insufficient_monitoring_evidence"
+          ],
+          "urgent": [],
+          "group": {
+            "zone_id": "Z6",
+            "N": 0,
+            "n": 0,
+            "m": 0,
+            "p": null,
+            "C": null,
+            "p_pct": null,
+            "C_pct": null,
+            "conditions": {
+              "n>=n_min": null,
+              "C>=C_min": null,
+              "m>=m_min": null,
+              "p>=theta": null
+            },
+            "A": 0,
+            "gate_available": false,
+            "min_eligible_required": null,
+            "min_flags_required": null,
+            "flagged_workers": [],
+            "unavailable_workers": [],
+            "reason": "roster has N=0: coverage not calculated, no automated group conclusion"
+          },
+          "label_en": "Insufficient group evidence",
+          "label_uk": "Недостатньо даних для групового висновку"
+        },
+        "feasibility": {
+          "roster_size": 0,
+          "min_eligible": null,
+          "min_flags_at_min_eligible": null,
+          "feasible": false,
+          "effective_min_coverage_pct": null,
+          "coverage_condition_redundant": null,
+          "note": "roster unavailable or empty: coverage not calculated; no group conclusion allowed"
+        }
+      }
+    },
+    "workers_restricted": {
+      "W01": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W02": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W03": {
+        "flag_available": true,
+        "flag": 1,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W04": {
+        "flag_available": true,
+        "flag": 1,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W05": {
+        "flag_available": false,
+        "flag": null,
+        "reason": "current window ineligible",
+        "eligible_windows": 0,
+        "current_context": null,
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W06": {
+        "flag_available": true,
+        "flag": 1,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W07": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W08": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W09": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W10": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W11": {
+        "flag_available": true,
+        "flag": 0,
+        "reason": "evaluated",
+        "eligible_windows": 5,
+        "current_context": "low_motion",
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      },
+      "W12": {
+        "flag_available": false,
+        "flag": null,
+        "reason": "current window ineligible",
+        "eligible_windows": 0,
+        "current_context": null,
+        "reference_state": {
+          "hr_bpm|low_motion": "calibrated",
+          "hr_bpm|high_motion": "calibrated",
+          "skin_temp_c|low_motion": "calibrated",
+          "skin_temp_c|high_motion": "calibrated"
+        }
+      }
+    },
+    "note": "individual physiological details are restricted to authorised roles (Sec. 3.7.2); scores are general deviation measures, not diagnoses; HR is a synthetic field in synthetic data"
+  },
+  "incident": {
+    "as_of": "2026-10-14T09:10:00Z",
+    "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+    "zones": {
+      "Z1": {
+        "zone_id": "Z1",
+        "site_id": "UMSF-A",
+        "name": "Адміністративний блок",
+        "M": [
+          {
+            "assertion_id": "A-E018",
+            "layer": "M",
+            "kind": "structural_assessment",
+            "zone_id": "Z1",
+            "site_id": "UMSF-A",
+            "semantics": "structural assessment by named assessor (scope/method/validity attached)",
+            "value": "no_restriction_observed",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "QA-1",
+            "observed_at": "2026-10-14T08:50:00Z",
+            "reported_at": "2026-10-14T08:50:01Z",
+            "time_uncertainty_s": 60,
+            "quality": 0.9,
+            "provenance": {
+              "source": "qualified assessor QA-1 (SYNTHETIC)",
+              "method": "visual inspection",
+              "assessor": "QA-1",
+              "scope": "Z1 ground floor and corridor",
+              "valid_until": "2026-10-14T12:00:00Z"
+            },
+            "event_ids": [
+              "E018"
+            ],
+            "verification": "qualified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1200.0,
+            "valid_until": "2026-10-14T12:00:00Z",
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          }
+        ],
+        "H": [],
+        "P": [],
+        "F": [
+          {
+            "assertion_id": "A-E011",
+            "layer": "F",
+            "kind": "asset_status",
+            "zone_id": "Z1",
+            "site_id": "UMSF-A",
+            "semantics": "asset status report (available/unavailable/unknown) with capacity interval",
+            "value": "unavailable",
+            "unit": null,
+            "source_class": "operator_report",
+            "source_id": "OP-A",
+            "observed_at": "2026-10-14T08:36:00Z",
+            "reported_at": "2026-10-14T08:36:01Z",
+            "time_uncertainty_s": 30,
+            "quality": 0.9,
+            "provenance": {
+              "source": "site operator A",
+              "method": "operator report",
+              "asset_id": "grid_feed_A",
+              "capacity_lower_bounds": {
+                "power_kw": 0,
+                "energy_kwh": 0
+              },
+              "basis": "grid feed A lost; no residual capacity can be justified"
+            },
+            "event_ids": [
+              "E011"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2040.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E015",
+            "layer": "F",
+            "kind": "asset_status",
+            "zone_id": "Z1",
+            "site_id": "UMSF-A",
+            "semantics": "asset status report (available/unavailable/unknown) with capacity interval",
+            "value": "available",
+            "unit": null,
+            "source_class": "operator_report",
+            "source_id": "OP-A",
+            "observed_at": "2026-10-14T08:39:00Z",
+            "reported_at": "2026-10-14T08:39:01Z",
+            "time_uncertainty_s": 30,
+            "quality": 0.9,
+            "provenance": {
+              "source": "site operator A",
+              "method": "operator verification",
+              "asset_id": "generator_G1",
+              "capacity_lower_bounds": {
+                "power_kw": 60
+              },
+              "basis": "generator G1 verified running; 75 kW rating derated to 60 kW justified lower bound"
+            },
+            "event_ids": [
+              "E015"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1860.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E015B",
+            "layer": "F",
+            "kind": "asset_status",
+            "zone_id": "Z1",
+            "site_id": "UMSF-A",
+            "semantics": "asset status report (available/unavailable/unknown) with capacity interval",
+            "value": "available",
+            "unit": null,
+            "source_class": "operator_report",
+            "source_id": "OP-A",
+            "observed_at": "2026-10-14T08:39:30Z",
+            "reported_at": "2026-10-14T08:39:31Z",
+            "time_uncertainty_s": 30,
+            "quality": 0.9,
+            "provenance": {
+              "source": "site operator A",
+              "method": "fuel gauge + log",
+              "asset_id": "fuel_tank_G1",
+              "capacity_lower_bounds": {
+                "energy_kwh": 200
+              },
+              "basis": "fuel for >= 200 kWh at generator efficiency over 4 h horizon (operator estimate)"
+            },
+            "event_ids": [
+              "E015B"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1830.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          }
+        ],
+        "U": [],
+        "summary": {
+          "station_nodes": {
+            "S01": {
+              "last_measured_at": "2026-10-14T09:09:50Z",
+              "age_s": 10.0,
+              "current": true,
+              "attachment_verified": true,
+              "gas_v": 0.413,
+              "pir_presence": false,
+              "last_known": {
+                "vib_peak_g": 0.023,
+                "tilt_deg": 1.22,
+                "pressure_hpa": 1003.77,
+                "temp_c": 21.92,
+                "gas_v": 0.413,
+                "sound_index": 231,
+                "pir_presence": false
+              }
+            }
+          },
+          "personnel_telemetry": {
+            "expected": 2,
+            "without_current_telemetry": 0
+          },
+          "structural": {
+            "state": "no_restriction_observed",
+            "assessor": "QA-1",
+            "method": "visual inspection",
+            "scope": "Z1 ground floor and corridor",
+            "valid_until": "2026-10-14T12:00:00Z",
+            "assertion_id": "A-E018"
+          },
+          "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+          "flags": {
+            "impact_evidence": false,
+            "possible_impact_local": false,
+            "gas_evidence": false,
+            "gas_alarm_current": false,
+            "observation_gap": false,
+            "structural_unknown": false,
+            "presence_cue_current": false,
+            "assistance_request_open": false
+          },
+          "mechanical_observations": 0,
+          "presence_cues_current": 0,
+          "open_assistance_requests": 0,
+          "asset_reports_current": 3,
+          "observation_gaps_current": 0
+        }
+      },
+      "Z2": {
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "name": "Механічний цех",
+        "M": [
+          {
+            "assertion_id": "A-E002",
+            "layer": "M",
+            "kind": "impact_excursion",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "channel excursion (acceleration), uncalibrated; not a damage measure",
+            "value": 2.8,
+            "unit": "g",
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T08:34:12.400Z",
+            "reported_at": "2026-10-14T08:34:13.400Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S02",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E002"
+            ],
+            "verification": "unverified",
+            "status": "stale",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2147.6,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority",
+              "attachment uncertain: no structural interpretation"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E003",
+            "layer": "M",
+            "kind": "pressure_transient",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "pressure transient in channel; not a blast estimate",
+            "value": 180,
+            "unit": "Pa",
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T08:34:12.600Z",
+            "reported_at": "2026-10-14T08:34:13.600Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S02",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E003"
+            ],
+            "verification": "unverified",
+            "status": "stale",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2147.4,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority",
+              "attachment uncertain: no structural interpretation"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E004",
+            "layer": "M",
+            "kind": "loud_sound",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "acoustic transient; not an explosion classification",
+            "value": 3900,
+            "unit": "index",
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T08:34:12.700Z",
+            "reported_at": "2026-10-14T08:34:13.700Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S02",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E004"
+            ],
+            "verification": "unverified",
+            "status": "stale",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2147.3,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority",
+              "attachment uncertain: no structural interpretation"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E005",
+            "layer": "M",
+            "kind": "possible_impact_local",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "possible_impact_local: local composite cue, UNVERIFIED; not a strike attribution",
+            "value": 2.8,
+            "unit": "g",
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T08:34:13Z",
+            "reported_at": "2026-10-14T08:34:14Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S02",
+              "method": "composite rule: impact + (loud or pressure) within 2 s",
+              "calibration_id": "uncalibrated"
+            },
+            "event_ids": [
+              "E005"
+            ],
+            "verification": "unverified",
+            "status": "stale",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2147.0,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority",
+              "attachment uncertain: no structural interpretation"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 3,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E006",
+            "layer": "M",
+            "kind": "tilt_change",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "orientation change of node; structural meaning requires verified mounting",
+            "value": 7.5,
+            "unit": "deg",
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T08:34:14Z",
+            "reported_at": "2026-10-14T08:34:15Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S02",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E006"
+            ],
+            "verification": "unverified",
+            "status": "stale",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2146.0,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority",
+              "attachment uncertain: no structural interpretation"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          }
+        ],
+        "H": [],
+        "P": [
+          {
+            "assertion_id": "A-E007",
+            "layer": "P",
+            "kind": "sos",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "direct assistance request (SOS)",
+            "value": 1,
+            "unit": null,
+            "source_class": "personnel_node",
+            "source_id": "A05",
+            "observed_at": "2026-10-14T08:34:20Z",
+            "reported_at": "2026-10-14T08:34:21Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "A05",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E007"
+            ],
+            "verification": "unverified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2140.0,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 3,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E017",
+            "layer": "P",
+            "kind": "personnel_accounting",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "personnel accounting report",
+            "value": "assistance_in_progress",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "RT1",
+            "observed_at": "2026-10-14T08:41:30Z",
+            "reported_at": "2026-10-14T08:41:31Z",
+            "time_uncertainty_s": 30,
+            "quality": 0.9,
+            "provenance": {
+              "source": "rescue team RT1",
+              "method": "response_action_start",
+              "related_event": "E007",
+              "worker": "W05",
+              "location_zone": "Z2"
+            },
+            "event_ids": [
+              "E017"
+            ],
+            "verification": "report",
+            "status": "superseded",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1710.0,
+            "valid_until": null,
+            "notes": [
+              "superseded by A-E019"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "P-pir-S02",
+            "layer": "P",
+            "kind": "presence_cue",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "possible presence cue (PIR); not a vital sign; absence cannot exclude a person",
+            "value": true,
+            "unit": null,
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T09:09:20Z",
+            "reported_at": "2026-10-14T09:09:20.600Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.95,
+            "provenance": {
+              "method": "PIR flag in station record"
+            },
+            "event_ids": [],
+            "verification": "unverified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 40.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": null,
+            "level": null,
+            "rule_version": null
+          }
+        ],
+        "F": [],
+        "U": [
+          {
+            "assertion_id": "U-non_authoritative_attribution_claim-A-E014",
+            "layer": "U",
+            "kind": "non_authoritative_attribution_claim",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "attribution claim from non-authoritative source; not used",
+            "value": null,
+            "unit": null,
+            "source_class": "derived",
+            "source_id": "OP-A",
+            "observed_at": "2026-10-14T08:38:00Z",
+            "reported_at": "2026-10-14T08:38:01Z",
+            "time_uncertainty_s": null,
+            "quality": null,
+            "provenance": {
+              "derived_from": "A-E014"
+            },
+            "event_ids": [
+              "E014"
+            ],
+            "verification": "derived",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": null,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": null,
+            "level": null,
+            "rule_version": null
+          },
+          {
+            "assertion_id": "U-attach-S02",
+            "layer": "U",
+            "kind": "attachment_uncertain",
+            "zone_id": "Z2",
+            "site_id": "UMSF-A",
+            "semantics": "node attachment uncertain: earlier structural interpretation withdrawn",
+            "value": null,
+            "unit": null,
+            "source_class": "stationary_node",
+            "source_id": "S02",
+            "observed_at": "2026-10-14T09:09:50Z",
+            "reported_at": "2026-10-14T09:09:50.600Z",
+            "time_uncertainty_s": null,
+            "quality": 0.95,
+            "provenance": {},
+            "event_ids": [],
+            "verification": "derived",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": null,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": null,
+            "level": null,
+            "rule_version": null
+          }
+        ],
+        "summary": {
+          "station_nodes": {
+            "S02": {
+              "last_measured_at": "2026-10-14T09:09:50Z",
+              "age_s": 10.0,
+              "current": true,
+              "attachment_verified": false,
+              "gas_v": 0.4,
+              "pir_presence": false,
+              "last_known": {
+                "vib_peak_g": 0.023,
+                "tilt_deg": 8.83,
+                "pressure_hpa": 1003.68,
+                "temp_c": 21.94,
+                "gas_v": 0.4,
+                "sound_index": 285,
+                "pir_presence": false
+              }
+            }
+          },
+          "personnel_telemetry": {
+            "expected": 5,
+            "without_current_telemetry": 0
+          },
+          "structural": {
+            "state": "unknown",
+            "assessor": null,
+            "note": "no current qualified structural assessment (no automated building clearance)"
+          },
+          "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+          "flags": {
+            "impact_evidence": true,
+            "possible_impact_local": true,
+            "gas_evidence": false,
+            "gas_alarm_current": false,
+            "observation_gap": false,
+            "structural_unknown": true,
+            "presence_cue_current": true,
+            "assistance_request_open": true
+          },
+          "mechanical_observations": 4,
+          "presence_cues_current": 1,
+          "open_assistance_requests": 1,
+          "asset_reports_current": 0,
+          "observation_gaps_current": 0
+        }
+      },
+      "Z3": {
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "name": "Насосна (підвал)",
+        "M": [],
+        "H": [
+          {
+            "assertion_id": "A-E008",
+            "layer": "H",
+            "kind": "gas_channel_alarm",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "uncalibrated gas-channel response (MQ-2); not a concentration or identification",
+            "value": 1.9,
+            "unit": "V",
+            "source_class": "stationary_node",
+            "source_id": "S03",
+            "observed_at": "2026-10-14T08:34:40Z",
+            "reported_at": "2026-10-14T08:34:41Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S03",
+              "method": "MQ-2 channel threshold",
+              "calibration_id": "uncalibrated"
+            },
+            "event_ids": [
+              "E008"
+            ],
+            "verification": "instrument_uncalibrated",
+            "status": "stale",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2120.0,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 600s: history only, no current authority"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          }
+        ],
+        "P": [
+          {
+            "assertion_id": "A-E009",
+            "layer": "P",
+            "kind": "sos",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "direct assistance request (SOS)",
+            "value": 1,
+            "unit": null,
+            "source_class": "stationary_node",
+            "source_id": "S03",
+            "observed_at": "2026-10-14T08:34:50Z",
+            "reported_at": "2026-10-14T08:34:51Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "S03",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E009"
+            ],
+            "verification": "unverified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2110.0,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 3,
+            "rule_version": 1
+          }
+        ],
+        "F": [],
+        "U": [
+          {
+            "assertion_id": "A-E010a",
+            "layer": "U",
+            "kind": "link_loss",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "link loss: current evidence from source becomes unknown",
+            "value": 60,
+            "unit": "s",
+            "source_class": "gateway",
+            "source_id": "S03",
+            "observed_at": "2026-10-14T08:36:30Z",
+            "reported_at": "2026-10-14T08:36:31Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "gateway silence detection"
+            },
+            "event_ids": [
+              "E010a"
+            ],
+            "verification": "unverified",
+            "status": "resolved",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2010.0,
+            "valid_until": null,
+            "notes": [
+              "link restored at 2026-10-14T08:58:00Z; gap interval retained"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E010b",
+            "layer": "U",
+            "kind": "link_loss",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "link loss: current evidence from source becomes unknown",
+            "value": 60,
+            "unit": "s",
+            "source_class": "gateway",
+            "source_id": "A08",
+            "observed_at": "2026-10-14T08:36:30Z",
+            "reported_at": "2026-10-14T08:36:31Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "gateway silence detection"
+            },
+            "event_ids": [
+              "E010b"
+            ],
+            "verification": "unverified",
+            "status": "resolved",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2010.0,
+            "valid_until": null,
+            "notes": [
+              "link restored at 2026-10-14T08:58:00Z; gap interval retained"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E010c",
+            "layer": "U",
+            "kind": "link_loss",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "link loss: current evidence from source becomes unknown",
+            "value": 60,
+            "unit": "s",
+            "source_class": "gateway",
+            "source_id": "A09",
+            "observed_at": "2026-10-14T08:36:30Z",
+            "reported_at": "2026-10-14T08:36:31Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "gateway silence detection"
+            },
+            "event_ids": [
+              "E010c"
+            ],
+            "verification": "unverified",
+            "status": "resolved",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 2010.0,
+            "valid_until": null,
+            "notes": [
+              "link restored at 2026-10-14T08:58:00Z; gap interval retained"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 2,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E020a",
+            "layer": "U",
+            "kind": "link_restored",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "link restored: delayed records enter history, not current window",
+            "value": 1350,
+            "unit": "s",
+            "source_class": "gateway",
+            "source_id": "S03",
+            "observed_at": "2026-10-14T08:58:00Z",
+            "reported_at": "2026-10-14T08:58:01Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "gateway reconnect"
+            },
+            "event_ids": [
+              "E020a"
+            ],
+            "verification": "unverified",
+            "status": "resolved",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 720.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E020b",
+            "layer": "U",
+            "kind": "link_restored",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "link restored: delayed records enter history, not current window",
+            "value": 1350,
+            "unit": "s",
+            "source_class": "gateway",
+            "source_id": "A08",
+            "observed_at": "2026-10-14T08:58:00Z",
+            "reported_at": "2026-10-14T08:58:01Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "gateway reconnect"
+            },
+            "event_ids": [
+              "E020b"
+            ],
+            "verification": "unverified",
+            "status": "resolved",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 720.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E020c",
+            "layer": "U",
+            "kind": "link_restored",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "link restored: delayed records enter history, not current window",
+            "value": 1350,
+            "unit": "s",
+            "source_class": "gateway",
+            "source_id": "A09",
+            "observed_at": "2026-10-14T08:58:00Z",
+            "reported_at": "2026-10-14T08:58:01Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "gateway reconnect"
+            },
+            "event_ids": [
+              "E020c"
+            ],
+            "verification": "unverified",
+            "status": "resolved",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 720.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E021",
+            "layer": "U",
+            "kind": "buffer_eviction",
+            "zone_id": "Z3",
+            "site_id": "UMSF-A",
+            "semantics": "buffer eviction: observations lost",
+            "value": 210,
+            "unit": "count",
+            "source_class": "gateway",
+            "source_id": "GA2",
+            "observed_at": "2026-10-14T08:58:01Z",
+            "reported_at": "2026-10-14T08:58:02Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "GA2",
+              "method": "node buffer accounting"
+            },
+            "event_ids": [
+              "E021"
+            ],
+            "verification": "unverified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 719.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          }
+        ],
+        "summary": {
+          "station_nodes": {
+            "S03": {
+              "last_measured_at": "2026-10-14T09:09:50Z",
+              "age_s": 10.0,
+              "current": true,
+              "attachment_verified": true,
+              "gas_v": 1.951,
+              "pir_presence": false,
+              "last_known": {
+                "vib_peak_g": 0.023,
+                "tilt_deg": 1.19,
+                "pressure_hpa": 1003.73,
+                "temp_c": 21.88,
+                "gas_v": 1.951,
+                "sound_index": 219,
+                "pir_presence": false
+              }
+            }
+          },
+          "personnel_telemetry": {
+            "expected": 2,
+            "without_current_telemetry": 0
+          },
+          "structural": {
+            "state": "unknown",
+            "assessor": null,
+            "note": "no current qualified structural assessment (no automated building clearance)"
+          },
+          "hazard_state": "alarm_history_no_current_alarm (uncalibrated channel; not cleared)",
+          "flags": {
+            "impact_evidence": false,
+            "possible_impact_local": false,
+            "gas_evidence": true,
+            "gas_alarm_current": false,
+            "observation_gap": false,
+            "structural_unknown": true,
+            "presence_cue_current": false,
+            "assistance_request_open": true
+          },
+          "mechanical_observations": 0,
+          "presence_cues_current": 0,
+          "open_assistance_requests": 1,
+          "asset_reports_current": 0,
+          "observation_gaps_current": 0
+        }
+      },
+      "Z4": {
+        "zone_id": "Z4",
+        "site_id": "UMSF-B",
+        "name": "Диспетчерська",
+        "M": [],
+        "H": [],
+        "P": [
+          {
+            "assertion_id": "A-E013",
+            "layer": "P",
+            "kind": "help_request",
+            "zone_id": "Z4",
+            "site_id": "UMSF-B",
+            "semantics": "direct help request from personnel node",
+            "value": 1,
+            "unit": null,
+            "source_class": "personnel_node",
+            "source_id": "A10",
+            "observed_at": "2026-10-14T08:37:05Z",
+            "reported_at": "2026-10-14T08:37:06Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.9,
+            "provenance": {
+              "source": "A10",
+              "method": "device rule"
+            },
+            "event_ids": [
+              "E013"
+            ],
+            "verification": "unverified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1975.0,
+            "valid_until": null,
+            "notes": [
+              "older than freshness horizon 1800s: history only, no current authority"
+            ],
+            "ack_state": "unacknowledged",
+            "level": 3,
+            "rule_version": 1
+          }
+        ],
+        "F": [],
+        "U": [],
+        "summary": {
+          "station_nodes": {
+            "S04": {
+              "last_measured_at": "2026-10-14T09:09:50Z",
+              "age_s": 10.0,
+              "current": true,
+              "attachment_verified": true,
+              "gas_v": 0.396,
+              "pir_presence": false,
+              "last_known": {
+                "vib_peak_g": 0.017,
+                "tilt_deg": 1.22,
+                "pressure_hpa": 1003.64,
+                "temp_c": 21.96,
+                "gas_v": 0.396,
+                "sound_index": 344,
+                "pir_presence": false
+              }
+            }
+          },
+          "personnel_telemetry": {
+            "expected": 2,
+            "without_current_telemetry": 0
+          },
+          "structural": {
+            "state": "unknown",
+            "assessor": null,
+            "note": "no current qualified structural assessment (no automated building clearance)"
+          },
+          "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+          "flags": {
+            "impact_evidence": false,
+            "possible_impact_local": false,
+            "gas_evidence": false,
+            "gas_alarm_current": false,
+            "observation_gap": false,
+            "structural_unknown": true,
+            "presence_cue_current": false,
+            "assistance_request_open": true
+          },
+          "mechanical_observations": 0,
+          "presence_cues_current": 0,
+          "open_assistance_requests": 1,
+          "asset_reports_current": 0,
+          "observation_gaps_current": 0
+        }
+      },
+      "Z5": {
+        "zone_id": "Z5",
+        "site_id": "UMSF-B",
+        "name": "Склад",
+        "M": [],
+        "H": [],
+        "P": [
+          {
+            "assertion_id": "P-pir-S05",
+            "layer": "P",
+            "kind": "presence_cue",
+            "zone_id": "Z5",
+            "site_id": "UMSF-B",
+            "semantics": "possible presence cue (PIR); not a vital sign; absence cannot exclude a person",
+            "value": true,
+            "unit": null,
+            "source_class": "stationary_node",
+            "source_id": "S05",
+            "observed_at": "2026-10-14T09:09:00Z",
+            "reported_at": "2026-10-14T09:09:00.600Z",
+            "time_uncertainty_s": 0.5,
+            "quality": 0.95,
+            "provenance": {
+              "method": "PIR flag in station record"
+            },
+            "event_ids": [],
+            "verification": "unverified",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 60.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": null,
+            "level": null,
+            "rule_version": null
+          }
+        ],
+        "F": [],
+        "U": [
+          {
+            "assertion_id": "U-personnel_telemetry_gap-Z5",
+            "layer": "U",
+            "kind": "personnel_telemetry_gap",
+            "zone_id": "Z5",
+            "site_id": "UMSF-B",
+            "semantics": "1 of 1 expected workers without current telemetry; missing telemetry does not indicate injury or death",
+            "value": null,
+            "unit": null,
+            "source_class": "derived",
+            "source_id": null,
+            "observed_at": "2026-10-14T09:10:00Z",
+            "reported_at": "2026-10-14T09:10:00Z",
+            "time_uncertainty_s": 0.0,
+            "quality": null,
+            "provenance": {
+              "method": "agent derivation"
+            },
+            "event_ids": [],
+            "verification": "derived",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": null,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": null,
+            "level": null,
+            "rule_version": null
+          }
+        ],
+        "summary": {
+          "station_nodes": {
+            "S05": {
+              "last_measured_at": "2026-10-14T09:09:50Z",
+              "age_s": 10.0,
+              "current": true,
+              "attachment_verified": true,
+              "gas_v": 0.386,
+              "pir_presence": false,
+              "last_known": {
+                "vib_peak_g": 0.017,
+                "tilt_deg": 1.23,
+                "pressure_hpa": 1003.68,
+                "temp_c": 21.75,
+                "gas_v": 0.386,
+                "sound_index": 309,
+                "pir_presence": false
+              }
+            }
+          },
+          "personnel_telemetry": {
+            "expected": 1,
+            "without_current_telemetry": 1
+          },
+          "structural": {
+            "state": "unknown",
+            "assessor": null,
+            "note": "no current qualified structural assessment (no automated building clearance)"
+          },
+          "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+          "flags": {
+            "impact_evidence": false,
+            "possible_impact_local": false,
+            "gas_evidence": false,
+            "gas_alarm_current": false,
+            "observation_gap": false,
+            "structural_unknown": true,
+            "presence_cue_current": true,
+            "assistance_request_open": false
+          },
+          "mechanical_observations": 0,
+          "presence_cues_current": 1,
+          "open_assistance_requests": 0,
+          "asset_reports_current": 0,
+          "observation_gaps_current": 0
+        }
+      },
+      "Z6": {
+        "zone_id": "Z6",
+        "site_id": "UMSF-A",
+        "name": "Пункт збору / укриття",
+        "M": [],
+        "H": [],
+        "P": [
+          {
+            "assertion_id": "A-E016W01",
+            "layer": "P",
+            "kind": "personnel_accounting",
+            "zone_id": "Z6",
+            "site_id": "UMSF-A",
+            "semantics": "personnel accounting report",
+            "value": "accounted_at_assembly",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "RT2",
+            "observed_at": "2026-10-14T08:45:00Z",
+            "reported_at": "2026-10-14T08:45:01Z",
+            "time_uncertainty_s": 60,
+            "quality": 0.9,
+            "provenance": {
+              "source": "rescue team RT2",
+              "method": "roll call at assembly point",
+              "worker": "W01",
+              "location_zone": "Z6"
+            },
+            "event_ids": [
+              "E016W01"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1500.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E016W02",
+            "layer": "P",
+            "kind": "personnel_accounting",
+            "zone_id": "Z6",
+            "site_id": "UMSF-A",
+            "semantics": "personnel accounting report",
+            "value": "accounted_at_assembly",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "RT2",
+            "observed_at": "2026-10-14T08:45:00Z",
+            "reported_at": "2026-10-14T08:45:01Z",
+            "time_uncertainty_s": 60,
+            "quality": 0.9,
+            "provenance": {
+              "source": "rescue team RT2",
+              "method": "roll call at assembly point",
+              "worker": "W02",
+              "location_zone": "Z6"
+            },
+            "event_ids": [
+              "E016W02"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1500.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E016W03",
+            "layer": "P",
+            "kind": "personnel_accounting",
+            "zone_id": "Z6",
+            "site_id": "UMSF-A",
+            "semantics": "personnel accounting report",
+            "value": "accounted_at_assembly",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "RT2",
+            "observed_at": "2026-10-14T08:45:00Z",
+            "reported_at": "2026-10-14T08:45:01Z",
+            "time_uncertainty_s": 60,
+            "quality": 0.9,
+            "provenance": {
+              "source": "rescue team RT2",
+              "method": "roll call at assembly point",
+              "worker": "W03",
+              "location_zone": "Z6"
+            },
+            "event_ids": [
+              "E016W03"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1500.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E016W04",
+            "layer": "P",
+            "kind": "personnel_accounting",
+            "zone_id": "Z6",
+            "site_id": "UMSF-A",
+            "semantics": "personnel accounting report",
+            "value": "accounted_at_assembly",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "RT2",
+            "observed_at": "2026-10-14T08:45:00Z",
+            "reported_at": "2026-10-14T08:45:01Z",
+            "time_uncertainty_s": 60,
+            "quality": 0.9,
+            "provenance": {
+              "source": "rescue team RT2",
+              "method": "roll call at assembly point",
+              "worker": "W04",
+              "location_zone": "Z6"
+            },
+            "event_ids": [
+              "E016W04"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 1,
+            "supersedes": null,
+            "age_s": 1500.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          },
+          {
+            "assertion_id": "A-E019",
+            "layer": "P",
+            "kind": "personnel_accounting",
+            "zone_id": "Z6",
+            "site_id": "UMSF-A",
+            "semantics": "personnel accounting report",
+            "value": "handed_to_medical",
+            "unit": null,
+            "source_class": "responder_report",
+            "source_id": "RT1",
+            "observed_at": "2026-10-14T08:52:00Z",
+            "reported_at": "2026-10-14T08:52:01Z",
+            "time_uncertainty_s": 30,
+            "quality": 0.9,
+            "provenance": {
+              "source": "rescue team RT1",
+              "method": "handover record",
+              "worker": "W05",
+              "location_zone": "Z6"
+            },
+            "event_ids": [
+              "E019"
+            ],
+            "verification": "report",
+            "status": "current",
+            "version": 2,
+            "supersedes": "A-E017",
+            "age_s": 1080.0,
+            "valid_until": null,
+            "notes": [],
+            "ack_state": "unacknowledged",
+            "level": 1,
+            "rule_version": 1
+          }
+        ],
+        "F": [],
+        "U": [],
+        "summary": {
+          "station_nodes": {
+            "S06": {
+              "last_measured_at": "2026-10-14T09:09:50Z",
+              "age_s": 10.0,
+              "current": true,
+              "attachment_verified": true,
+              "gas_v": 0.371,
+              "pir_presence": false,
+              "last_known": {
+                "vib_peak_g": 0.021,
+                "tilt_deg": 1.21,
+                "pressure_hpa": 1003.81,
+                "temp_c": 21.81,
+                "gas_v": 0.371,
+                "sound_index": 191,
+                "pir_presence": false
+              }
+            }
+          },
+          "personnel_telemetry": {
+            "expected": 0,
+            "without_current_telemetry": 0
+          },
+          "structural": {
+            "state": "unknown",
+            "assessor": null,
+            "note": "no current qualified structural assessment (no automated building clearance)"
+          },
+          "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+          "flags": {
+            "impact_evidence": false,
+            "possible_impact_local": false,
+            "gas_evidence": false,
+            "gas_alarm_current": false,
+            "observation_gap": false,
+            "structural_unknown": true,
+            "presence_cue_current": false,
+            "assistance_request_open": false
+          },
+          "mechanical_observations": 0,
+          "presence_cues_current": 0,
+          "open_assistance_requests": 0,
+          "asset_reports_current": 0,
+          "observation_gaps_current": 0
+        }
+      }
+    },
+    "site_context": [
+      {
+        "assertion_id": "A-E001",
+        "layer": "SITE",
+        "kind": "air_raid_alert",
+        "zone_id": null,
+        "site_id": "UMSF-A",
+        "semantics": "air-raid alert (authoritative external source)",
+        "value": 1,
+        "unit": null,
+        "source_class": "authoritative_external_alert",
+        "source_id": null,
+        "observed_at": "2026-10-14T08:30:00Z",
+        "reported_at": "2026-10-14T08:30:01Z",
+        "time_uncertainty_s": 0,
+        "quality": 0.9,
+        "provenance": {
+          "source": "regional emergency information service (SYNTHETIC)",
+          "method": "official bulletin"
+        },
+        "event_ids": [
+          "E001"
+        ],
+        "verification": "authoritative",
+        "status": "current",
+        "version": 1,
+        "supersedes": null,
+        "age_s": 2400.0,
+        "valid_until": null,
+        "notes": [],
+        "ack_state": "unacknowledged",
+        "level": 2,
+        "rule_version": 1
+      },
+      {
+        "assertion_id": "A-E001B",
+        "layer": "SITE",
+        "kind": "air_raid_alert",
+        "zone_id": null,
+        "site_id": "UMSF-B",
+        "semantics": "air-raid alert (authoritative external source)",
+        "value": 1,
+        "unit": null,
+        "source_class": "authoritative_external_alert",
+        "source_id": null,
+        "observed_at": "2026-10-14T08:30:00Z",
+        "reported_at": "2026-10-14T08:30:01Z",
+        "time_uncertainty_s": 0,
+        "quality": 0.9,
+        "provenance": {
+          "source": "regional emergency information service (SYNTHETIC)",
+          "method": "official bulletin"
+        },
+        "event_ids": [
+          "E001B"
+        ],
+        "verification": "authoritative",
+        "status": "current",
+        "version": 1,
+        "supersedes": null,
+        "age_s": 2400.0,
+        "valid_until": null,
+        "notes": [],
+        "ack_state": "unacknowledged",
+        "level": 2,
+        "rule_version": 1
+      },
+      {
+        "assertion_id": "A-E012",
+        "layer": "SITE",
+        "kind": "external_strike_report",
+        "zone_id": null,
+        "site_id": "UMSF-A",
+        "semantics": "externally reported strike (authoritative external source)",
+        "value": 1,
+        "unit": null,
+        "source_class": "authoritative_external_alert",
+        "source_id": null,
+        "observed_at": "2026-10-14T08:36:40Z",
+        "reported_at": "2026-10-14T08:41:00Z",
+        "time_uncertainty_s": 120,
+        "quality": 0.9,
+        "provenance": {
+          "source": "regional emergency information service (SYNTHETIC)",
+          "method": "official bulletin",
+          "area": "industrial district including site A"
+        },
+        "event_ids": [
+          "E012"
+        ],
+        "verification": "authoritative",
+        "status": "current",
+        "version": 1,
+        "supersedes": null,
+        "age_s": 2000.0,
+        "valid_until": null,
+        "notes": [],
+        "ack_state": "unacknowledged",
+        "level": 3,
+        "rule_version": 1
+      }
+    ],
+    "rejected_attributions": [
+      {
+        "assertion_id": "A-E014",
+        "layer": "SITE",
+        "kind": "external_strike_report",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "semantics": "externally reported strike (authoritative external source)",
+        "value": 1,
+        "unit": null,
+        "source_class": "operator_report",
+        "source_id": "OP-A",
+        "observed_at": "2026-10-14T08:38:00Z",
+        "reported_at": "2026-10-14T08:38:01Z",
+        "time_uncertainty_s": null,
+        "quality": 0.9,
+        "provenance": {
+          "source": "relayed phone call",
+          "method": "hearsay"
+        },
+        "event_ids": [
+          "E014"
+        ],
+        "verification": "report",
+        "status": "rejected_as_attribution",
+        "version": 1,
+        "supersedes": null,
+        "age_s": 1920.0,
+        "valid_until": null,
+        "notes": [
+          "time uncertainty unknown: delays unqualified",
+          "strike/alert claims accepted only from authoritative_external_alert"
+        ],
+        "ack_state": "unacknowledged",
+        "level": 2,
+        "rule_version": 1
+      }
+    ],
+    "packets": [
+      {
+        "packet_id": "PKT-260b8ed54276",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": null,
+        "site_id": "UMSF-B",
+        "assertion_id": "A-E001B",
+        "layer": "SITE",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:30:00Z",
+        "reported_at": "2026-10-14T08:30:01Z",
+        "first_displayed_at": "2026-10-14T08:31:00Z",
+        "time_uncertainty_s": 0,
+        "source_class": "authoritative_external_alert",
+        "source_id": null,
+        "event_semantics": "air-raid alert (authoritative external source)",
+        "event_semantics_uk": "повітряна тривога",
+        "values": [
+          {
+            "name": "air_raid_alert",
+            "value": 1,
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {},
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "status": "current",
+        "verification": "authoritative",
+        "age_s": 2400.0
+      },
+      {
+        "packet_id": "PKT-4c0150308fe2",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": null,
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E001",
+        "layer": "SITE",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:30:00Z",
+        "reported_at": "2026-10-14T08:30:01Z",
+        "first_displayed_at": "2026-10-14T08:31:00Z",
+        "time_uncertainty_s": 0,
+        "source_class": "authoritative_external_alert",
+        "source_id": null,
+        "event_semantics": "air-raid alert (authoritative external source)",
+        "event_semantics_uk": "повітряна тривога",
+        "values": [
+          {
+            "name": "air_raid_alert",
+            "value": 1,
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {},
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "status": "current",
+        "verification": "authoritative",
+        "age_s": 2400.0
+      },
+      {
+        "packet_id": "PKT-5efe1b429d8c",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E002",
+        "layer": "M",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:12.400Z",
+        "reported_at": "2026-10-14T08:34:13.400Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S02",
+        "event_semantics": "channel excursion (acceleration), uncalibrated; not a damage measure",
+        "event_semantics_uk": "відхилення каналу прискорення (некалібровано; не міра руйнування)",
+        "values": [
+          {
+            "name": "impact_excursion",
+            "value": 2.8,
+            "unit": "g"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority",
+          "attachment uncertain: no structural interpretation"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "stale",
+        "verification": "unverified",
+        "age_s": 2147.6
+      },
+      {
+        "packet_id": "PKT-9753ef48b3e5",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E003",
+        "layer": "M",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:12.600Z",
+        "reported_at": "2026-10-14T08:34:13.600Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S02",
+        "event_semantics": "pressure transient in channel; not a blast estimate",
+        "event_semantics_uk": "перехідний процес тиску (не оцінка вибуху)",
+        "values": [
+          {
+            "name": "pressure_transient",
+            "value": 180,
+            "unit": "Pa"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority",
+          "attachment uncertain: no structural interpretation"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "stale",
+        "verification": "unverified",
+        "age_s": 2147.4
+      },
+      {
+        "packet_id": "PKT-3e331c415b76",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E004",
+        "layer": "M",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:12.700Z",
+        "reported_at": "2026-10-14T08:34:13.700Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S02",
+        "event_semantics": "acoustic transient; not an explosion classification",
+        "event_semantics_uk": "акустичний перехідний сигнал (не класифікація вибуху)",
+        "values": [
+          {
+            "name": "loud_sound",
+            "value": 3900,
+            "unit": "index"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority",
+          "attachment uncertain: no structural interpretation"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "stale",
+        "verification": "unverified",
+        "age_s": 2147.3
+      },
+      {
+        "packet_id": "PKT-3ed8f824ce83",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E005",
+        "layer": "M",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:13Z",
+        "reported_at": "2026-10-14T08:34:14Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S02",
+        "event_semantics": "possible_impact_local: local composite cue, UNVERIFIED; not a strike attribution",
+        "event_semantics_uk": "можливий локальний удар — НЕПІДТВЕРДЖЕНА складена ознака, не атрибуція удару",
+        "values": [
+          {
+            "name": "possible_impact_local",
+            "value": 2.8,
+            "unit": "g"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority",
+          "attachment uncertain: no structural interpretation"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "composite rule: impact + (loud or pressure) within 2 s"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "stale",
+        "verification": "unverified",
+        "age_s": 2147.0
+      },
+      {
+        "packet_id": "PKT-5883a56a6088",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E006",
+        "layer": "M",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:14Z",
+        "reported_at": "2026-10-14T08:34:15Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S02",
+        "event_semantics": "orientation change of node; structural meaning requires verified mounting",
+        "event_semantics_uk": "зміна орієнтації вузла (структурне значення потребує перевіреного кріплення)",
+        "values": [
+          {
+            "name": "tilt_change",
+            "value": 7.5,
+            "unit": "deg"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority",
+          "attachment uncertain: no structural interpretation"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "stale",
+        "verification": "unverified",
+        "age_s": 2146.0
+      },
+      {
+        "packet_id": "PKT-b2fe5a309aae",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E007",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:20Z",
+        "reported_at": "2026-10-14T08:34:21Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "personnel_node",
+        "source_id": "A05",
+        "event_semantics": "direct assistance request (SOS)",
+        "event_semantics_uk": "прямий запит допомоги (SOS)",
+        "values": [
+          {
+            "name": "sos",
+            "value": 1,
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "unverified",
+        "age_s": 2140.0
+      },
+      {
+        "packet_id": "PKT-3b7e781fe365",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E008",
+        "layer": "H",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:40Z",
+        "reported_at": "2026-10-14T08:34:41Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S03",
+        "event_semantics": "uncalibrated gas-channel response (MQ-2); not a concentration or identification",
+        "event_semantics_uk": "спрацювання некаліброваного газового каналу (не концентрація, не ідентифікація)",
+        "values": [
+          {
+            "name": "gas_channel_alarm",
+            "value": 1.9,
+            "unit": "V"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 600s: history only, no current authority"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "MQ-2 channel threshold"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "stale",
+        "verification": "instrument_uncalibrated",
+        "age_s": 2120.0
+      },
+      {
+        "packet_id": "PKT-6c030308b89b",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E009",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:34:50Z",
+        "reported_at": "2026-10-14T08:34:51Z",
+        "first_displayed_at": "2026-10-14T08:35:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S03",
+        "event_semantics": "direct assistance request (SOS)",
+        "event_semantics_uk": "прямий запит допомоги (SOS)",
+        "values": [
+          {
+            "name": "sos",
+            "value": 1,
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "unverified",
+        "age_s": 2110.0
+      },
+      {
+        "packet_id": "PKT-07611a868fab",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z1",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E011",
+        "layer": "F",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:36:00Z",
+        "reported_at": "2026-10-14T08:36:01Z",
+        "first_displayed_at": "2026-10-14T08:37:00Z",
+        "time_uncertainty_s": 30,
+        "source_class": "operator_report",
+        "source_id": "OP-A",
+        "event_semantics": "asset status report (available/unavailable/unknown) with capacity interval",
+        "event_semantics_uk": "стан активу",
+        "values": [
+          {
+            "name": "asset_status",
+            "value": "unavailable",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "operator report"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "communications",
+          "fire_water_pump"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 2040.0
+      },
+      {
+        "packet_id": "PKT-13e2f562933b",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E010b",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:36:30Z",
+        "reported_at": "2026-10-14T08:36:31Z",
+        "first_displayed_at": "2026-10-14T08:37:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "A08",
+        "event_semantics": "link loss: current evidence from source becomes unknown",
+        "event_semantics_uk": "втрата зв'язку — поточні дані джерела невідомі",
+        "values": [
+          {
+            "name": "link_loss",
+            "value": 60,
+            "unit": "s"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "link restored at 2026-10-14T08:58:00Z; gap interval retained"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "gateway silence detection"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "resolved",
+        "verification": "unverified",
+        "age_s": 2010.0
+      },
+      {
+        "packet_id": "PKT-9884787bff89",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E010a",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:36:30Z",
+        "reported_at": "2026-10-14T08:36:31Z",
+        "first_displayed_at": "2026-10-14T08:37:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "S03",
+        "event_semantics": "link loss: current evidence from source becomes unknown",
+        "event_semantics_uk": "втрата зв'язку — поточні дані джерела невідомі",
+        "values": [
+          {
+            "name": "link_loss",
+            "value": 60,
+            "unit": "s"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "link restored at 2026-10-14T08:58:00Z; gap interval retained"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "gateway silence detection"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "resolved",
+        "verification": "unverified",
+        "age_s": 2010.0
+      },
+      {
+        "packet_id": "PKT-eb3073a72d7c",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E010c",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:36:30Z",
+        "reported_at": "2026-10-14T08:36:31Z",
+        "first_displayed_at": "2026-10-14T08:37:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "A09",
+        "event_semantics": "link loss: current evidence from source becomes unknown",
+        "event_semantics_uk": "втрата зв'язку — поточні дані джерела невідомі",
+        "values": [
+          {
+            "name": "link_loss",
+            "value": 60,
+            "unit": "s"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "link restored at 2026-10-14T08:58:00Z; gap interval retained"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "gateway silence detection"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "resolved",
+        "verification": "unverified",
+        "age_s": 2010.0
+      },
+      {
+        "packet_id": "PKT-9b850d459337",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": null,
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E012",
+        "layer": "SITE",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:36:40Z",
+        "reported_at": "2026-10-14T08:41:00Z",
+        "first_displayed_at": "2026-10-14T08:41:00Z",
+        "time_uncertainty_s": 120,
+        "source_class": "authoritative_external_alert",
+        "source_id": null,
+        "event_semantics": "externally reported strike (authoritative external source)",
+        "event_semantics_uk": "повідомлення про удар від уповноваженого зовнішнього джерела",
+        "values": [
+          {
+            "name": "external_strike_report",
+            "value": 1,
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {},
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "status": "current",
+        "verification": "authoritative",
+        "age_s": 2000.0
+      },
+      {
+        "packet_id": "PKT-6ddb480d0800",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z4",
+        "site_id": "UMSF-B",
+        "assertion_id": "A-E013",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:37:05Z",
+        "reported_at": "2026-10-14T08:37:06Z",
+        "first_displayed_at": "2026-10-14T08:38:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "personnel_node",
+        "source_id": "A10",
+        "event_semantics": "direct help request from personnel node",
+        "event_semantics_uk": "запит допомоги з персонального вузла",
+        "values": [
+          {
+            "name": "help_request",
+            "value": 1,
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "older than freshness horizon 1800s: history only, no current authority"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "device rule"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "process_monitoring"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "unverified",
+        "age_s": 1975.0
+      },
+      {
+        "packet_id": "PKT-ca4b027526b6",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "U-non_authoritative_attribution_claim-A-E014",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:38:00Z",
+        "reported_at": "2026-10-14T08:38:01Z",
+        "first_displayed_at": "2026-10-14T08:39:00Z",
+        "time_uncertainty_s": null,
+        "source_class": "derived",
+        "source_id": "OP-A",
+        "event_semantics": "attribution claim from non-authoritative source; not used",
+        "event_semantics_uk": "attribution claim from non-authoritative source; not used",
+        "values": [
+          {
+            "name": "non_authoritative_attribution_claim",
+            "value": null,
+            "unit": null
+          }
+        ],
+        "quality": null,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": null,
+          "calibration_id": "uncalibrated",
+          "method": null
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "derived",
+        "age_s": null
+      },
+      {
+        "packet_id": "PKT-b4d0ddd93f39",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z1",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E015",
+        "layer": "F",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:39:00Z",
+        "reported_at": "2026-10-14T08:39:01Z",
+        "first_displayed_at": "2026-10-14T08:40:00Z",
+        "time_uncertainty_s": 30,
+        "source_class": "operator_report",
+        "source_id": "OP-A",
+        "event_semantics": "asset status report (available/unavailable/unknown) with capacity interval",
+        "event_semantics_uk": "стан активу",
+        "values": [
+          {
+            "name": "asset_status",
+            "value": "available",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "operator verification"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "communications",
+          "fire_water_pump"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1860.0
+      },
+      {
+        "packet_id": "PKT-66bcb31b9e1b",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z1",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E015B",
+        "layer": "F",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:39:30Z",
+        "reported_at": "2026-10-14T08:39:31Z",
+        "first_displayed_at": "2026-10-14T08:40:00Z",
+        "time_uncertainty_s": 30,
+        "source_class": "operator_report",
+        "source_id": "OP-A",
+        "event_semantics": "asset status report (available/unavailable/unknown) with capacity interval",
+        "event_semantics_uk": "стан активу",
+        "values": [
+          {
+            "name": "asset_status",
+            "value": "available",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "fuel gauge + log"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "communications",
+          "fire_water_pump"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1830.0
+      },
+      {
+        "packet_id": "PKT-91be5baeaf73",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E017",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:41:30Z",
+        "reported_at": "2026-10-14T08:41:31Z",
+        "first_displayed_at": "2026-10-14T08:42:00Z",
+        "time_uncertainty_s": 30,
+        "source_class": "responder_report",
+        "source_id": "RT1",
+        "event_semantics": "personnel accounting report",
+        "event_semantics_uk": "звіт про облік персоналу",
+        "values": [
+          {
+            "name": "personnel_accounting",
+            "value": "assistance_in_progress",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [
+          "superseded by A-E019"
+        ],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "response_action_start"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "superseded",
+        "verification": "report",
+        "age_s": 1710.0
+      },
+      {
+        "packet_id": "PKT-07246b252d31",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z6",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E016W02",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:45:00Z",
+        "reported_at": "2026-10-14T08:45:01Z",
+        "first_displayed_at": "2026-10-14T08:46:00Z",
+        "time_uncertainty_s": 60,
+        "source_class": "responder_report",
+        "source_id": "RT2",
+        "event_semantics": "personnel accounting report",
+        "event_semantics_uk": "звіт про облік персоналу",
+        "values": [
+          {
+            "name": "personnel_accounting",
+            "value": "accounted_at_assembly",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "roll call at assembly point"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E019",
+          "observed_at": "2026-10-14T08:52:00Z",
+          "value": "handed_to_medical",
+          "worker": "W05",
+          "status": "current",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1500.0
+      },
+      {
+        "packet_id": "PKT-10e811c14c96",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z6",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E016W04",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:45:00Z",
+        "reported_at": "2026-10-14T08:45:01Z",
+        "first_displayed_at": "2026-10-14T08:46:00Z",
+        "time_uncertainty_s": 60,
+        "source_class": "responder_report",
+        "source_id": "RT2",
+        "event_semantics": "personnel accounting report",
+        "event_semantics_uk": "звіт про облік персоналу",
+        "values": [
+          {
+            "name": "personnel_accounting",
+            "value": "accounted_at_assembly",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "roll call at assembly point"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E019",
+          "observed_at": "2026-10-14T08:52:00Z",
+          "value": "handed_to_medical",
+          "worker": "W05",
+          "status": "current",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1500.0
+      },
+      {
+        "packet_id": "PKT-8122263558d7",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z6",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E016W03",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:45:00Z",
+        "reported_at": "2026-10-14T08:45:01Z",
+        "first_displayed_at": "2026-10-14T08:46:00Z",
+        "time_uncertainty_s": 60,
+        "source_class": "responder_report",
+        "source_id": "RT2",
+        "event_semantics": "personnel accounting report",
+        "event_semantics_uk": "звіт про облік персоналу",
+        "values": [
+          {
+            "name": "personnel_accounting",
+            "value": "accounted_at_assembly",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "roll call at assembly point"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E019",
+          "observed_at": "2026-10-14T08:52:00Z",
+          "value": "handed_to_medical",
+          "worker": "W05",
+          "status": "current",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1500.0
+      },
+      {
+        "packet_id": "PKT-a36d9e14f1a8",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z6",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E016W01",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:45:00Z",
+        "reported_at": "2026-10-14T08:45:01Z",
+        "first_displayed_at": "2026-10-14T08:46:00Z",
+        "time_uncertainty_s": 60,
+        "source_class": "responder_report",
+        "source_id": "RT2",
+        "event_semantics": "personnel accounting report",
+        "event_semantics_uk": "звіт про облік персоналу",
+        "values": [
+          {
+            "name": "personnel_accounting",
+            "value": "accounted_at_assembly",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "roll call at assembly point"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E019",
+          "observed_at": "2026-10-14T08:52:00Z",
+          "value": "handed_to_medical",
+          "worker": "W05",
+          "status": "current",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1500.0
+      },
+      {
+        "packet_id": "PKT-dacb84b0a7a7",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z1",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E018",
+        "layer": "M",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:50:00Z",
+        "reported_at": "2026-10-14T08:50:01Z",
+        "first_displayed_at": "2026-10-14T08:51:00Z",
+        "time_uncertainty_s": 60,
+        "source_class": "responder_report",
+        "source_id": "QA-1",
+        "event_semantics": "structural assessment by named assessor (scope/method/validity attached)",
+        "event_semantics_uk": "висновок кваліфікованого експерта щодо конструкцій",
+        "values": [
+          {
+            "name": "structural_assessment",
+            "value": "no_restriction_observed",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "visual inspection"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "communications",
+          "fire_water_pump"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "qualified",
+        "age_s": 1200.0
+      },
+      {
+        "packet_id": "PKT-3421ecad2fea",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z6",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E019",
+        "layer": "P",
+        "version": 2,
+        "supersedes": "A-E017",
+        "observed_at": "2026-10-14T08:52:00Z",
+        "reported_at": "2026-10-14T08:52:01Z",
+        "first_displayed_at": "2026-10-14T08:53:00Z",
+        "time_uncertainty_s": 30,
+        "source_class": "responder_report",
+        "source_id": "RT1",
+        "event_semantics": "personnel accounting report",
+        "event_semantics_uk": "звіт про облік персоналу",
+        "values": [
+          {
+            "name": "personnel_accounting",
+            "value": "handed_to_medical",
+            "unit": null
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "handover record"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E019",
+          "observed_at": "2026-10-14T08:52:00Z",
+          "value": "handed_to_medical",
+          "worker": "W05",
+          "status": "current",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "report",
+        "age_s": 1080.0
+      },
+      {
+        "packet_id": "PKT-4ef6a955e4a4",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E020b",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:58:00Z",
+        "reported_at": "2026-10-14T08:58:01Z",
+        "first_displayed_at": "2026-10-14T08:59:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "A08",
+        "event_semantics": "link restored: delayed records enter history, not current window",
+        "event_semantics_uk": "зв'язок відновлено — затримані записи лише в історію",
+        "values": [
+          {
+            "name": "link_restored",
+            "value": 1350,
+            "unit": "s"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "gateway reconnect"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "resolved",
+        "verification": "unverified",
+        "age_s": 720.0
+      },
+      {
+        "packet_id": "PKT-81929122a2e0",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E020c",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:58:00Z",
+        "reported_at": "2026-10-14T08:58:01Z",
+        "first_displayed_at": "2026-10-14T08:59:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "A09",
+        "event_semantics": "link restored: delayed records enter history, not current window",
+        "event_semantics_uk": "зв'язок відновлено — затримані записи лише в історію",
+        "values": [
+          {
+            "name": "link_restored",
+            "value": 1350,
+            "unit": "s"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "gateway reconnect"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "resolved",
+        "verification": "unverified",
+        "age_s": 720.0
+      },
+      {
+        "packet_id": "PKT-aee82578784b",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E020a",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:58:00Z",
+        "reported_at": "2026-10-14T08:58:01Z",
+        "first_displayed_at": "2026-10-14T08:59:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "S03",
+        "event_semantics": "link restored: delayed records enter history, not current window",
+        "event_semantics_uk": "зв'язок відновлено — затримані записи лише в історію",
+        "values": [
+          {
+            "name": "link_restored",
+            "value": 1350,
+            "unit": "s"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "gateway reconnect"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "resolved",
+        "verification": "unverified",
+        "age_s": 720.0
+      },
+      {
+        "packet_id": "PKT-403d26dfcd9e",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "assertion_id": "A-E021",
+        "layer": "U",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T08:58:01Z",
+        "reported_at": "2026-10-14T08:58:02Z",
+        "first_displayed_at": "2026-10-14T08:59:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "gateway",
+        "source_id": "GA2",
+        "event_semantics": "buffer eviction: observations lost",
+        "event_semantics_uk": "витіснення буфера — частину спостережень втрачено",
+        "values": [
+          {
+            "name": "buffer_eviction",
+            "value": 210,
+            "unit": "count"
+          }
+        ],
+        "quality": 0.9,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": 1,
+          "calibration_id": "uncalibrated",
+          "method": "node buffer accounting"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [
+          "water_support"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "unverified",
+        "age_s": 719.0
+      },
+      {
+        "packet_id": "PKT-d7cc552d6f5b",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z5",
+        "site_id": "UMSF-B",
+        "assertion_id": "P-pir-S05",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T09:09:00Z",
+        "reported_at": "2026-10-14T09:09:00.600Z",
+        "first_displayed_at": "2026-10-14T08:30:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S05",
+        "event_semantics": "possible presence cue (PIR); not a vital sign; absence cannot exclude a person",
+        "event_semantics_uk": "possible presence cue (PIR); not a vital sign; absence cannot exclude a person",
+        "values": [
+          {
+            "name": "presence_cue",
+            "value": true,
+            "unit": null
+          }
+        ],
+        "quality": 0.95,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": null,
+          "calibration_id": "uncalibrated",
+          "method": "PIR flag in station record"
+        },
+        "last_confirmed_personnel": null,
+        "operational_dependencies": [],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "unverified",
+        "age_s": 60.0
+      },
+      {
+        "packet_id": "PKT-e547c186ac36",
+        "incident_id": "INC-umsf-p3-post-impact-demo-v1",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "assertion_id": "P-pir-S02",
+        "layer": "P",
+        "version": 1,
+        "supersedes": null,
+        "observed_at": "2026-10-14T09:09:20Z",
+        "reported_at": "2026-10-14T09:09:20.600Z",
+        "first_displayed_at": "2026-10-14T08:45:00Z",
+        "time_uncertainty_s": 0.5,
+        "source_class": "stationary_node",
+        "source_id": "S02",
+        "event_semantics": "possible presence cue (PIR); not a vital sign; absence cannot exclude a person",
+        "event_semantics_uk": "possible presence cue (PIR); not a vital sign; absence cannot exclude a person",
+        "values": [
+          {
+            "name": "presence_cue",
+            "value": true,
+            "unit": null
+          }
+        ],
+        "quality": 0.95,
+        "quality_reasons": [],
+        "configuration": {
+          "rule_version": null,
+          "calibration_id": "uncalibrated",
+          "method": "PIR flag in station record"
+        },
+        "last_confirmed_personnel": {
+          "assertion_id": "A-E017",
+          "observed_at": "2026-10-14T08:41:30Z",
+          "value": "assistance_in_progress",
+          "worker": "W05",
+          "status": "superseded",
+          "source_class": "responder_report"
+        },
+        "operational_dependencies": [
+          "emergency_lighting",
+          "production"
+        ],
+        "ack_state": "unacknowledged",
+        "ack_note": "acknowledgement means received/reviewed by a responsible role; not proof that a rescue action occurred",
+        "status": "current",
+        "verification": "unverified",
+        "age_s": 40.0
+      }
+    ],
+    "timing": [
+      {
+        "event_id": "E005",
+        "event_type": "possible_impact_local",
+        "zone_id": "Z2",
+        "t_e": "2026-10-14T08:34:13Z",
+        "time_uncertainty_s": 0.5,
+        "t_p": "2026-10-14T08:35:00Z",
+        "t_a": null,
+        "T_report": {
+          "status": "interval",
+          "value_s": null,
+          "interval_s": [
+            46.5,
+            47.5
+          ]
+        },
+        "T_action": {
+          "status": "not_recorded",
+          "value_s": null,
+          "interval_s": null
+        },
+        "note": "t_p is the first incident-packet display time by this agent; not an end-to-end transport measurement"
+      },
+      {
+        "event_id": "E007",
+        "event_type": "sos",
+        "zone_id": "Z2",
+        "t_e": "2026-10-14T08:34:20Z",
+        "time_uncertainty_s": 0.5,
+        "t_p": "2026-10-14T08:35:00Z",
+        "t_a": "2026-10-14T08:41:30Z",
+        "T_report": {
+          "status": "interval",
+          "value_s": null,
+          "interval_s": [
+            39.5,
+            40.5
+          ]
+        },
+        "T_action": {
+          "status": "interval",
+          "value_s": null,
+          "interval_s": [
+            429.5,
+            430.5
+          ]
+        },
+        "note": "t_p is the first incident-packet display time by this agent; not an end-to-end transport measurement"
+      },
+      {
+        "event_id": "E008",
+        "event_type": "gas_channel_alarm",
+        "zone_id": "Z3",
+        "t_e": "2026-10-14T08:34:40Z",
+        "time_uncertainty_s": 0.5,
+        "t_p": "2026-10-14T08:35:00Z",
+        "t_a": null,
+        "T_report": {
+          "status": "interval",
+          "value_s": null,
+          "interval_s": [
+            19.5,
+            20.5
+          ]
+        },
+        "T_action": {
+          "status": "not_recorded",
+          "value_s": null,
+          "interval_s": null
+        },
+        "note": "t_p is the first incident-packet display time by this agent; not an end-to-end transport measurement"
+      },
+      {
+        "event_id": "E009",
+        "event_type": "sos",
+        "zone_id": "Z3",
+        "t_e": "2026-10-14T08:34:50Z",
+        "time_uncertainty_s": 0.5,
+        "t_p": "2026-10-14T08:35:00Z",
+        "t_a": null,
+        "T_report": {
+          "status": "interval",
+          "value_s": null,
+          "interval_s": [
+            9.5,
+            10.5
+          ]
+        },
+        "T_action": {
+          "status": "not_recorded",
+          "value_s": null,
+          "interval_s": null
+        },
+        "note": "t_p is the first incident-packet display time by this agent; not an end-to-end transport measurement"
+      },
+      {
+        "event_id": "E013",
+        "event_type": "help_request",
+        "zone_id": "Z4",
+        "t_e": "2026-10-14T08:37:05Z",
+        "time_uncertainty_s": 0.5,
+        "t_p": "2026-10-14T08:38:00Z",
+        "t_a": null,
+        "T_report": {
+          "status": "interval",
+          "value_s": null,
+          "interval_s": [
+            54.5,
+            55.5
+          ]
+        },
+        "T_action": {
+          "status": "not_recorded",
+          "value_s": null,
+          "interval_s": null
+        },
+        "note": "t_p is the first incident-packet display time by this agent; not an end-to-end transport measurement"
+      }
+    ],
+    "strike_statement_uk": "Уповноважене зовнішнє джерело (regional emergency information service (SYNTHETIC)) повідомило про удар (спостереження 2026-10-14T08:36:40Z, повідомлено 2026-10-14T08:41:00Z). Локальні складені ознаки possible_impact_local залишаються НЕПІДТВЕРДЖЕНИМИ; зв'язок між ними та зовнішнім повідомленням встановлюється лише оперативним звітом.",
+    "strike_statement_en": "An authoritative external source reported a strike (observed 2026-10-14T08:36:40Z, reported 2026-10-14T08:41:00Z). Local possible_impact_local composites remain UNVERIFIED; association with the external report requires an operational report retaining both provenance chains."
+  },
+  "rescue": {
+    "as_of": "2026-10-14T09:10:00Z",
+    "personnel": [
+      {
+        "worker": "W01",
+        "expected_zone": "Z1",
+        "status": "responder_confirmed",
+        "category": "known",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z6",
+        "responder_report": {
+          "event_id": "E016W01",
+          "value": "accounted_at_assembly",
+          "observed_at": "2026-10-14T08:45:00Z",
+          "source_class": "responder_report"
+        },
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z6",
+          "basis": "responder_report (last confirmed)",
+          "at": "2026-10-14T08:45:00Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W02",
+        "expected_zone": "Z1",
+        "status": "responder_confirmed",
+        "category": "known",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z6",
+        "responder_report": {
+          "event_id": "E016W02",
+          "value": "accounted_at_assembly",
+          "observed_at": "2026-10-14T08:45:00Z",
+          "source_class": "responder_report"
+        },
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z6",
+          "basis": "responder_report (last confirmed)",
+          "at": "2026-10-14T08:45:00Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W03",
+        "expected_zone": "Z2",
+        "status": "responder_confirmed",
+        "category": "known",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z6",
+        "responder_report": {
+          "event_id": "E016W03",
+          "value": "accounted_at_assembly",
+          "observed_at": "2026-10-14T08:45:00Z",
+          "source_class": "responder_report"
+        },
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z6",
+          "basis": "responder_report (last confirmed)",
+          "at": "2026-10-14T08:45:00Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W04",
+        "expected_zone": "Z2",
+        "status": "responder_confirmed",
+        "category": "known",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z6",
+        "responder_report": {
+          "event_id": "E016W04",
+          "value": "accounted_at_assembly",
+          "observed_at": "2026-10-14T08:45:00Z",
+          "source_class": "responder_report"
+        },
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z6",
+          "basis": "responder_report (last confirmed)",
+          "at": "2026-10-14T08:45:00Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W05",
+        "expected_zone": "Z2",
+        "status": "responder_confirmed",
+        "category": "known",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z2",
+        "responder_report": {
+          "event_id": "E019",
+          "value": "handed_to_medical",
+          "observed_at": "2026-10-14T08:52:00Z",
+          "source_class": "responder_report"
+        },
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z6",
+          "basis": "responder_report (last confirmed)",
+          "at": "2026-10-14T08:52:00Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W06",
+        "expected_zone": "Z2",
+        "status": "recent_device_observation",
+        "category": "observed_not_location_confirmed",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z2",
+        "responder_report": null,
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z2",
+          "basis": "last device telemetry (gateway/device location is not the person's current position)",
+          "at": "2026-10-14T09:09:50Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W07",
+        "expected_zone": "Z2",
+        "status": "recent_device_observation",
+        "category": "observed_not_location_confirmed",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z2",
+        "responder_report": null,
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z2",
+          "basis": "last device telemetry (gateway/device location is not the person's current position)",
+          "at": "2026-10-14T09:09:50Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W08",
+        "expected_zone": "Z3",
+        "status": "recent_device_observation",
+        "category": "observed_not_location_confirmed",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z3",
+        "responder_report": null,
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z3",
+          "basis": "last device telemetry (gateway/device location is not the person's current position)",
+          "at": "2026-10-14T09:09:50Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W09",
+        "expected_zone": "Z3",
+        "status": "recent_device_observation",
+        "category": "observed_not_location_confirmed",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z3",
+        "responder_report": null,
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z3",
+          "basis": "last device telemetry (gateway/device location is not the person's current position)",
+          "at": "2026-10-14T09:09:50Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W10",
+        "expected_zone": "Z4",
+        "status": "assistance_requested",
+        "category": "assistance_requested",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z4",
+        "responder_report": null,
+        "assistance_requests": [
+          {
+            "event_id": "E013",
+            "event_type": "help_request",
+            "observed_at": "2026-10-14T08:37:05Z",
+            "zone_id": "Z4",
+            "ack_state": "unacknowledged"
+          }
+        ],
+        "last_confirmed_location": {
+          "zone_id": "Z4",
+          "basis": "assistance request zone",
+          "at": "2026-10-14T08:37:05Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W11",
+        "expected_zone": "Z4",
+        "status": "recent_device_observation",
+        "category": "observed_not_location_confirmed",
+        "last_telemetry_at": "2026-10-14T09:09:50Z",
+        "last_telemetry_zone": "Z4",
+        "responder_report": null,
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z4",
+          "basis": "last device telemetry (gateway/device location is not the person's current position)",
+          "at": "2026-10-14T09:09:50Z"
+        },
+        "notes": []
+      },
+      {
+        "worker": "W12",
+        "expected_zone": "Z5",
+        "status": "unaccounted",
+        "category": "unaccounted",
+        "last_telemetry_at": "2026-10-14T08:49:50Z",
+        "last_telemetry_zone": "Z5",
+        "responder_report": null,
+        "assistance_requests": [],
+        "last_confirmed_location": {
+          "zone_id": "Z5",
+          "basis": "last device telemetry (gateway/device location is not the person's current position)",
+          "at": "2026-10-14T08:49:50Z"
+        },
+        "notes": [
+          "no recent observation and no current responder confirmation; silence is not evidence of injury or death"
+        ]
+      }
+    ],
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "tasks": [
+      {
+        "task_id": "RT-assist_help_request-W10",
+        "kind": "assist_help_request",
+        "zone_id": "Z4",
+        "site_id": "UMSF-B",
+        "h": 1,
+        "p": 90,
+        "competencies": [
+          "first_aid"
+        ],
+        "ppe": [],
+        "teams_required": 1,
+        "subject": {
+          "worker": "W10",
+          "request_event": "E013"
+        },
+        "evidence": [
+          "E013"
+        ],
+        "label_uk": "Допомога за запитом допомоги",
+        "access": {
+          "a": 1,
+          "status": "authorised",
+          "authorised_by": "incident command",
+          "conditions": [],
+          "valid_from": "2026-10-14T08:00:00Z",
+          "valid_until": null
+        },
+        "notes": []
+      },
+      {
+        "task_id": "RT-assist_sos-S03",
+        "kind": "assist_sos",
+        "zone_id": "Z3",
+        "site_id": "UMSF-A",
+        "h": 1,
+        "p": 100,
+        "competencies": [
+          "first_aid",
+          "search"
+        ],
+        "ppe": [
+          "gas_monitor",
+          "scba"
+        ],
+        "teams_required": 1,
+        "subject": {
+          "device": "S03",
+          "request_event": "E009",
+          "person": "unknown (stationary button)"
+        },
+        "evidence": [
+          "E009"
+        ],
+        "label_uk": "Допомога за сигналом SOS",
+        "access": {
+          "a": 0,
+          "status": "unknown",
+          "authorised_by": null,
+          "escalation": "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+        },
+        "notes": []
+      },
+      {
+        "task_id": "RT-locate_unaccounted-W12",
+        "kind": "locate_unaccounted",
+        "zone_id": "Z5",
+        "site_id": "UMSF-B",
+        "h": 1,
+        "p": 70,
+        "competencies": [
+          "search"
+        ],
+        "ppe": [],
+        "teams_required": 1,
+        "subject": {
+          "worker": "W12",
+          "last_confirmed_location": {
+            "zone_id": "Z5",
+            "basis": "last device telemetry (gateway/device location is not the person's current position)",
+            "at": "2026-10-14T08:49:50Z"
+          }
+        },
+        "evidence": [],
+        "label_uk": "Встановлення місцеперебування неврахованої особи",
+        "access": {
+          "a": 1,
+          "status": "authorised",
+          "authorised_by": "incident command",
+          "conditions": [],
+          "valid_from": "2026-10-14T08:00:00Z",
+          "valid_until": null
+        },
+        "notes": [
+          "task is to establish whereabouts; no casualty inference from silence"
+        ]
+      },
+      {
+        "task_id": "RT-check_presence_cue-Z2",
+        "kind": "check_presence_cue",
+        "zone_id": "Z2",
+        "site_id": "UMSF-A",
+        "h": 0,
+        "p": 40,
+        "competencies": [
+          "search"
+        ],
+        "ppe": [
+          "helmet"
+        ],
+        "teams_required": 1,
+        "subject": {
+          "zone": "Z2",
+          "cues": 1
+        },
+        "evidence": [
+          "P-pir-S02"
+        ],
+        "label_uk": "Перевірка можливої ознаки присутності (не ознака життя)",
+        "access": {
+          "a": 1,
+          "status": "authorised",
+          "authorised_by": "incident command",
+          "conditions": [
+            "helmet",
+            "two-person rule"
+          ],
+          "valid_from": "2026-10-14T08:36:00Z",
+          "valid_until": null
+        },
+        "notes": [
+          "possible presence cue only: cannot establish that a person is trapped, alive or conscious"
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "team_id": "RT1",
+        "task_id": "RT-assist_help_request-W10",
+        "kind": "assist_help_request",
+        "zone_id": "Z4",
+        "urgent": true,
+        "priority": 90,
+        "delta_s": 1495,
+        "delta_label": "qualified estimate (zone distance / speed + setup); not a validated route",
+        "ppe_required": []
+      },
+      {
+        "team_id": "RT4",
+        "task_id": "RT-locate_unaccounted-W12",
+        "kind": "locate_unaccounted",
+        "zone_id": "Z5",
+        "urgent": true,
+        "priority": 70,
+        "delta_s": 300,
+        "delta_label": "qualified estimate (zone distance / speed + setup); not a validated route",
+        "ppe_required": []
+      },
+      {
+        "team_id": "RT2",
+        "task_id": "RT-check_presence_cue-Z2",
+        "kind": "check_presence_cue",
+        "zone_id": "Z2",
+        "urgent": false,
+        "priority": 40,
+        "delta_s": 377,
+        "delta_label": "qualified estimate (zone distance / speed + setup); not a validated route",
+        "ppe_required": [
+          "helmet"
+        ]
+      }
+    ],
+    "unassigned": [
+      {
+        "task_id": "RT-assist_sos-S03",
+        "kind": "assist_sos",
+        "zone_id": "Z3",
+        "urgent": true,
+        "priority": 100,
+        "limiting_constraints": [
+          "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+        ],
+        "status": "unresolved task requiring review (not low priority, not abandoned)"
+      }
+    ],
+    "unassigned_urgent": [
+      {
+        "task_id": "RT-assist_sos-S03",
+        "kind": "assist_sos",
+        "zone_id": "Z3",
+        "urgent": true,
+        "priority": 100,
+        "limiting_constraints": [
+          "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+        ],
+        "status": "unresolved task requiring review (not low priority, not abandoned)"
+      }
+    ],
+    "active_limiting_constraints": [
+      "one-team-per-task / one-task-per-team capacity (Eq. 8)",
+      "access authorisation x_rj <= a_j (unknown or restricted access)",
+      "PPE requirement for hazard zones (eligibility e_rj)",
+      "competency requirement (eligibility e_rj)"
+    ],
+    "escalations": [
+      {
+        "task_id": "RT-assist_sos-S03",
+        "type": "access",
+        "detail": "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+      }
+    ],
+    "objective": {
+      "urgent_assigned": 2,
+      "total_priority": 200,
+      "total_estimated_time_s": 2172
+    },
+    "teams_considered": [
+      {
+        "team_id": "RT1",
+        "role": "rescue",
+        "competencies": [
+          "first_aid",
+          "rope_rescue",
+          "search"
+        ],
+        "ppe": [
+          "scba",
+          "gas_monitor",
+          "helmet"
+        ],
+        "available": true
+      },
+      {
+        "team_id": "RT2",
+        "role": "rescue",
+        "competencies": [
+          "first_aid",
+          "search"
+        ],
+        "ppe": [
+          "helmet"
+        ],
+        "available": true
+      },
+      {
+        "team_id": "RT3",
+        "role": "rescue",
+        "competencies": [
+          "first_aid",
+          "medical_support"
+        ],
+        "ppe": [],
+        "available": false
+      },
+      {
+        "team_id": "RT4",
+        "role": "rescue",
+        "competencies": [
+          "gas_detection",
+          "search"
+        ],
+        "ppe": [
+          "scba",
+          "gas_monitor",
+          "helmet"
+        ],
+        "available": true
+      },
+      {
+        "team_id": "ST1",
+        "role": "assessment",
+        "competencies": [
+          "structural_assessment"
+        ],
+        "ppe": [
+          "helmet"
+        ],
+        "available": true
+      },
+      {
+        "team_id": "RC1",
+        "role": "recovery",
+        "competencies": [
+          "comms",
+          "electrical"
+        ],
+        "ppe": [
+          "helmet"
+        ],
+        "available": true
+      },
+      {
+        "team_id": "RC2",
+        "role": "recovery",
+        "competencies": [
+          "debris_clearance",
+          "gas_detection",
+          "water_systems"
+        ],
+        "ppe": [
+          "scba",
+          "gas_monitor",
+          "helmet"
+        ],
+        "available": true
+      }
+    ],
+    "solver": {
+      "method": "lexicographic Eq. (9) via exact max-weight bipartite matching (Hungarian / Kuhn-Munkres, integer scaled weights)",
+      "exact": true,
+      "teams": 7,
+      "single_team_tasks": 4,
+      "multi_team_tasks": 0,
+      "eligible_pairs": 8
+    },
+    "pairs": {
+      "RC1|RT-assist_help_request-W10": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1620,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: first_aid"
+        ]
+      },
+      "RC1|RT-assist_sos-S03": {
+        "e": 0,
+        "a": 0,
+        "delta_s": 210,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: first_aid,search",
+          "missing PPE for zone hazard: gas_monitor,scba"
+        ]
+      },
+      "RC1|RT-check_presence_cue-Z2": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 368,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: search"
+        ]
+      },
+      "RC1|RT-locate_unaccounted-W12": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1845,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: search"
+        ]
+      },
+      "RC2|RT-assist_help_request-W10": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1495,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: first_aid"
+        ]
+      },
+      "RC2|RT-assist_sos-S03": {
+        "e": 0,
+        "a": 0,
+        "delta_s": 252,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: first_aid,search"
+        ]
+      },
+      "RC2|RT-check_presence_cue-Z2": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 377,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: search"
+        ]
+      },
+      "RC2|RT-locate_unaccounted-W12": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1723,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: search"
+        ]
+      },
+      "RT1|RT-assist_help_request-W10": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 1495,
+        "why_not": []
+      },
+      "RT1|RT-assist_sos-S03": {
+        "e": 1,
+        "a": 0,
+        "delta_s": 252,
+        "why_not": []
+      },
+      "RT1|RT-check_presence_cue-Z2": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 377,
+        "why_not": []
+      },
+      "RT1|RT-locate_unaccounted-W12": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 1723,
+        "why_not": []
+      },
+      "RT2|RT-assist_help_request-W10": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 1495,
+        "why_not": []
+      },
+      "RT2|RT-assist_sos-S03": {
+        "e": 0,
+        "a": 0,
+        "delta_s": 252,
+        "why_not": [
+          "missing PPE for zone hazard: gas_monitor,scba"
+        ]
+      },
+      "RT2|RT-check_presence_cue-Z2": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 377,
+        "why_not": []
+      },
+      "RT2|RT-locate_unaccounted-W12": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 1723,
+        "why_not": []
+      },
+      "RT3|RT-assist_help_request-W10": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 120,
+        "why_not": [
+          "team not available in this planning interval"
+        ]
+      },
+      "RT3|RT-assist_sos-S03": {
+        "e": 0,
+        "a": 0,
+        "delta_s": 1572,
+        "why_not": [
+          "team not available in this planning interval",
+          "missing competencies: search",
+          "missing PPE for zone hazard: gas_monitor,scba"
+        ]
+      },
+      "RT3|RT-check_presence_cue-Z2": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1733,
+        "why_not": [
+          "team not available in this planning interval",
+          "missing competencies: search",
+          "missing PPE for zone hazard: helmet"
+        ]
+      },
+      "RT3|RT-locate_unaccounted-W12": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 408,
+        "why_not": [
+          "team not available in this planning interval",
+          "missing competencies: search"
+        ]
+      },
+      "RT4|RT-assist_help_request-W10": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 228,
+        "why_not": [
+          "missing competencies: first_aid"
+        ]
+      },
+      "RT4|RT-assist_sos-S03": {
+        "e": 0,
+        "a": 0,
+        "delta_s": 1612,
+        "why_not": [
+          "missing competencies: first_aid"
+        ]
+      },
+      "RT4|RT-check_presence_cue-Z2": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 1778,
+        "why_not": []
+      },
+      "RT4|RT-locate_unaccounted-W12": {
+        "e": 1,
+        "a": 1,
+        "delta_s": 300,
+        "why_not": []
+      },
+      "ST1|RT-assist_help_request-W10": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1495,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: first_aid"
+        ]
+      },
+      "ST1|RT-assist_sos-S03": {
+        "e": 0,
+        "a": 0,
+        "delta_s": 252,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: first_aid,search",
+          "missing PPE for zone hazard: gas_monitor,scba"
+        ]
+      },
+      "ST1|RT-check_presence_cue-Z2": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 377,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: search"
+        ]
+      },
+      "ST1|RT-locate_unaccounted-W12": {
+        "e": 0,
+        "a": 1,
+        "delta_s": 1723,
+        "why_not": [
+          "team role is not rescue",
+          "missing competencies: search"
+        ]
+      }
+    },
+    "boundary": "Proposal only. No medical triage, no building entry route selection, no casualty inference. Coefficients are policy values, not survival probabilities. Authorisation: rescue coordinator / incident command."
+  },
+  "continuity": {
+    "result": {
+      "status": "OPTIMAL",
+      "method": "enumeration",
+      "y": {
+        "communications": 1,
+        "emergency_lighting": 1,
+        "fire_water_pump": 1,
+        "water_support": 0,
+        "production": 0,
+        "process_monitoring": 1
+      },
+      "objective": 22.0,
+      "total_weight": 27.0,
+      "Q_pct": 81.48148148148148,
+      "resource_use": {
+        "energy_kwh": 160.0,
+        "power_kw": 40.0,
+        "radio_channels": 3.0,
+        "staff": 4.0
+      },
+      "resource_capacity": {
+        "energy_kwh": 200.0,
+        "power_kw": 60.0,
+        "radio_channels": 4.0,
+        "staff": 6.0
+      },
+      "unused": {
+        "energy_kwh": 40.0,
+        "power_kw": 20.0,
+        "radio_channels": 1.0,
+        "staff": 2.0
+      },
+      "binding_resources": [
+        "energy_kwh",
+        "power_kw",
+        "staff"
+      ],
+      "infeasibility_reasons": [],
+      "excluded_inadmissible": [
+        "water_support"
+      ],
+      "notes": [],
+      "candidates_examined": 64,
+      "options_for_review": []
+    },
+    "services": [
+      {
+        "service_id": "communications",
+        "name": "Зв'язок",
+        "demand": {
+          "power_kw": 4.0,
+          "staff": 1.0,
+          "radio_channels": 2.0,
+          "energy_kwh": 16.0
+        },
+        "weight": 6.0,
+        "mandatory": true,
+        "requires": [],
+        "admissible": true,
+        "admissibility_basis": "isolation checked by operator",
+        "zone_id": "Z1"
+      },
+      {
+        "service_id": "emergency_lighting",
+        "name": "Аварійне освітлення",
+        "demand": {
+          "power_kw": 8.0,
+          "energy_kwh": 32.0
+        },
+        "weight": 5.0,
+        "mandatory": true,
+        "requires": [],
+        "admissible": true,
+        "admissibility_basis": "life-safety circuit",
+        "zone_id": "Z2"
+      },
+      {
+        "service_id": "fire_water_pump",
+        "name": "Пожежний насос",
+        "demand": {
+          "power_kw": 25.0,
+          "staff": 2.0,
+          "energy_kwh": 100.0
+        },
+        "weight": 8.0,
+        "mandatory": true,
+        "requires": [
+          "communications"
+        ],
+        "admissible": true,
+        "admissibility_basis": "life-safety; operator procedure FP-2",
+        "zone_id": "Z1"
+      },
+      {
+        "service_id": "water_support",
+        "name": "Водопостачання (підтримка)",
+        "demand": {
+          "power_kw": 18.0,
+          "staff": 2.0,
+          "energy_kwh": 72.0
+        },
+        "weight": 4.0,
+        "mandatory": false,
+        "requires": [],
+        "admissible": null,
+        "admissibility_basis": "pump room Z3 not assessed (gas-channel alarm, link loss)",
+        "zone_id": "Z3"
+      },
+      {
+        "service_id": "production",
+        "name": "Виробництво",
+        "demand": {
+          "power_kw": 45.0,
+          "staff": 4.0,
+          "energy_kwh": 180.0
+        },
+        "weight": 1.0,
+        "mandatory": false,
+        "requires": [
+          "communications"
+        ],
+        "admissible": true,
+        "admissibility_basis": "operator",
+        "zone_id": "Z2"
+      },
+      {
+        "service_id": "process_monitoring",
+        "name": "Моніторинг процесу",
+        "demand": {
+          "power_kw": 3.0,
+          "staff": 1.0,
+          "radio_channels": 1.0,
+          "energy_kwh": 12.0
+        },
+        "weight": 3.0,
+        "mandatory": false,
+        "requires": [
+          "communications"
+        ],
+        "admissible": true,
+        "admissibility_basis": "read-only monitoring, no control path",
+        "zone_id": "Z4"
+      }
+    ],
+    "capacity_provenance": [
+      {
+        "resource_id": "energy_kwh",
+        "asset_id": "fuel_tank_G1",
+        "lower_bound": 200,
+        "basis": "fuel for >= 200 kWh at generator efficiency over 4 h horizon (operator estimate)",
+        "source": "operator_report A-E015B at 2026-10-14T08:39:30Z"
+      },
+      {
+        "resource_id": "energy_kwh",
+        "asset_id": "grid_feed_A",
+        "lower_bound": 0,
+        "basis": "grid feed A lost; no residual capacity can be justified",
+        "source": "operator_report A-E011 at 2026-10-14T08:36:00Z"
+      },
+      {
+        "resource_id": "power_kw",
+        "asset_id": "generator_G1",
+        "lower_bound": 60,
+        "basis": "generator G1 verified running; 75 kW rating derated to 60 kW justified lower bound",
+        "source": "operator_report A-E015 at 2026-10-14T08:39:00Z"
+      },
+      {
+        "resource_id": "power_kw",
+        "asset_id": "grid_feed_A",
+        "lower_bound": 0,
+        "basis": "grid feed A lost; no residual capacity can be justified",
+        "source": "operator_report A-E011 at 2026-10-14T08:36:00Z"
+      },
+      {
+        "resource_id": "radio_channels",
+        "asset_id": null,
+        "lower_bound": 4,
+        "basis": "licensed site radio channels",
+        "source": "asset register"
+      },
+      {
+        "resource_id": "staff",
+        "asset_id": null,
+        "lower_bound": 6,
+        "basis": "operators present on shift roster and accounted",
+        "source": "asset register"
+      }
+    ],
+    "horizon_h": 4.0,
+    "solver_method": "exact enumeration over 64 candidates"
+  },
+  "recovery": {
+    "as_of": "2026-10-14T09:10:00Z",
+    "tasks": [
+      {
+        "task_id": "RC-gas_hazard_check-Z2",
+        "kind": "gas_hazard_check",
+        "zone_id": "Z2",
+        "title_uk": "Перевірка газової небезпеки сертифікованим приладом",
+        "competencies": [
+          "gas_detection"
+        ],
+        "equipment": {
+          "certified_gas_detector": 1
+        },
+        "duration_s": 1200,
+        "priority": 95,
+        "prerequisites": [],
+        "satisfied_by_evidence": [],
+        "entry": true,
+        "linked_service": null,
+        "reason": "gas-channel response or impact evidence: hazard check with qualified instrument",
+        "release_s": 0,
+        "blocked_reasons": [],
+        "status": "scheduled_candidate",
+        "start": "2026-10-14T09:10:00Z",
+        "finish": "2026-10-14T09:30:00Z",
+        "start_offset_min": 0.0,
+        "finish_offset_min": 20.0,
+        "crew": "RC2",
+        "cpm": {
+          "ES": 0,
+          "EF": 1200,
+          "LS": 0,
+          "LF": 1200,
+          "slack": 0
+        },
+        "critical": true
+      },
+      {
+        "task_id": "RC-temporary_power_path-Z1",
+        "kind": "temporary_power_path",
+        "zone_id": "Z1",
+        "title_uk": "Підготовка тимчасової схеми живлення (комутацію виконує уповноважений оператор)",
+        "competencies": [
+          "electrical"
+        ],
+        "equipment": {
+          "mobile_generator": 1,
+          "cable_kit": 1
+        },
+        "duration_s": 3600,
+        "priority": 100,
+        "prerequisites": [],
+        "satisfied_by_evidence": [
+          "structural assessment A-E018 by QA-1 (no_restriction_observed, valid until 2026-10-14T12:00:00Z)"
+        ],
+        "entry": true,
+        "linked_service": "power_kw",
+        "reason": "power/energy capacity limits the continuity proposal",
+        "release_s": 0,
+        "blocked_reasons": [],
+        "status": "scheduled_candidate",
+        "start": "2026-10-14T09:10:00Z",
+        "finish": "2026-10-14T10:10:00Z",
+        "start_offset_min": 0.0,
+        "finish_offset_min": 60.0,
+        "crew": "RC1",
+        "cpm": {
+          "ES": 0,
+          "EF": 3600,
+          "LS": 5700,
+          "LF": 9300,
+          "slack": 5700
+        },
+        "critical": false
+      },
+      {
+        "task_id": "RC-gas_hazard_check-Z3",
+        "kind": "gas_hazard_check",
+        "zone_id": "Z3",
+        "title_uk": "Перевірка газової небезпеки сертифікованим приладом",
+        "competencies": [
+          "gas_detection"
+        ],
+        "equipment": {
+          "certified_gas_detector": 1
+        },
+        "duration_s": 1200,
+        "priority": 95,
+        "prerequisites": [],
+        "satisfied_by_evidence": [],
+        "entry": true,
+        "linked_service": null,
+        "reason": "gas-channel response or impact evidence: hazard check with qualified instrument",
+        "release_s": 300,
+        "blocked_reasons": [],
+        "status": "scheduled_candidate",
+        "start": "2026-10-14T09:30:00Z",
+        "finish": "2026-10-14T09:50:00Z",
+        "start_offset_min": 20.0,
+        "finish_offset_min": 40.0,
+        "crew": "RC2",
+        "cpm": {
+          "ES": 300,
+          "EF": 1500,
+          "LS": 8100,
+          "LF": 9300,
+          "slack": 7800
+        },
+        "critical": false
+      },
+      {
+        "task_id": "RC-structural_inspection-Z2",
+        "kind": "structural_inspection",
+        "zone_id": "Z2",
+        "title_uk": "Обстеження конструкцій кваліфікованим експертом",
+        "competencies": [
+          "structural_assessment"
+        ],
+        "equipment": {},
+        "duration_s": 2700,
+        "priority": 90,
+        "prerequisites": [
+          "RC-gas_hazard_check-Z2"
+        ],
+        "satisfied_by_evidence": [],
+        "entry": true,
+        "linked_service": null,
+        "reason": "mechanical excursion / possible_impact_local and no qualified structural assessment",
+        "release_s": 0,
+        "blocked_reasons": [],
+        "status": "scheduled_candidate",
+        "start": "2026-10-14T09:30:00Z",
+        "finish": "2026-10-14T10:15:00Z",
+        "start_offset_min": 20.0,
+        "finish_offset_min": 65.0,
+        "crew": "ST1",
+        "cpm": {
+          "ES": 1200,
+          "EF": 3900,
+          "LS": 1200,
+          "LF": 3900,
+          "slack": 0
+        },
+        "critical": true
+      },
+      {
+        "task_id": "RC-debris_clearance-Z2",
+        "kind": "debris_clearance",
+        "zone_id": "Z2",
+        "title_uk": "Розчищення уламків",
+        "competencies": [
+          "debris_clearance"
+        ],
+        "equipment": {
+          "loader": 1
+        },
+        "duration_s": 5400,
+        "priority": 50,
+        "prerequisites": [
+          "RC-gas_hazard_check-Z2",
+          "RC-structural_inspection-Z2"
+        ],
+        "satisfied_by_evidence": [],
+        "entry": true,
+        "linked_service": null,
+        "reason": "possible_impact_local composite in zone (unverified): debris clearance candidate",
+        "release_s": 0,
+        "blocked_reasons": [],
+        "status": "scheduled_candidate",
+        "start": "2026-10-14T10:15:00Z",
+        "finish": "2026-10-14T11:45:00Z",
+        "start_offset_min": 65.0,
+        "finish_offset_min": 155.0,
+        "crew": "RC2",
+        "cpm": {
+          "ES": 3900,
+          "EF": 9300,
+          "LS": 3900,
+          "LF": 9300,
+          "slack": 0
+        },
+        "critical": true
+      },
+      {
+        "task_id": "RC-water_support_restoration-Z3",
+        "kind": "water_support_restoration",
+        "zone_id": "Z3",
+        "title_uk": "Відновлення водопостачання (підтримка)",
+        "competencies": [
+          "water_systems"
+        ],
+        "equipment": {
+          "pump_kit": 1
+        },
+        "duration_s": 3600,
+        "priority": 110,
+        "prerequisites": [
+          "RC-gas_hazard_check-Z3"
+        ],
+        "satisfied_by_evidence": [],
+        "entry": true,
+        "linked_service": "water_support",
+        "reason": "service not supported in continuity proposal",
+        "release_s": 0,
+        "blocked_reasons": [
+          "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)",
+          "equipment 'pump_kit' unavailable or unknown (need 1, verified 0)"
+        ],
+        "status": "blocked",
+        "start": null,
+        "finish": null,
+        "start_offset_min": null,
+        "finish_offset_min": null,
+        "crew": null,
+        "cpm": null,
+        "critical": false
+      }
+    ],
+    "makespan_min": 155.0,
+    "critical_path": [
+      "RC-gas_hazard_check-Z2",
+      "RC-structural_inspection-Z2",
+      "RC-debris_clearance-Z2"
+    ],
+    "blocked": [
+      {
+        "task_id": "RC-water_support_restoration-Z3",
+        "kind": "water_support_restoration",
+        "zone_id": "Z3",
+        "title_uk": "Відновлення водопостачання (підтримка)",
+        "competencies": [
+          "water_systems"
+        ],
+        "equipment": {
+          "pump_kit": 1
+        },
+        "duration_s": 3600,
+        "priority": 110,
+        "prerequisites": [
+          "RC-gas_hazard_check-Z3"
+        ],
+        "satisfied_by_evidence": [],
+        "entry": true,
+        "linked_service": "water_support",
+        "reason": "service not supported in continuity proposal",
+        "release_s": 0,
+        "blocked_reasons": [
+          "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)",
+          "equipment 'pump_kit' unavailable or unknown (need 1, verified 0)"
+        ],
+        "status": "blocked",
+        "start": null,
+        "finish": null,
+        "start_offset_min": null,
+        "finish_offset_min": null,
+        "crew": null,
+        "cpm": null,
+        "critical": false
+      }
+    ],
+    "unscheduled": [],
+    "unresolved_prerequisites": [
+      {
+        "task_id": "RC-water_support_restoration-Z3",
+        "prerequisite": "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+      },
+      {
+        "task_id": "RC-water_support_restoration-Z3",
+        "prerequisite": "equipment 'pump_kit' unavailable or unknown (need 1, verified 0)"
+      }
+    ],
+    "excluded_actuation": [
+      {
+        "service_id": "production",
+        "kind": "restart_production",
+        "reason": "restoration requires industrial actuation: outside this service; authorised operator procedure only"
+      }
+    ],
+    "restoration_order": [
+      {
+        "service_id": "(capacity) power_kw",
+        "mandatory": false,
+        "weight": null,
+        "reason": "raises the justified lower bound of usable power",
+        "task": "RC-temporary_power_path-Z1"
+      },
+      {
+        "service_id": "water_support",
+        "mandatory": false,
+        "weight": 4,
+        "reason": "service not supported in continuity proposal",
+        "task": "RC-water_support_restoration-Z3"
+      },
+      {
+        "service_id": "production",
+        "mandatory": false,
+        "weight": 1,
+        "reason": "service not supported in continuity proposal",
+        "task": "excluded (actuation)"
+      }
+    ],
+    "crews": [
+      "ST1",
+      "RC1",
+      "RC2"
+    ],
+    "teams_excluded_busy_with_rescue": [
+      "RT1",
+      "RT2",
+      "RT4"
+    ],
+    "equipment": {
+      "certified_gas_detector": 1,
+      "loader": 1,
+      "mobile_generator": 1,
+      "cable_kit": 2,
+      "spare_gateway": 1
+    },
+    "solver": {
+      "method": "CPM (earliest/latest start) + serial schedule-generation scheme, priority rule min-LS / max-priority / id",
+      "exact": false,
+      "note": "heuristic candidate schedule (resource-constrained scheduling is NP-hard); prerequisites are hard constraints"
+    },
+    "boundary": "Candidate schedule for authorised recovery management. Industrial actuation (switching, restarts, ventilation, unlocking) is outside this service and never scheduled. No automated building clearance."
+  }
+}

@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with the associated manuscript."
+type: software
+title: "UMSF Incident Lab: standalone Colab notebook for evidence-aware multisensor analysis"
+version: 1.2.0
+date-released: 2026-10-14
+license: MIT
+authors:
+  - family-names: Torstensson
+    given-names: Olga
+    affiliation: Halmstad University
+    orcid: "https://orcid.org/0009-0007-2169-6851"
+  - family-names: Prokopovych-Tkachenko
+    given-names: Dmytro
+    affiliation: University of Customs and Finance
+    orcid: "https://orcid.org/0000-0002-6590-3898"
+  - family-names: Adilzhanova
+    given-names: Saltanat
+    affiliation: Almaty Technological University
+    orcid: "https://orcid.org/0000-0003-1768-064X"
+  - family-names: Tykhonenko
+    given-names: Mariia
+    affiliation: University of Customs and Finance
+    orcid: "https://orcid.org/0009-0000-5192-3241"
+  - family-names: Beketova
+    given-names: Gulzhanat
+    affiliation: Almaty University of Energy and Communications
+    orcid: "https://orcid.org/0000-0001-7160-1514"
+  - family-names: Sydybayeva
+    given-names: Madina
+    affiliation: Satbayev University
+    orcid: "https://orcid.org/0000-0002-8950-5421"
+keywords:
+  - critical infrastructure
+  - multisensor monitoring
+  - incident support
+  - data quality
+  - monitoring coverage
+  - evidence provenance
+  - physiological monitoring
+  - building-state monitoring
+  - BLE
+  - synthetic data
+abstract: >-
+  Research software for ingestion, validation, deduplication, durable storage, roster-based
+  summarisation and export of personnel physiological feature records, stationary building-state
+  records (including an uncalibrated MQ-2 gas-channel voltage and PIR presence) and source-qualified
+  incident events, following the UMSF shared protocol v1.0. Deterministic generators reproduce the
+  documented synthetic Study A and Study B results, the Stage-1 bench excerpt and the service
+  allocation example of the associated manuscript, and produce a synthetic post-impact incident
+  scenario. Strike attribution only from authoritative external sources; no human data included.
+  Not a medical device or certified safety system.
+references:
+  - type: article
+    title: "Evidence-Aware Multisensor Monitoring for Critical Infrastructure Incident Support: System architecture and preliminary verification using synthetic evaluations and bench demonstrations"
+    authors:
+      - family-names: Torstensson
+        given-names: Olga
+      - family-names: Prokopovych-Tkachenko
+        given-names: Dmytro
+      - family-names: Adilzhanova
+        given-names: Saltanat
+      - family-names: Tykhonenko
+        given-names: Mariia
+      - family-names: Beketova
+        given-names: Gulzhanat
+      - family-names: Sydybayeva
+        given-names: Madina
+    journal: "Results in Engineering"
+    year: 2026
+    notes: "Manuscript (research article)."

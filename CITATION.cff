@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+type: software
+title: "UMSF Incident Lab"
+abstract: "Evidence-aware replay of multisensor incident streams and rule-based decision support for critical infrastructure facilities after a missile strike."
+version: 1.2.0
+date-released: "2026-10-14"
+license: MIT
+doi: 10.5281/zenodo.23380282
+repository-code: "https://github.com/oltoHalmstad/umsf-lab"
+authors:
+  - family-names: Torstensson
+    given-names: Olga
+    email: olga.torstensson@hh.se
+    affiliation: "Halmstad University"
+  - family-names: Prokopovych-Tkachenko
+    given-names: Dmytro
+    affiliation: "University of Customs and Finance"
+  - family-names: Adilzhanova
+    given-names: Saltanat
+    affiliation: "Almaty Technological University"
+  - family-names: Tykhonenko
+    given-names: Mariia
+  - family-names: Beketova
+    given-names: Gulzhanat
+  - family-names: Sydybayeva
+    given-names: Madina
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23380282
+    description: "UMSF Incident Lab v1.2.0"
+  - type: doi
+    value: 10.5281/zenodo.23380523
+    description: "UMSF Incident AI Agent Lab v1.2.0"
+  - type: doi
+    value: 10.5281/zenodo.23380409
+    description: "UMSF Firmware Lab v1.2.0"
+  - type: doi
+    value: 10.5281/zenodo.23542153
+    description: "UMSF Bench Prototype v1.0.0"
+keywords:
+  - critical infrastructure
+  - incident response
+  - multisensor stream replay
+  - decision support
+  - reproducible research software

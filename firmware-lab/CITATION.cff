@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: If you use this laboratory, cite this software release. Authors are preserved
+  from the supplied firmware metadata.
+type: software
+title: 'UMSF Firmware Laboratory: A Self-Contained Colab Companion for ESP32/BLE Protocols
+  and Native Logic'
+version: 1.2.0
+date-released: 2026-10-14
+license: MIT
+abstract: An English, self-contained computational laboratory accompanying umsf-ble-firmware
+  1.0.0. The notebook embeds the original source and builds its portable C/C++ libraries,
+  runs all original host tests and supplied protocol vectors, and generates 30 explanatory
+  figures with PNG/SVG exports. Controlled native experiments examine physiological
+  feature quality, null sentinels, explicitly synthetic HR, stationary detector rules,
+  gas warmup and hysteresis, tilt uncertainty, SOS debounce, link freshness, RAM-buffer
+  priorities and application acknowledgements. Protocol experiments inspect CRC corruption
+  and native BLE fragmentation. Includes clean and executed notebooks, a rendered
+  HTML report, CSV traces, source provenance, validation evidence, citation metadata
+  and MIT license. All experimental sensor inputs are synthetic. ESP32 firmware images
+  are not compiled or hardware-validated in this release; hosted Google Colab frontend
+  execution has not been directly tested. The notebook is verified in a fresh local
+  Python/IPython process with only the notebook supplied. Thresholds are uncalibrated;
+  no clinical, gas-concentration, structural-safety or causal-attribution claims are
+  made.
+keywords:
+- ESP32
+- Bluetooth Low Energy
+- NimBLE
+- MQTT
+- firmware
+- physiological monitoring
+- critical infrastructure
+- incident support
+- dataset acquisition
+authors:
+- given-names: Olga
+  family-names: Torstensson
+  affiliation: Halmstad University
+  orcid: https://orcid.org/0009-0007-2169-6851
+- given-names: Dmytro
+  family-names: Prokopovych-Tkachenko
+  affiliation: University of Customs and Finance
+  orcid: https://orcid.org/0000-0002-6590-3898
+- given-names: Saltanat
+  family-names: Adilzhanova
+  affiliation: Almaty Technological University
+  orcid: https://orcid.org/0000-0003-1768-064X
+- given-names: Mariia
+  family-names: Tykhonenko
+  affiliation: University of Customs and Finance
+  orcid: https://orcid.org/0009-0000-5192-3241
+- given-names: Gulzhanat
+  family-names: Beketova
+  affiliation: Almaty University of Energy and Communications
+  orcid: https://orcid.org/0000-0001-7160-1514
+- given-names: Madina
+  family-names: Sydybayeva
+  affiliation: Satbayev University
+  orcid: https://orcid.org/0000-0002-8950-5421

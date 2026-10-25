@@ -1,0 +1,39 @@
+{
+  "original_test_returncode": 0,
+  "original_tests_line": "Ran 58 tests in 15.232s",
+  "reference_rows": 25,
+  "reference_all_ok": true,
+  "semantic_checks": [
+    {
+      "Check": "Measured origin rejected by default",
+      "Passed": true
+    },
+    {
+      "Check": "Out-of-range HR rejected",
+      "Passed": true
+    },
+    {
+      "Check": "Local source cannot assert external strike report",
+      "Passed": true
+    },
+    {
+      "Check": "Incident SpO2 remains null",
+      "Passed": true
+    },
+    {
+      "Check": "Link loss produces unknown station evidence",
+      "Passed": true
+    }
+  ],
+  "protocol_checks": {
+    "decoded_frames": 179,
+    "all_crc_valid": true,
+    "reassembly_exact": true,
+    "compact_bytes": 20,
+    "corruption_detected": true
+  },
+  "crypto_verified": 40320,
+  "incident_records_valid": true,
+  "source_files_verified": 66,
+  "verification_elapsed_s": 15.468
+}

@@ -1,0 +1,27 @@
+| group               | item                                                | paper                              | reproduced                         | status |
+|---------------------|-----------------------------------------------------|------------------------------------|------------------------------------|--------|
+| Study A / Table 11  | records (baseline + evaluation)                     | 40320 (11520 + 28800)              | 40320 (11520 + 28800)              | OK     |
+| Study A / Table 11  | evaluation zone-minutes                             | 4800                               | 4800                               | OK     |
+| Study A / Table 11  | strong / weak episodes detected                     | 10/10; 0/5                         | 10/10; 0/5                         | OK     |
+| Study A / Table 11  | zone-minute TP / FP / FN / TN                       | 280 / 0 / 120 / 4400               | 280 / 0 / 120 / 4400               | OK     |
+| Study A / Table 11  | precision / recall / F1                             | 1.000 / 0.700 / 0.824              | 1.000 / 0.700 / 0.824              | OK     |
+| Study A / Table 11  | FN split (weak / strong confirmation lag)           | 100 / 20                           | 100 / 20                           | OK     |
+| Study A / Table 11  | degraded-coverage zone-minutes                      | 50                                 | 50                                 | OK     |
+| Study A / Table 11  | ordinary protected records verified                 | 40320/40320                        | 40320/40320                        | OK     |
+| Study A / Table 11  | negative class: ciphertext_alteration               | 1000/1000 rejected                 | 1000/1000 rejected                 | OK     |
+| Study A / Table 11  | negative class: retained_signature_modification     | 1000/1000 rejected                 | 1000/1000 rejected                 | OK     |
+| Study A / Table 11  | negative class: replay                              | 1000/1000 rejected                 | 1000/1000 rejected                 | OK     |
+| Study A / Table 11  | negative class: delivery_180s_vs_120s_freshness     | 1000/1000 rejected                 | 1000/1000 rejected                 | OK     |
+| Study B / Table 12  | input lines; unique identities                      | 2173; 2160                         | 2173; 2160                         | OK     |
+| Study B / Table 12  | duplicates; conflicts; rejected lines               | 6; 1; 6                            | 6; 1; 6                            | OK     |
+| Study B / Table 12  | nonconflicting records exported                     | 2159                               | 2159                               | OK     |
+| Study B / Table 12  | five-minute summaries (per site)                    | 12 (6 + 6)                         | 12 (6 + 6)                         | OK     |
+| Study B / Table 12  | expected window / final-minute records              | 180 / 36                           | 180 / 36                           | OK     |
+| Study B / Table 12  | functional self-checks passed / failed              | 10 / 0                             | 10 / 0                             | OK     |
+| Stage 1 / Table 13  | records; sequence continuous                        | 13; True                           | 13; True                           | OK     |
+| Stage 1 / Table 13  | node-time span (s)                                  | 120                                | 120                                | OK     |
+| Stage 1 / Table 13  | temperature change (degC)                           | 0.38                               | 0.38                               | OK     |
+| Stage 1 / Table 13  | PPG IR range; motion range                          | 1181-1224; 75-102                  | 1181-1224; 75-102                  | OK     |
+| Stage 1 / Table 13  | example line -> seq, node ms, temp, PPG, motion, HR | 13, 122488, 22.19, 1187, 97, 76    | 13, 122488, 22.19, 1187, 97, 76    | OK     |
+| Sec. 4.9 / Table 16 | Q at B = 2 / 4 / 6 / 10                             | infeasible / 68.75 / 93.75 / 100.0 | infeasible / 68.75 / 93.75 / 100.0 | OK     |
+| Sec. 3.3.8          | storage sizing (12 nodes, 1.5 kB/record, 8 h)       | 1.8 kB/s; 51.84 MB                 | 1.8 kB/s; 51.84 MB                 | OK     |

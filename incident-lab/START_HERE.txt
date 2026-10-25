@@ -1,0 +1,23 @@
+UMSF INCIDENT LAB 1.2.0 — START HERE
+
+1. Upload UMSF_Incident_Lab.ipynb to Google Colab (File -> Upload notebook).
+2. Select a Python CPU runtime and choose Runtime -> Run all (about 1-2 minutes).
+3. The notebook already contains its source code, tests and research data.
+4. Download umsf_notebook_runs/latest/results.zip from the runtime Files pane.
+
+Self-sufficient cells: after the three setup cells of Section 1 have run once, any
+analysis cell can be run on its own, in any order, and again after Restart session.
+If a cell reports "No module named 'umsf_lab'", run Section 1 again.
+
+For a preview, open UMSF_Incident_Lab.html. For interactive exploration without
+running Python, open interactive_dashboard.html in a browser. The executed
+notebook contains the saved outputs of the local verification run.
+
+For Zenodo, use ZENODO_DESCRIPTION.txt for ready-to-copy text and .zenodo.json
+for machine-readable metadata. CITATION.cff and LICENSE are included.
+See docs/ZENODO_DEPOSIT.md for deposit notes. No DOI has been invented.
+
+All notebook code cells (sequentially, and each analysis cell alone in a fresh
+kernel) and the original tests passed locally. The hosted Colab frontend was not
+tested. Synthetic and bench-transcription origins are explicit throughout the
+project; this is not independent field validation.

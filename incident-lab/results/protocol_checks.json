@@ -1,0 +1,7 @@
+{
+  "decoded_frames": 179,
+  "all_crc_valid": true,
+  "reassembly_exact": true,
+  "compact_bytes": 20,
+  "corruption_detected": true
+}

@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+type: software
+title: 'UMSF Incident AI Agent Laboratory: A Self-Contained Colab Project for Evidence-Aware
+  Decision Support'
+version: 1.2.0
+date-released: '2026-10-15'
+license: MIT
+authors:
+- family-names: Torstensson
+  given-names: Olga
+  affiliation: Halmstad University
+  orcid: https://orcid.org/0009-0007-2169-6851
+- family-names: Prokopovych-Tkachenko
+  given-names: Dmytro
+  affiliation: University of Customs and Finance
+  orcid: https://orcid.org/0000-0002-6590-3898
+- family-names: Adilzhanova
+  given-names: Saltanat
+  affiliation: Almaty Technological University
+  orcid: https://orcid.org/0000-0003-1768-064X
+- family-names: Tykhonenko
+  given-names: Mariia
+  affiliation: University of Customs and Finance
+  orcid: https://orcid.org/0009-0000-5192-3241
+- family-names: Beketova
+  given-names: Gulzhanat
+  affiliation: Almaty University of Energy and Communications
+  orcid: https://orcid.org/0000-0001-7160-1514
+- family-names: Sydybayeva
+  given-names: Madina
+  affiliation: Satbayev University
+  orcid: https://orcid.org/0000-0002-8950-5421
+abstract: This English computational laboratory converts umsf-incident-ai-agent 1.0.0
+  into a self-contained Google Colab-compatible notebook. It embeds the original source,
+  two synthetic incident scenarios and the companion P1 incident fixture. The notebook
+  runs 116 original tests without skips and 44 supplied analytical checks, then produces
+  30 explanatory figures, an offline interactive replay explorer, CSV/JSON outputs,
+  audit evidence and a rendered HTML report. Experiments cover robust personal references,
+  missing channels, persistent flags, coverage-aware group decisions, source-qualified
+  incident state, exact lexicographic rescue assignment, exact multi-resource service-continuity
+  allocation, heuristic recovery scheduling, proposal authority and hash-chain audit
+  integrity. Both scenarios are replayed at 41 chronological cutoffs. Deterministic
+  algorithms compute all decisions; no external language-model API or credentials
+  are required. Every plan remains a proposal. All records are synthetic and the project
+  has not been validated against real rescue operations. The original source and localized
+  examples are retained verbatim for provenance; the new notebook, figures, explorer
+  and documentation are English. All code cells were executed in a fresh local Python/IPython
+  process with only the notebook supplied. Hosted Google Colab frontend execution
+  and live LLM API compatibility were not directly tested.
+keywords:
+- critical infrastructure
+- incident support
+- rescue logistics
+- recovery scheduling
+- service continuity
+- decision support
+- monitoring coverage
+- evidence provenance
+- human authorisation
+- constrained allocation

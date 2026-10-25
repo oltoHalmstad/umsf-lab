@@ -1,0 +1,202 @@
+{
+  "schema_version": "as-1.0",
+  "scenario_id": "umsf-p3-post-impact-demo-v1-no_backup_power",
+  "data_origin": "synthetic",
+  "planning_horizon_h": 4,
+  "temporary_power_zone": "Z1",
+  "resources": [
+    {
+      "resource_id": "power_kw",
+      "unit": "kW",
+      "kind": "power",
+      "contributions": [
+        {
+          "asset_id": "grid_feed_A",
+          "lower_bound": 250,
+          "basis": "pre-event register"
+        }
+      ],
+      "basis": "sum of per-asset justified lower bounds; updated by asset_status events"
+    },
+    {
+      "resource_id": "energy_kwh",
+      "unit": "kWh",
+      "kind": "energy",
+      "contributions": [
+        {
+          "asset_id": "grid_feed_A",
+          "lower_bound": 1000,
+          "basis": "pre-event: 250 kW x 4 h"
+        }
+      ],
+      "basis": "energy over the 4 h planning horizon; separate from the power bound"
+    },
+    {
+      "resource_id": "staff",
+      "unit": "persons",
+      "kind": "staff",
+      "lower_bound": 6,
+      "basis": "operators present on shift roster and accounted"
+    },
+    {
+      "resource_id": "radio_channels",
+      "unit": "channels",
+      "kind": "comms",
+      "lower_bound": 4,
+      "basis": "licensed site radio channels"
+    }
+  ],
+  "services": [
+    {
+      "service_id": "communications",
+      "name": "Зв'язок",
+      "zone_id": "Z1",
+      "priority_weight": 6,
+      "mandatory": true,
+      "demand": {
+        "power_kw": 4,
+        "staff": 1,
+        "radio_channels": 2
+      },
+      "requires": [],
+      "admissible": true,
+      "admissibility_basis": "isolation checked by operator"
+    },
+    {
+      "service_id": "emergency_lighting",
+      "name": "Аварійне освітлення",
+      "zone_id": "Z2",
+      "priority_weight": 5,
+      "mandatory": true,
+      "demand": {
+        "power_kw": 8
+      },
+      "requires": [],
+      "admissible": true,
+      "admissibility_basis": "life-safety circuit"
+    },
+    {
+      "service_id": "fire_water_pump",
+      "name": "Пожежний насос",
+      "zone_id": "Z1",
+      "priority_weight": 8,
+      "mandatory": true,
+      "demand": {
+        "power_kw": 25,
+        "staff": 2
+      },
+      "requires": [
+        "communications"
+      ],
+      "admissible": true,
+      "admissibility_basis": "life-safety; operator procedure FP-2"
+    },
+    {
+      "service_id": "water_support",
+      "name": "Водопостачання (підтримка)",
+      "zone_id": "Z3",
+      "priority_weight": 4,
+      "mandatory": false,
+      "demand": {
+        "power_kw": 18,
+        "staff": 2
+      },
+      "requires": [],
+      "admissible": null,
+      "admissibility_basis": "pump room Z3 not assessed (gas-channel alarm, link loss)",
+      "asset_ids": [
+        "pump_P1"
+      ]
+    },
+    {
+      "service_id": "production",
+      "name": "Виробництво",
+      "zone_id": "Z2",
+      "priority_weight": 1,
+      "mandatory": false,
+      "demand": {
+        "power_kw": 45,
+        "staff": 4
+      },
+      "requires": [
+        "communications"
+      ],
+      "admissible": true,
+      "admissibility_basis": "operator",
+      "actuation_required_to_restore": true
+    },
+    {
+      "service_id": "process_monitoring",
+      "name": "Моніторинг процесу",
+      "zone_id": "Z4",
+      "priority_weight": 3,
+      "mandatory": false,
+      "demand": {
+        "power_kw": 3,
+        "staff": 1,
+        "radio_channels": 1
+      },
+      "requires": [
+        "communications"
+      ],
+      "admissible": true,
+      "admissibility_basis": "read-only monitoring, no control path"
+    }
+  ],
+  "equipment": [
+    {
+      "kind": "certified_gas_detector",
+      "quantity": 1,
+      "status": "available"
+    },
+    {
+      "kind": "loader",
+      "quantity": 1,
+      "status": "available"
+    },
+    {
+      "kind": "mobile_generator",
+      "quantity": 1,
+      "status": "available"
+    },
+    {
+      "kind": "cable_kit",
+      "quantity": 2,
+      "status": "available"
+    },
+    {
+      "kind": "spare_gateway",
+      "quantity": 1,
+      "status": "available"
+    },
+    {
+      "kind": "pump_kit",
+      "quantity": 1,
+      "status": "unknown"
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "grid_feed_A",
+      "zone_id": "Z1",
+      "kind": "power_feed",
+      "status": "available"
+    },
+    {
+      "asset_id": "generator_G1",
+      "zone_id": "Z1",
+      "kind": "generator",
+      "status": "available",
+      "capacity_interval_kw": [
+        60,
+        75
+      ]
+    },
+    {
+      "asset_id": "pump_P1",
+      "zone_id": "Z3",
+      "kind": "pump",
+      "status": "unknown"
+    }
+  ]
+}

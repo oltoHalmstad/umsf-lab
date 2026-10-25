@@ -1,0 +1,9 @@
+time_s,type,name,level,value_x1000
+10,8,presence,0,1000
+30,7,pressure_transient,1,200000
+30.025,4,loud_sound,1,3000000
+30,3,impact_excursion,2,2500
+30,10,possible_impact_local,2,2500
+41,8,presence,0,0
+61,6,tilt_change,2,12000
+200,5,gas_channel_alarm,2,1500

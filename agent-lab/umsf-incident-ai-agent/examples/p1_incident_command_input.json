@@ -1,0 +1,17 @@
+{
+  "_note": "SIMULATED incident-command input for the P1 dataset (umsf-incident-dataset/data/incident). It is NOT derived from sensor data: access authorisations, PPE declarations and task overrides are decisions of incident command. Use with: umsf-agent replay --data ../umsf-incident-dataset/data/incident --policy examples/p1_incident_command_input.json --out OUT",
+  "access": [
+    {"zone_id": "A-Z2", "status": "authorised", "scope": ["all"], "authorised_by": "incident command (simulated)", "valid_from": "2026-10-14T05:09:00Z"},
+    {"zone_id": "B-Z1", "status": "authorised", "scope": ["all"], "authorised_by": "incident command (simulated)", "valid_from": "2026-10-14T05:00:00Z"},
+    {"zone_id": "B-Z2", "status": "authorised", "scope": ["all"], "authorised_by": "incident command (simulated)", "valid_from": "2026-10-14T05:00:00Z"},
+    {"zone_id": "A-Z1", "status": "authorised", "scope": ["rescue"], "authorised_by": "incident command (simulated)",
+     "conditions": ["SCBA", "two-person rule", "entry limited to the scope of assessment EV0025"], "valid_from": "2026-10-14T05:18:00Z"},
+    {"zone_id": "A-Z1", "status": "authorised", "scope": ["gas_hazard_check"], "authorised_by": "incident command (simulated)",
+     "conditions": ["SCBA", "qualified instrument"], "valid_from": "2026-10-14T05:20:00Z"}
+  ],
+  "team_overrides": {
+    "RT-1": {"ppe": ["scba", "gas_monitor", "helmet"]},
+    "RT-2": {"ppe": ["helmet"]},
+    "RT-3": {"ppe": ["scba", "gas_monitor", "helmet"]}
+  }
+}

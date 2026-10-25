@@ -1,0 +1,31 @@
+{
+  "dataset_id": "umsf-p3-post-impact-demo-v1",
+  "scenario_id": "umsf-p3-post-impact-demo-v1",
+  "variant": "post_impact",
+  "variant_description": "main storyline (generator and fuel verified at 08:39)",
+  "data_origin": "synthetic",
+  "label": "SYNTHETIC — constructed scenario; no real site, persons, attack or measured physiology",
+  "generator": "umsf_agent.scenario",
+  "seed": 20261014,
+  "start": "2026-10-14T08:00:00Z",
+  "end": "2026-10-14T09:10:00Z",
+  "baseline_end": "2026-10-14T08:30:00Z",
+  "sites": [
+    "UMSF-A",
+    "UMSF-B"
+  ],
+  "timezone_display": "Europe/Kyiv",
+  "notes": [
+    "station records are synthetic 10 s summaries",
+    "HR is a synthetic interface field",
+    "one duplicate and one conflicting physio record are included on purpose"
+  ],
+  "files": {
+    "assets.json": "14ea1a6e04c823101fe6f4c779bc0f7392890cd0443ba31b135250b0f0c92eb5",
+    "events.jsonl": "f487391620c54e2b68817f3b3ad921c778dda9b3591faf012d7ff9d08be9bf4f",
+    "physio.jsonl": "01a872f8d00af476a898b6898fd16d2c866b036347f80e56fe6777b01a1f8c9f",
+    "roster.json": "2d99371eb7096ebac866267e2d8267d6f0ca65230f74fb3fb87c08d7491c631d",
+    "station.jsonl": "3e0d56ea9ea73267d4a61beaedcb8db0dac87ab8a14e17efdde05050e684b401",
+    "teams.json": "9938be013385fed7f55d34fc3b401b50ffd272483689b377d7e3292f60f472ab"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:umsf:schema:roster:1.0",
+  "title": "UMSF site roster",
+  "description": "Explicit expected-membership roster (PROTOCOL.md 5.4). Stationary nodes are never workers.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "site_id",
+    "zones",
+    "device_map",
+    "valid_from",
+    "valid_to"
+  ],
+  "properties": {
+    "site_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "zones": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 256,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "zone_id",
+          "name",
+          "expected_workers",
+          "stationary_nodes"
+        ],
+        "properties": {
+          "zone_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "expected_workers": {
+            "type": "array",
+            "maxItems": 1024,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+            }
+          },
+          "stationary_nodes": {
+            "type": "array",
+            "maxItems": 1024,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+            }
+          }
+        }
+      }
+    },
+    "device_map": {
+      "type": "object",
+      "maxProperties": 4096,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+      }
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "valid_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "maxLength": 32
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "upload_type": "software",
+  "title": "UMSF Incident AI Agent Laboratory: A Self-Contained Colab Project for Evidence-Aware Decision Support",
+  "version": "1.2.0",
+  "publication_date": "2026-10-15",
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Torstensson, Olga",
+      "affiliation": "Halmstad University",
+      "orcid": "0009-0007-2169-6851"
+    },
+    {
+      "name": "Prokopovych-Tkachenko, Dmytro",
+      "affiliation": "University of Customs and Finance",
+      "orcid": "0000-0002-6590-3898"
+    },
+    {
+      "name": "Adilzhanova, Saltanat",
+      "affiliation": "Almaty Technological University",
+      "orcid": "0000-0003-1768-064X"
+    },
+    {
+      "name": "Tykhonenko, Mariia",
+      "affiliation": "University of Customs and Finance",
+      "orcid": "0009-0000-5192-3241"
+    },
+    {
+      "name": "Beketova, Gulzhanat",
+      "affiliation": "Almaty University of Energy and Communications",
+      "orcid": "0000-0001-7160-1514"
+    },
+    {
+      "name": "Sydybayeva, Madina",
+      "affiliation": "Satbayev University",
+      "orcid": "0000-0002-8950-5421"
+    }
+  ],
+  "description": "<p>This English computational laboratory converts umsf-incident-ai-agent 1.0.0 into a self-contained Google Colab-compatible notebook. It embeds the original source, two synthetic incident scenarios and the companion P1 incident fixture. The notebook runs 116 original tests without skips and 44 supplied analytical checks, then produces 30 explanatory figures, an offline interactive replay explorer, CSV/JSON outputs, audit evidence and a rendered HTML report. Experiments cover robust personal references, missing channels, persistent flags, coverage-aware group decisions, source-qualified incident state, exact lexicographic rescue assignment, exact multi-resource service-continuity allocation, heuristic recovery scheduling, proposal authority and hash-chain audit integrity. Both scenarios are replayed at 41 chronological cutoffs. Deterministic algorithms compute all decisions; no external language-model API or credentials are required. Every plan remains a proposal. All records are synthetic and the project has not been validated against real rescue operations. The original source and localized examples are retained verbatim for provenance; the new notebook, figures, explorer and documentation are English. After a three-cell setup, every analysis cell is self-sufficient and can run alone, in any order or after a kernel restart. All code cells were executed in a fresh local Jupyter kernel with only the notebook supplied, and each analysis cell was additionally executed alone in its own fresh kernel. Hosted Google Colab frontend execution and live LLM API compatibility were not directly tested.</p>",
+  "keywords": [
+    "critical infrastructure",
+    "incident support",
+    "AI agent",
+    "decision support",
+    "rescue logistics",
+    "consequence liquidation",
+    "recovery scheduling",
+    "service continuity",
+    "monitoring coverage",
+    "evidence provenance",
+    "human authorisation",
+    "constrained allocation",
+    "Google Colab",
+    "Jupyter notebook",
+    "reproducibility",
+    "synthetic scenarios",
+    "visual analytics"
+  ],
+  "related_identifiers": [],
+  "notes": "Notebook companion 1.2.0 (optimized; every analysis cell self-sufficient); original agent 1.0.0 preserved. Offline deterministic execution. See results/VALIDATION_REPORT.json. No DOI assigned by this package."
+}

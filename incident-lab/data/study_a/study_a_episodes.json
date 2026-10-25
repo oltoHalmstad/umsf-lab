@@ -1,0 +1,286 @@
+{
+ "episodes": [
+  {
+   "strength": "strong",
+   "day": 2,
+   "zone": 0,
+   "start": 180,
+   "minutes": 30,
+   "workers": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 2,
+   "zone": 1,
+   "start": 48,
+   "minutes": 30,
+   "workers": [
+    1,
+    3,
+    4
+   ]
+  },
+  {
+   "strength": "weak",
+   "day": 2,
+   "zone": 1,
+   "start": 361,
+   "minutes": 20,
+   "workers": [
+    1,
+    4,
+    5
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 3,
+   "zone": 0,
+   "start": 88,
+   "minutes": 30,
+   "workers": [
+    0,
+    3,
+    4
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 3,
+   "zone": 1,
+   "start": 90,
+   "minutes": 30,
+   "workers": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "strength": "weak",
+   "day": 3,
+   "zone": 1,
+   "start": 263,
+   "minutes": 20,
+   "workers": [
+    0,
+    1,
+    5
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 4,
+   "zone": 0,
+   "start": 113,
+   "minutes": 30,
+   "workers": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 4,
+   "zone": 1,
+   "start": 107,
+   "minutes": 30,
+   "workers": [
+    0,
+    2,
+    4
+   ]
+  },
+  {
+   "strength": "weak",
+   "day": 4,
+   "zone": 1,
+   "start": 300,
+   "minutes": 20,
+   "workers": [
+    1,
+    2,
+    5
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 5,
+   "zone": 0,
+   "start": 138,
+   "minutes": 30,
+   "workers": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "strength": "weak",
+   "day": 5,
+   "zone": 0,
+   "start": 326,
+   "minutes": 20,
+   "workers": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 5,
+   "zone": 1,
+   "start": 151,
+   "minutes": 30,
+   "workers": [
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 6,
+   "zone": 0,
+   "start": 29,
+   "minutes": 30,
+   "workers": [
+    0,
+    1,
+    3
+   ]
+  },
+  {
+   "strength": "strong",
+   "day": 6,
+   "zone": 1,
+   "start": 50,
+   "minutes": 30,
+   "workers": [
+    2,
+    3,
+    5
+   ]
+  },
+  {
+   "strength": "weak",
+   "day": 6,
+   "zone": 1,
+   "start": 439,
+   "minutes": 20,
+   "workers": [
+    0,
+    2,
+    3
+   ]
+  }
+ ],
+ "degraded_intervals": [
+  {
+   "day": 2,
+   "zone": 0,
+   "start": 11,
+   "minutes": 5,
+   "workers": [
+    1,
+    3
+   ]
+  },
+  {
+   "day": 2,
+   "zone": 1,
+   "start": 391,
+   "minutes": 5,
+   "workers": [
+    3,
+    5
+   ]
+  },
+  {
+   "day": 3,
+   "zone": 0,
+   "start": 379,
+   "minutes": 5,
+   "workers": [
+    0,
+    3
+   ]
+  },
+  {
+   "day": 3,
+   "zone": 1,
+   "start": 435,
+   "minutes": 5,
+   "workers": [
+    2,
+    5
+   ]
+  },
+  {
+   "day": 4,
+   "zone": 0,
+   "start": 389,
+   "minutes": 5,
+   "workers": [
+    2,
+    4
+   ]
+  },
+  {
+   "day": 4,
+   "zone": 1,
+   "start": 157,
+   "minutes": 5,
+   "workers": [
+    0,
+    5
+   ]
+  },
+  {
+   "day": 5,
+   "zone": 0,
+   "start": 297,
+   "minutes": 5,
+   "workers": [
+    4,
+    5
+   ]
+  },
+  {
+   "day": 5,
+   "zone": 1,
+   "start": 105,
+   "minutes": 5,
+   "workers": [
+    1,
+    2
+   ]
+  },
+  {
+   "day": 6,
+   "zone": 0,
+   "start": 421,
+   "minutes": 5,
+   "workers": [
+    1,
+    3
+   ]
+  },
+  {
+   "day": 6,
+   "zone": 1,
+   "start": 329,
+   "minutes": 5,
+   "workers": [
+    4,
+    5
+   ]
+  }
+ ]
+}

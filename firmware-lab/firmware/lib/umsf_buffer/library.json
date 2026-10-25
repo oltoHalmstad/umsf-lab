@@ -1,0 +1,9 @@
+{
+  "name": "umsf_buffer",
+  "version": "1.0.0",
+  "description": "RAM ring buffer of unacknowledged records with cumulative application ACK",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "build": { "srcDir": "src", "includeDir": "src" }
+}

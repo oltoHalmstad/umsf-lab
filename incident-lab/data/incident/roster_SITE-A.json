@@ -1,0 +1,47 @@
+{
+ "site_id": "SITE-A",
+ "zones": [
+  {
+   "zone_id": "A-Z1",
+   "name": "Workshop No. 1, north wing",
+   "expected_workers": [
+    "W01",
+    "W02",
+    "W03"
+   ],
+   "stationary_nodes": [
+    "SA1"
+   ]
+  },
+  {
+   "zone_id": "A-Z2",
+   "name": "Control room",
+   "expected_workers": [
+    "W04",
+    "W05",
+    "W06"
+   ],
+   "stationary_nodes": [
+    "SA2"
+   ]
+  },
+  {
+   "zone_id": "A-Z3",
+   "name": "Electrical room (no rostered workers)",
+   "expected_workers": [],
+   "stationary_nodes": [
+    "SA3"
+   ]
+  }
+ ],
+ "device_map": {
+  "A01": "W01",
+  "A02": "W02",
+  "A03": "W03",
+  "A04": "W04",
+  "A05": "W05",
+  "A06": "W06"
+ },
+ "valid_from": "2026-10-14T00:00:00Z",
+ "valid_to": "2026-10-15T00:00:00Z"
+}

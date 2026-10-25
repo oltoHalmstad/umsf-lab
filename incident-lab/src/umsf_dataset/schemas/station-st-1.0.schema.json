@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:umsf:schema:station:st-1.0",
+  "title": "UMSF stationary building-state record, schema st-1.0",
+  "description": "One 1 s summary window of a stationary node (PROTOCOL.md 5.2). gas_v is an uncalibrated MQ-2 channel voltage, not a concentration. attachment_verified is an installation fact, not a sensor inference.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "data_origin",
+    "scenario_id",
+    "site_id",
+    "zone_id",
+    "device_id",
+    "boot_id",
+    "sequence",
+    "measured_at",
+    "received_at",
+    "vib_peak_g",
+    "accel_rms_g",
+    "tilt_deg",
+    "tilt_delta_deg",
+    "pressure_hpa",
+    "pressure_delta_pa",
+    "temp_c",
+    "gas_v",
+    "sound_index",
+    "pir_presence",
+    "sos",
+    "attachment_verified",
+    "quality",
+    "battery_pct"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "st-1.0"
+    },
+    "data_origin": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "synthetic_payload_physical_transport",
+        "bench_transcription",
+        "measured"
+      ]
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "site_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "zone_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "device_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "boot_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "measured_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "vib_peak_g": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 655.35
+    },
+    "accel_rms_g": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 65.535
+    },
+    "tilt_deg": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -180,
+      "maximum": 180
+    },
+    "tilt_delta_deg": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -180,
+      "maximum": 180
+    },
+    "pressure_hpa": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 300,
+      "maximum": 1100
+    },
+    "pressure_delta_pa": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -32767,
+      "maximum": 32767
+    },
+    "temp_c": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -40,
+      "maximum": 85
+    },
+    "gas_v": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 5
+    },
+    "sound_index": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4095
+    },
+    "pir_presence": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "sos": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "attachment_verified": {
+      "type": "boolean"
+    },
+    "quality": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "battery_pct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "gateway_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "flags": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 255
+    },
+    "sensor_flags": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 255
+    },
+    "fw_build": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "frame_hex": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([0-9a-fA-F]{2}){0,512}$"
+    }
+  }
+}

@@ -1,0 +1,153 @@
+# UMSF Bench Prototype: ESP32 sensor firmware and local monitoring interface
+
+Version 1.0.0 · MIT License · part of the UMSF Incident Lab project
+
+This archive contains the source code of the ESP32 bench prototype that was used in the
+UMSF project (University of Customs and Finance, Dnipro) to define the record fields,
+event types and evidence states that UMSF Incident Lab later uses. It accompanies the
+software paper *"UMSF Incident Lab: Open-source software for evidence-aware multisensor
+incident analysis and decision support"* (Appendix A, bench prototype).
+
+The archive is for **provenance and reuse**. It is not part of the three verified
+releases (UMSF Incident Lab, UMSF Incident AI Agent Lab and UMSF Firmware Lab, v1.2.0), and
+no reading from this prototype is used as an input in the paper. The readings are
+uncalibrated. This is not a medical device and not a certified safety system.
+
+## Contents
+
+```
+UMSF_Bench_Prototype_v1.0.0/
+├── README.md                  this file
+├── LICENSE                    MIT
+├── CITATION.cff               citation metadata
+├── .zenodo.json               Zenodo deposit metadata
+├── CHANGELOG.md
+├── SHA256SUMS.txt             checksums of every file in the archive
+├── firmware/
+│   ├── gateway/               gateway AG1: ESP-NOW receiver + Wi-Fi access point + web dashboard
+│   │   ├── platformio.ini
+│   │   └── src/main.cpp
+│   ├── wearable/              wearable node W01–W03: PPG heart rate, motion/impact, skin temperature, SOS
+│   │   ├── platformio.ini
+│   │   └── src/main.cpp
+│   └── fixed_node/README.md   stationary (structural) node A01–A03: packet contract (source not included, see below)
+├── interface/
+│   ├── dashboard.html         the dashboard page, extracted verbatim from firmware/gateway/src/main.cpp
+│   └── mock_gateway.py        offline simulator of the gateway HTTP API (synthetic data, Python stdlib)
+└── docs/
+    ├── HARDWARE.md            components, pin assignment, wiring
+    ├── PROTOCOL.md            ESP-NOW packet formats, flag bits, HTTP API, serial log formats
+    └── figures/               screen captures of the dashboard (idle state)
+```
+
+## System overview
+
+```
+ wearable W01..W03 ──┐                                   ┌──> smartphone / laptop
+ (MAX30102, MPU-6050, │  ESP-NOW broadcast, channel 1    │    Wi-Fi "UMSF_AG1"
+  DS18B20, SOS button)├────────────────────────> gateway AG1 ──> http://192.168.4.1
+ fixed node A01..A03 ─┘  1 packet/s + on flag change      │    (dashboard, /api JSON)
+ (MPU-6050, BMP, DS18B20,                                 └──> USB serial: EVENT / W,... CSV log
+  microphone, MQ gas, PIR, SOS)
+```
+
+* Nodes **broadcast** over ESP-NOW. Every gateway on the same channel receives the same
+  packets, so several gateways can run at the same time.
+* The gateway runs a Wi-Fi access point and serves a local dashboard. No internet access
+  is needed.
+* The gateway keeps alarms **latched** until an operator presses *Reset alarms*. A node
+  that is silent for 5 s is shown as *link lost*, with its last received data.
+
+## Building and flashing
+
+Requirements: [PlatformIO](https://platformio.org) (CLI or the VS Code extension), an
+ESP32 DevKit (`esp32dev`), USB cable.
+
+```bash
+# Gateway
+cd firmware/gateway
+pio run -t upload
+pio device monitor            # 115200 baud
+
+# Wearable: set NODE_ID in src/main.cpp ("W01", "W02" or "W03") for each device first
+cd firmware/wearable
+pio run -t upload
+pio device monitor
+```
+
+Then connect a phone or laptop to the Wi-Fi network **UMSF_AG1** (password `umsf12345`)
+and open **http://192.168.4.1**.
+
+Compile-time options in `firmware/wearable/src/main.cpp`:
+
+| Macro          | Default | Meaning |
+|----------------|---------|---------|
+| `NODE_ID`      | `"W03"` | Wearable identity, must be unique (`W01`–`W03` have names on the dashboard) |
+| `ESPNOW_CH`    | `1`     | Wi-Fi channel; must match the gateway |
+| `HR_SYNTHETIC` | `0`     | `1` sends a simulated heart rate. These packets carry the `W_HR_SYNTH` flag and the dashboard labels the value **SIMULATED** |
+| `PPG_DEBUG`    | `1`     | `0` = one TX line per packet, `1` = PPG status every second, `2` = Serial Plotter output |
+
+Settings in `firmware/gateway/src/main.cpp`: `GATEWAY_ID`, `AP_SSID`, `AP_PASSWORD`,
+`OFFLINE_MS` (5000), heart-rate warning range `HR_LOW`/`HR_HIGH` (45–130 bpm), and the
+zone and person names (`ZONES`, `PEOPLE`).
+
+Library versions are not pinned in `platformio.ini`. Record the versions that PlatformIO
+resolves (`pio pkg list`) when you reproduce a build.
+
+## Viewing the interface without hardware
+
+`interface/mock_gateway.py` serves the unchanged dashboard together with a **synthetic**
+`/api` endpoint that has the same JSON structure as the gateway:
+
+```bash
+python3 interface/mock_gateway.py --scenario idle      # or: impact | sos | linkloss
+# open http://127.0.0.1:8000
+```
+
+In the `impact`, `sos` and `linkloss` scenarios the event starts 20 s after launch. All
+simulated values are generated by the script. They are not prototype readings.
+
+## Heart-rate processing (wearable)
+
+The heart rate is computed on the wearable from the MAX30102 IR channel at 100 samples/s:
+finger detection → automatic LED current adjustment → baseline removal → 2-pole
+low-pass (~5 Hz) → adaptive-threshold peak detection → interval checks (refractory
+period, motion gating with the MPU-6050, perfusion-index range, outlier rejection) →
+median of the last 8 beat-to-beat intervals. The estimate is dropped if no interval has
+been accepted for 10 s. While no valid estimate exists, the dashboard shows "—" with the
+reason (no finger, motion, acquiring). The algorithm has **not** been validated against a
+reference device.
+
+## Known issues and limitations
+
+* **Fixed-node source not included.** `firmware/fixed_node/` documents only the packet
+  contract that the gateway expects (from `firmware/gateway/src/main.cpp`). The node shown
+  as *Node A01* in the figures needs that firmware.
+* **No authentication or encryption.** ESP-NOW packets are unencrypted broadcasts and the
+  Wi-Fi password is hard-coded. Use the prototype only on an isolated bench.
+* **Cause attribution in the interface.** The dashboard text interprets observations, for
+  example "Likely a hit or an explosion nearby", "typical sign of a blast wave" and
+  "possible fire nearby". These phrases come from fixed rules on uncalibrated thresholds.
+  They are not verified causes. UMSF Incident Lab itself reports mechanical observations
+  with unknown cause.
+* **Counters.** "Packets" counts packets received by this gateway. "Lost" counts gaps in
+  the sender's sequence number since the first received packet. Both reset when the
+  gateway restarts and are not performance indicators.
+* **Uncalibrated thresholds.** Impact 3 g (wearable) and the fixed-node thresholds are
+  illustrative bench values.
+* Event times in the dashboard are reconstructed in the browser from the gateway's
+  `millis()`. The gateway has no real-time clock.
+
+## How to cite
+
+See `CITATION.cff`. Please also cite the main software release:
+S. Adilzhanova et al., *UMSF Incident Lab*, v1.2.0, Zenodo, 2026,
+https://doi.org/10.5281/zenodo.23380282.
+
+## License
+
+MIT (see `LICENSE`). Third-party libraries fetched by PlatformIO keep their own licenses.
+
+## Contact
+
+Olga Torstensson, Halmstad University — olga.torstensson@hh.se

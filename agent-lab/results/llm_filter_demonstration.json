@@ -1,0 +1,22 @@
+[
+  {
+    "case": "Supported count",
+    "accepted": true
+  },
+  {
+    "case": "Unsupported count",
+    "accepted": false
+  },
+  {
+    "case": "Forbidden phrase",
+    "accepted": false
+  },
+  {
+    "case": "Source phrase exception",
+    "accepted": true
+  },
+  {
+    "case": "Small number tolerance",
+    "accepted": true
+  }
+]

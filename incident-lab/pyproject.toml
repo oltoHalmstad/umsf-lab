@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "umsf-incident-dataset"
+version = "1.0.0"
+description = "Evidence-aware collection, validation, storage and export of physiological, building-state, gas-channel, presence and incident-event records (UMSF protocol v1.0), with deterministic reproduction of the manuscript's synthetic studies."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Olga Torstensson" },
+  { name = "Dmytro Prokopovych-Tkachenko" },
+  { name = "Saltanat Adilzhanova" },
+  { name = "Mariia Tykhonenko" },
+  { name = "Gulzhanat Beketova" },
+  { name = "Madina Sydybayeva" },
+]
+keywords = ["critical infrastructure", "multisensor monitoring", "incident support", "data quality",
+            "monitoring coverage", "evidence provenance", "BLE", "dataset", "synthetic data"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+crypto = ["cryptography>=41"]
+live = ["paho-mqtt>=1.6", "bleak>=0.21", "pyserial>=3.5"]
+all = ["cryptography>=41", "paho-mqtt>=1.6", "bleak>=0.21", "pyserial>=3.5"]
+
+[project.scripts]
+umsf-dataset = "umsf_dataset.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+umsf_dataset = ["schemas/*.json"]

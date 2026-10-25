@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "umsf-incident-ai-agent"
+version = "1.0.0"
+description = "Evidence-aware AI decision-support agent for post-impact rescue logistics and consequence-liquidation (recovery) logistics. Deterministic planning; human authorisation required."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Olga Torstensson" },
+  { name = "Dmytro Prokopovych-Tkachenko" },
+  { name = "Saltanat Adilzhanova" },
+  { name = "Mariia Tykhonenko" },
+  { name = "Gulzhanat Beketova" },
+  { name = "Madina Sydybayeva" },
+]
+keywords = [
+  "critical infrastructure", "incident support", "rescue logistics",
+  "recovery scheduling", "service continuity", "decision support",
+  "monitoring coverage", "evidence provenance", "human authorisation",
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["anthropic"]
+
+[project.scripts]
+umsf-agent = "umsf_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+umsf_agent = ["data/*.json"]

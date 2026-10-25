@@ -1,0 +1,259 @@
+[
+ {
+  "name": "physio_feature_A01_seq13",
+  "hex": "b50101014130310001000d00000078de0100ab08f802ffffa30400004600b6036100ffff5c510f00e803fa0010270700f004",
+  "expected": {
+   "header": {
+    "magic": 181,
+    "version": 1,
+    "source_class": 1,
+    "frame_type": 1,
+    "device_id": "A01",
+    "boot_id": 1,
+    "sequence": 13,
+    "node_time_ms": 122488
+   },
+   "payload": {
+    "skin_temp": 2219,
+    "hr": 760,
+    "spo2": null,
+    "ppg_ir_mean": 1187,
+    "ppg_red_mean_div16": 70,
+    "ppg_valid_permille": 950,
+    "motion_rms_mg": 97,
+    "gsr_mv": null,
+    "quality_pct": 92,
+    "battery_pct": 81,
+    "channel_flags": 15,
+    "artifact_flags": 0,
+    "n_ppg_samples": 1000,
+    "n_imu_samples": 250,
+    "window_ms": 10000,
+    "fw_build": 7
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "physio_feature_all_null_flat",
+  "hex": "b501010141303200020001000000102700000080ffffffffffffffffffffffffffffffffffff0012ffffffffffffffff88ea",
+  "expected": {
+   "magic": 181,
+   "version": 1,
+   "source_class": 1,
+   "frame_type": 1,
+   "device_id": "A02",
+   "boot_id": 2,
+   "sequence": 1,
+   "node_time_ms": 10000,
+   "skin_temp": null,
+   "hr": null,
+   "spo2": null,
+   "ppg_ir_mean": null,
+   "ppg_red_mean_div16": null,
+   "ppg_valid_permille": null,
+   "motion_rms_mg": null,
+   "gsr_mv": null,
+   "quality_pct": null,
+   "battery_pct": null,
+   "channel_flags": 0,
+   "artifact_flags": 18,
+   "n_ppg_samples": null,
+   "n_imu_samples": null,
+   "window_ms": null,
+   "fw_build": null,
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "station_state_background",
+  "hex": "b50102025330310001003c00000060ea000003000a000400feff352703008e082003160306010164571fc800e80301000300adf5",
+  "expected": {
+   "header": {
+    "magic": 181,
+    "version": 1,
+    "source_class": 2,
+    "frame_type": 2,
+    "device_id": "S01",
+    "boot_id": 1,
+    "sequence": 60,
+    "node_time_ms": 60000
+   },
+   "payload": {
+    "vib_peak_cg": 3,
+    "accel_rms_mg": 10,
+    "tilt_ddeg": 4,
+    "tilt_delta_ddeg": -2,
+    "pressure_dhpa": 10037,
+    "pressure_delta_pa": 3,
+    "temp": 2190,
+    "gas_mv": 800,
+    "gas_baseline_mv": 790,
+    "sound_index": 262,
+    "flags": 1,
+    "quality_pct": 100,
+    "battery_pct": 87,
+    "sensor_flags": 31,
+    "n_imu_samples": 200,
+    "window_ms": 1000,
+    "zone_code": 1,
+    "fw_build": 3
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "event_possible_impact_local",
+  "hex": "b5010203533031000100e1010000005507000a020410000001000100e0016eef",
+  "expected": {
+   "header": {
+    "magic": 181,
+    "version": 1,
+    "source_class": 2,
+    "frame_type": 3,
+    "device_id": "S01",
+    "boot_id": 1,
+    "sequence": 481,
+    "node_time_ms": 480512
+   },
+   "payload": {
+    "event_type": 10,
+    "level": 2,
+    "value": 4100,
+    "rule_version": 1,
+    "zone_code": 1,
+    "related_seq_lo": 480
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "event_tilt_negative_value_flat",
+  "hex": "b5010203533033000400070000002823000006024c0affff02000300000071a1",
+  "expected": {
+   "magic": 181,
+   "version": 1,
+   "source_class": 2,
+   "frame_type": 3,
+   "device_id": "S03",
+   "boot_id": 4,
+   "sequence": 7,
+   "node_time_ms": 9000,
+   "event_type": 6,
+   "level": 2,
+   "value": -62900,
+   "rule_version": 2,
+   "zone_code": 3,
+   "related_seq_lo": 0,
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "status_frame",
+  "hex": "b50101044130310003003011000080ee36004c0c0000e1100000d5100000070007ff6e2c",
+  "expected": {
+   "header": {
+    "magic": 181,
+    "version": 1,
+    "source_class": 1,
+    "frame_type": 4,
+    "device_id": "A01",
+    "boot_id": 3,
+    "sequence": 4400,
+    "node_time_ms": 3600000
+   },
+   "payload": {
+    "battery_pct": 76,
+    "buffered_records": 12,
+    "evicted_total": 0,
+    "sent_total": 4321,
+    "acked_up_to_seq": 4309,
+    "fw_build": 7,
+    "sensor_flags": 7,
+    "rssi_neg": null
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "ack_frame_gateway",
+  "hex": "b5010305414731000000630000000000000003000000d510000010cc",
+  "expected": {
+   "header": {
+    "magic": 181,
+    "version": 1,
+    "source_class": 3,
+    "frame_type": 5,
+    "device_id": "AG1",
+    "boot_id": 0,
+    "sequence": 99,
+    "node_time_ms": 0
+   },
+   "payload": {
+    "target_boot_id": 3,
+    "reserved": 0,
+    "ack_up_to_seq": 4309
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "config_frame",
+  "hex": "b501030641473100000001000000000000000200102701010000cecd",
+  "expected": {
+   "header": {
+    "magic": 181,
+    "version": 1,
+    "source_class": 3,
+    "frame_type": 6,
+    "device_id": "AG1",
+    "boot_id": 0,
+    "sequence": 1,
+    "node_time_ms": 0
+   },
+   "payload": {
+    "zone_code": 2,
+    "feature_window_ms": 10000,
+    "sample_profile": 1,
+    "synthetic_hr_enabled": 1,
+    "reserved": 0
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "compact_stationary_20B",
+  "hex": "c505ffff9a014f0034279908aa053c0f9dff8500",
+  "expected": {
+   "header": {
+    "magic": 197,
+    "node_index": 5,
+    "seq": 65535
+   },
+   "payload": {
+    "vib_peak_cg": 410,
+    "tilt_ddeg": 79,
+    "pressure_dhpa": 10036,
+    "temp": 2201,
+    "gas_mv": 1450,
+    "sound_index": 3900,
+    "flags": 157,
+    "battery_pct": null
+   },
+   "crc_ok": true
+  }
+ },
+ {
+  "name": "physio_corrupted_crc",
+  "hex": "b50101014130310001000e00000088050200ab08f902ffffa30400004600b6036100ffff5c510f00e803fa00102707009890",
+  "expected": {
+   "crc_ok": false
+  }
+ },
+ {
+  "name": "truncated_frame_error",
+  "hex": "b50101014130310001000d00000078de0100ab08f802ffffa30400004600",
+  "expect_error": true,
+  "expected": {}
+ }
+]

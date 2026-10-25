@@ -1,0 +1,20 @@
+ok   physio_paper_stage1_A01
+ok   physio_all_null
+ok   physio_full_edge_values
+ok   station_stage2_card_values
+ok   station_tilt_63deg_alarms
+ok   event_sos_stationary
+ok   event_help_request_personnel
+ok   event_possible_impact_local
+ok   event_pressure_transient
+ok   event_link_loss_gateway
+ok   event_link_restored_gateway
+ok   event_buffer_eviction_zone_max
+ok   event_tilt_negative_value
+ok   status_personnel
+ok   ack_gateway_to_A01
+ok   config_gateway
+ok   physio_crc_corrupted
+ok   compact_stage2
+ok   compact_nulls_wrap
+19 vectors verified

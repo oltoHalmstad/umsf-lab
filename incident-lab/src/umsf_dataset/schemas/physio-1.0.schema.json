@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:umsf:schema:physio:1.0",
+  "title": "UMSF physiological feature record, schema 1.0",
+  "description": "Manuscript Sec. 3.3.8 field list plus optional PROTOCOL.md 5.1 extension keys. Missing measurements are null, never zero.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "data_origin",
+    "scenario_id",
+    "site_id",
+    "device_id",
+    "boot_id",
+    "sequence",
+    "measured_at",
+    "received_at",
+    "hr_bpm",
+    "spo2_pct",
+    "skin_temp_c",
+    "motion_rms_g",
+    "quality",
+    "battery_pct"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "data_origin": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "synthetic_payload_physical_transport",
+        "bench_transcription",
+        "measured"
+      ]
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "site_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "device_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "boot_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "measured_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "hr_bpm": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 20,
+      "maximum": 250
+    },
+    "spo2_pct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 50,
+      "maximum": 100
+    },
+    "skin_temp_c": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 20,
+      "maximum": 45
+    },
+    "motion_rms_g": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 16
+    },
+    "quality": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "battery_pct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "gateway_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "zone_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "worker_pseudonym": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "ppg_ir": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "channel_flags": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 255
+    },
+    "artifact_flags": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 255
+    },
+    "hr_synthetic": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "fw_build": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "time_uncertainty_s": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 86400
+    },
+    "frame_hex": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([0-9a-fA-F]{2}){0,512}$"
+    }
+  }
+}

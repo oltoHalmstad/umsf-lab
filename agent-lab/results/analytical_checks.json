@@ -1,0 +1,444 @@
+[
+  {
+    "check": "Table 10 case A: expected/valid",
+    "expected": "12 / 10",
+    "actual": "12 / 10",
+    "pass": true
+  },
+  {
+    "check": "Table 10 case A: persistent flags",
+    "expected": 4,
+    "actual": 4,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case A: coverage %",
+    "expected": 83.3,
+    "actual": 83.3,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case A: affected proportion %",
+    "expected": 40.0,
+    "actual": 40.0,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case A: group indicator A",
+    "expected": 1,
+    "actual": 1,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case A: output",
+    "expected": "Possible group event",
+    "actual": "Possible group event",
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: expected/valid",
+    "expected": "12 / 4",
+    "actual": "12 / 4",
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: persistent flags",
+    "expected": 3,
+    "actual": 3,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: coverage %",
+    "expected": 33.3,
+    "actual": 33.3,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: affected proportion %",
+    "expected": 75.0,
+    "actual": 75.0,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: group indicator A",
+    "expected": 0,
+    "actual": 0,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: output",
+    "expected": "Insufficient group evidence; individual review",
+    "actual": "Insufficient group evidence; individual review",
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: expected/valid",
+    "expected": "12 / 10",
+    "actual": "12 / 10",
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: persistent flags",
+    "expected": 1,
+    "actual": 1,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: coverage %",
+    "expected": 83.3,
+    "actual": 83.3,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: affected proportion %",
+    "expected": 10.0,
+    "actual": 10.0,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: group indicator A",
+    "expected": 0,
+    "actual": 0,
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: output",
+    "expected": "Urgent individual assistance; no group trigger",
+    "actual": "Urgent individual assistance; no group trigger",
+    "pass": true
+  },
+  {
+    "check": "Table 10 case B: states",
+    "expected": [
+      "individual_review_indicated",
+      "insufficient_monitoring_evidence"
+    ],
+    "actual": [
+      "individual_review_indicated",
+      "insufficient_monitoring_evidence"
+    ],
+    "pass": true
+  },
+  {
+    "check": "Table 10 case C: urgent pathway independent of group rule",
+    "expected": true,
+    "actual": true,
+    "pass": true
+  },
+  {
+    "check": "Sec 4.3: N=12 min eligible max(6, ceil(0.7*12))",
+    "expected": 9,
+    "actual": 9,
+    "pass": true
+  },
+  {
+    "check": "Sec 4.3: case B cannot satisfy coverage irrespective of flags",
+    "expected": false,
+    "actual": false,
+    "pass": true
+  },
+  {
+    "check": "Study A: six-person zone min eligible",
+    "expected": 5,
+    "actual": 5,
+    "pass": true
+  },
+  {
+    "check": "Study A: effective minimum coverage %",
+    "expected": 83.3,
+    "actual": 83.3,
+    "pass": true
+  },
+  {
+    "check": "Study A: nominal 70% condition redundant",
+    "expected": true,
+    "actual": true,
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=0 infeasible",
+    "expected": "INFEASIBLE",
+    "actual": "INFEASIBLE",
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=1 infeasible",
+    "expected": "INFEASIBLE",
+    "actual": "INFEASIBLE",
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=2 infeasible",
+    "expected": "INFEASIBLE",
+    "actual": "INFEASIBLE",
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=3 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      68.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      68.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=4 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      68.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      68.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=5 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      68.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      68.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=6 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=7 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=8 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=9 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      93.75
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=10 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      100.0
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      100.0
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=11 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      100.0
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      100.0
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=12 allocation / Q",
+    "expected": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      100.0
+    ],
+    "actual": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      100.0
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=6 priority sum 15 of 16",
+    "expected": [
+      15.0,
+      16.0
+    ],
+    "actual": [
+      15.0,
+      16.0
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=4 one unit unused",
+    "expected": 1.0,
+    "actual": 1.0,
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: B=7 production individually feasible but does not displace water",
+    "expected": [
+      1,
+      0
+    ],
+    "actual": [
+      1,
+      0
+    ],
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: exhaustive enumeration of 16 binary allocations",
+    "expected": 16,
+    "actual": 16,
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: branch-and-bound agrees with enumeration for B=0..12",
+    "expected": true,
+    "actual": true,
+    "pass": true
+  },
+  {
+    "check": "Sec 4.9: infeasible case assigns no Q",
+    "expected": null,
+    "actual": null,
+    "pass": true
+  }
+]

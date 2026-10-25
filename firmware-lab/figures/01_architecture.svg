@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="872.39952pt" height="368.39952pt" viewBox="0 0 872.39952 368.39952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 368.39952 
+L 872.39952 368.39952 
+L 872.39952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 21.499992 168.117396 
+L 235.999872 168.117396 
+Q 244.579867 168.117396 244.579867 160.072308 
+L 244.579867 86.325664 
+Q 244.579867 78.280575 235.999872 78.280575 
+L 21.499992 78.280575 
+Q 12.919997 78.280575 12.919997 86.325664 
+L 12.919997 160.072308 
+Q 12.919997 168.117396 21.499992 168.117396 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #e6f2f1; stroke: #096b72; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 21.499992 329.019166 
+L 235.999872 329.019166 
+Q 244.579867 329.019166 244.579867 320.974078 
+L 244.579867 247.227433 
+Q 244.579867 239.182345 235.999872 239.182345 
+L 21.499992 239.182345 
+Q 12.919997 239.182345 12.919997 247.227433 
+L 12.919997 320.974078 
+Q 12.919997 329.019166 21.499992 329.019166 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #e6f2f1; stroke: #096b72; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 314.649828 248.568281 
+L 529.149708 248.568281 
+Q 537.729703 248.568281 537.729703 240.523193 
+L 537.729703 166.776548 
+Q 537.729703 158.73146 529.149708 158.73146 
+L 314.649828 158.73146 
+Q 306.069833 158.73146 306.069833 166.776548 
+L 306.069833 240.523193 
+Q 306.069833 248.568281 314.649828 248.568281 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #e6f2f1; stroke: #096b72; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 622.099656 248.568281 
+L 836.599536 248.568281 
+Q 845.179531 248.568281 845.179531 240.523193 
+L 845.179531 166.776548 
+Q 845.179531 158.73146 836.599536 158.73146 
+L 622.099656 158.73146 
+Q 613.519661 158.73146 613.519661 166.776548 
+L 613.519661 240.523193 
+Q 613.519661 248.568281 622.099656 248.568281 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #e6f2f1; stroke: #096b72; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 244.687527 134.536943 
+Q 275.325011 160.072442 305.103656 184.892123 
+" clip-path="url(#p4682763fcb)" style="fill: none; stroke: #096b72; stroke-linecap: round"/>
+    <path d="M 302.236168 178.336399 
+L 305.103656 184.892123 
+L 298.138584 183.252679 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #096b72; stroke: #096b72; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 244.608975 279.380494 
+Q 275.324119 250.580239 305.223679 222.544722 
+" clip-path="url(#p4682763fcb)" style="fill: none; stroke: #096b72; stroke-linecap: round"/>
+    <path d="M 298.366199 224.587997 
+L 305.223679 222.544722 
+L 302.743811 229.25667 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #096b72; stroke: #096b72; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 538.301476 193.59351 
+Q 575.626765 193.59351 611.83402 193.59351 
+" clip-path="url(#p4682763fcb)" style="fill: none; stroke: #096b72; stroke-linecap: round"/>
+    <path d="M 605.43402 190.39351 
+L 611.83402 193.59351 
+L 605.43402 196.79351 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #096b72; stroke: #096b72; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 612.947888 240.523193 
+Q 575.622599 240.523193 539.415344 240.523193 
+" clip-path="url(#p4682763fcb)" style="fill: none; stroke: #096b72; stroke-linecap: round"/>
+    <path d="M 545.815344 243.723193 
+L 539.415344 240.523193 
+L 545.815344 237.323193 
+z
+" clip-path="url(#p4682763fcb)" style="fill: #096b72; stroke: #096b72; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(88.082588 120.545665)">Personnel node</text>
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(58.728057 133.855236)">PPG · temperature · motion</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(87.622823 281.447435)">Stationary node</text>
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(55.944541 294.757005)">IMU · pressure · gas · sound</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(388.422815 200.99655)">BLE gateway</text>
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(365.937268 214.306121)">identity · RAM · JSON</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(703.272721 200.99655)">Site agent</text>
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(672.434049 214.306121)">durable storage · ACK</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="575.624682" y="170.128669" transform="rotate(-0 575.624682 170.128669)">MQTT</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="575.624682" y="267.340154" transform="rotate(-0 575.624682 267.340154)">App ACK</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="436.19976" y="344.438919" transform="rotate(-0 436.19976 344.438919)">Native laboratory: codec, features, rules, queues and freshness — no hardware claims</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 13.2px; font-family: 'Inter', 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="436.19976" y="19.9875" transform="rotate(-0 436.19976 19.9875)">From local evidence to acknowledged storage</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4682763fcb">
+   <rect x="7.2" y="25.9875" width="857.99952" height="335.21202"/>
+  </clipPath>
+ </defs>
+</svg>

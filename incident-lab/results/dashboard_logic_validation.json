@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "control_combinations": 1830,
+  "method": "JavaScript executed with a minimal DOM test adapter",
+  "browser_visual_rendering_tested": false,
+  "checks": [
+    "All nodes/channels/cutoffs execute",
+    "No future arrivals displayed",
+    "No invalid SVG coordinates",
+    "Initial empty evidence",
+    "SA1 final unknown / SB2 final current"
+  ]
+}

@@ -1,0 +1,563 @@
+[
+  {
+    "name": "physio_paper_stage1_A01",
+    "note": "Values of the paper Stage-1 record; fields absent from that record are null (measurements) or 0 (counters). hr is the synthetic test field (HR_SYNTHETIC). Gateway text line for this frame: RX,AG1,152639,F,A01,1,13,122488,2219,1187,97,76,TPMH (paper display without H: TPM).",
+    "length": 50,
+    "hex": "b50101014130310001000d00000078de0100ab08f802ffffa3040000ffffffff6100ffffffff0f00000000001027010094dc",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 1,
+        "device_id": "A01",
+        "boot_id": 1,
+        "sequence": 13,
+        "node_time_ms": 122488
+      },
+      "payload": {
+        "skin_temp": 2219,
+        "hr": 760,
+        "spo2": null,
+        "ppg_ir_mean": 1187,
+        "ppg_red_mean_div16": null,
+        "ppg_valid_permille": null,
+        "motion_rms_mg": 97,
+        "gsr_mv": null,
+        "quality_pct": null,
+        "battery_pct": null,
+        "channel_flags": 15,
+        "artifact_flags": 0,
+        "n_ppg_samples": 0,
+        "n_imu_samples": 0,
+        "window_ms": 10000,
+        "fw_build": 1
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "physio_all_null",
+    "note": "All measurement fields carry their null sentinel (missing is never zero).",
+    "length": 50,
+    "hex": "b5010101413032000300010000001c2700000080ffffffffffffffffffffffffffffffffffff003800000000102701001330",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 1,
+        "device_id": "A02",
+        "boot_id": 3,
+        "sequence": 1,
+        "node_time_ms": 10012
+      },
+      "payload": {
+        "skin_temp": null,
+        "hr": null,
+        "spo2": null,
+        "ppg_ir_mean": null,
+        "ppg_red_mean_div16": null,
+        "ppg_valid_permille": null,
+        "motion_rms_mg": null,
+        "gsr_mv": null,
+        "quality_pct": null,
+        "battery_pct": null,
+        "channel_flags": 0,
+        "artifact_flags": 56,
+        "n_ppg_samples": 0,
+        "n_imu_samples": 0,
+        "window_ms": 10000,
+        "fw_build": 1
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "physio_full_edge_values",
+    "note": "Negative temperature, near-max boot/sequence/node time, GSR and SOS flags.",
+    "length": 50,
+    "hex": "b501010141303300fefffeffffffd8feffff83ffffffffff209401000314db033801aa052e513701e603fa00102765001ba0",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 1,
+        "device_id": "A03",
+        "boot_id": 65534,
+        "sequence": 4294967294,
+        "node_time_ms": 4294967000
+      },
+      "payload": {
+        "skin_temp": -125,
+        "hr": null,
+        "spo2": null,
+        "ppg_ir_mean": 103456,
+        "ppg_red_mean_div16": 5123,
+        "ppg_valid_permille": 987,
+        "motion_rms_mg": 312,
+        "gsr_mv": 1450,
+        "quality_pct": 46,
+        "battery_pct": 81,
+        "channel_flags": 55,
+        "artifact_flags": 1,
+        "n_ppg_samples": 998,
+        "n_imu_samples": 250,
+        "window_ms": 10000,
+        "fw_build": 101
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "station_stage2_card_values",
+    "note": "Displayed Stage-2 card values (0.03 g, 0.4 deg, 1003.7 hPa, 21.9 C, 0.80 V, sound 262, presence) transcribed into a frame; no baseline, so tilt_delta is null and attachment_uncertain is set.",
+    "length": 52,
+    "hex": "b50102025330310002003900000048ee00000300ffff04000080352700808e082003ffff060181ffff1fc800e8030100010033e1",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 2,
+        "frame_type": 2,
+        "device_id": "S01",
+        "boot_id": 2,
+        "sequence": 57,
+        "node_time_ms": 61000
+      },
+      "payload": {
+        "vib_peak_cg": 3,
+        "accel_rms_mg": null,
+        "tilt_ddeg": 4,
+        "tilt_delta_ddeg": null,
+        "pressure_dhpa": 10037,
+        "pressure_delta_pa": null,
+        "temp": 2190,
+        "gas_mv": 800,
+        "gas_baseline_mv": null,
+        "sound_index": 262,
+        "flags": 129,
+        "quality_pct": null,
+        "battery_pct": null,
+        "sensor_flags": 31,
+        "n_imu_samples": 200,
+        "window_ms": 1000,
+        "zone_code": 1,
+        "fw_build": 1
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "station_tilt_63deg_alarms",
+    "note": "Tilt change 63.0 deg vs baseline, gas alarm, loud sound, SOS; PIR not ok.",
+    "length": 52,
+    "hex": "b50102025330320005008403000028cf0d0029001200760276022527fdff3efeba041b030807ba50400fc700e803020001003ba2",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 2,
+        "frame_type": 2,
+        "device_id": "S02",
+        "boot_id": 5,
+        "sequence": 900,
+        "node_time_ms": 905000
+      },
+      "payload": {
+        "vib_peak_cg": 41,
+        "accel_rms_mg": 18,
+        "tilt_ddeg": 630,
+        "tilt_delta_ddeg": 630,
+        "pressure_dhpa": 10021,
+        "pressure_delta_pa": -3,
+        "temp": -450,
+        "gas_mv": 1210,
+        "gas_baseline_mv": 795,
+        "sound_index": 1800,
+        "flags": 186,
+        "quality_pct": 80,
+        "battery_pct": 64,
+        "sensor_flags": 15,
+        "n_imu_samples": 199,
+        "window_ms": 1000,
+        "zone_code": 2,
+        "fw_build": 1
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_sos_stationary",
+    "note": "SOS button GPIO27 on a stationary node (urgent).",
+    "length": 32,
+    "hex": "b50102035330310002003a0000003cf000000103e8030000010001003900b0ef",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 2,
+        "frame_type": 3,
+        "device_id": "S01",
+        "boot_id": 2,
+        "sequence": 58,
+        "node_time_ms": 61500
+      },
+      "payload": {
+        "event_type": 1,
+        "level": 3,
+        "value": 1000,
+        "rule_version": 1,
+        "zone_code": 1,
+        "related_seq_lo": 57
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_help_request_personnel",
+    "note": "Personnel help button (urgent, independent of group rules).",
+    "length": 32,
+    "hex": "b50101034130310001000e00000048e801000b03e8030000010001000d00bddf",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 3,
+        "device_id": "A01",
+        "boot_id": 1,
+        "sequence": 14,
+        "node_time_ms": 125000
+      },
+      "payload": {
+        "event_type": 11,
+        "level": 3,
+        "value": 1000,
+        "rule_version": 1,
+        "zone_code": 1,
+        "related_seq_lo": 13
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_possible_impact_local",
+    "note": "Unverified local composite (impact + loud/pressure within 2 s), value 2.5 g.",
+    "length": 32,
+    "hex": "b50102035330310002003b00000002f300000a02c4090000010001003a00c02f",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 2,
+        "frame_type": 3,
+        "device_id": "S01",
+        "boot_id": 2,
+        "sequence": 59,
+        "node_time_ms": 62210
+      },
+      "payload": {
+        "event_type": 10,
+        "level": 2,
+        "value": 2500,
+        "rule_version": 1,
+        "zone_code": 1,
+        "related_seq_lo": 58
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_pressure_transient",
+    "note": "Pressure transient 150 Pa within 1 s.",
+    "length": 32,
+    "hex": "b50102035330310002003c0000005cf300000701f0490200010001003a00e764",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 2,
+        "frame_type": 3,
+        "device_id": "S01",
+        "boot_id": 2,
+        "sequence": 60,
+        "node_time_ms": 62300
+      },
+      "payload": {
+        "event_type": 7,
+        "level": 1,
+        "value": 150000,
+        "rule_version": 1,
+        "zone_code": 1,
+        "related_seq_lo": 58
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_link_loss_gateway",
+    "note": "Gateway-generated link_loss (source_class 3, device_id = gateway); 2.4 s since last frame.",
+    "length": 32,
+    "hex": "b50103034147310003004d000000905f0100090260090000010001003c00c1c5",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 3,
+        "frame_type": 3,
+        "device_id": "AG1",
+        "boot_id": 3,
+        "sequence": 77,
+        "node_time_ms": 90000
+      },
+      "payload": {
+        "event_type": 9,
+        "level": 2,
+        "value": 2400,
+        "rule_version": 1,
+        "zone_code": 1,
+        "related_seq_lo": 60
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_link_restored_gateway",
+    "note": "Gateway-generated link_restored after a 240 s outage.",
+    "length": 32,
+    "hex": "b50103034147310003004e000000100905000c0080a90300010001003c00220d",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 3,
+        "frame_type": 3,
+        "device_id": "AG1",
+        "boot_id": 3,
+        "sequence": 78,
+        "node_time_ms": 330000
+      },
+      "payload": {
+        "event_type": 12,
+        "level": 0,
+        "value": 240000,
+        "rule_version": 1,
+        "zone_code": 1,
+        "related_seq_lo": 60
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_buffer_eviction_zone_max",
+    "note": "Node buffer evicted 2 records (value = count x1000); zone_code 0xFFFF = null (zone unknown).",
+    "length": 32,
+    "hex": "b50101034130310001002d000000d0dd06000d02d00700000100ffff000086d7",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 3,
+        "device_id": "A01",
+        "boot_id": 1,
+        "sequence": 45,
+        "node_time_ms": 450000
+      },
+      "payload": {
+        "event_type": 13,
+        "level": 2,
+        "value": 2000,
+        "rule_version": 1,
+        "zone_code": null,
+        "related_seq_lo": 0
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "event_tilt_negative_value",
+    "note": "Signed i32 value round-trip (-12.345).",
+    "length": 32,
+    "hex": "b50102035330320005008503000010d30d000602c7cfffff010002008403faeb",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 2,
+        "frame_type": 3,
+        "device_id": "S02",
+        "boot_id": 5,
+        "sequence": 901,
+        "node_time_ms": 906000
+      },
+      "payload": {
+        "event_type": 6,
+        "level": 2,
+        "value": -12345,
+        "rule_version": 1,
+        "zone_code": 2,
+        "related_seq_lo": 900
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "status_personnel",
+    "note": "STATUS: battery unknown (null), 5 buffered, 2 evicted, RSSI -67 dBm.",
+    "length": 36,
+    "hex": "b50101044130310001000d000000d0fb0100ff050200780000000c00000001000743b406",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 4,
+        "device_id": "A01",
+        "boot_id": 1,
+        "sequence": 13,
+        "node_time_ms": 130000
+      },
+      "payload": {
+        "battery_pct": null,
+        "buffered_records": 5,
+        "evicted_total": 2,
+        "sent_total": 120,
+        "acked_up_to_seq": 12,
+        "fw_build": 1,
+        "sensor_flags": 7,
+        "rssi_neg": 67
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "ack_gateway_to_A01",
+    "note": "Application ACK relayed only after site-agent COMMIT: boot 1 up to seq 13.",
+    "length": 28,
+    "hex": "b50103054147310003004f000000f80c0500010000000d00000024fe",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 3,
+        "frame_type": 5,
+        "device_id": "AG1",
+        "boot_id": 3,
+        "sequence": 79,
+        "node_time_ms": 331000
+      },
+      "payload": {
+        "target_boot_id": 1,
+        "reserved": 0,
+        "ack_up_to_seq": 13
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "config_gateway",
+    "note": "CONFIG: zone 2, 10 s window, profile 0, synthetic HR test field enabled.",
+    "length": 28,
+    "hex": "b501030641473100030050000000ec0e050002001027000100003922",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 3,
+        "frame_type": 6,
+        "device_id": "AG1",
+        "boot_id": 3,
+        "sequence": 80,
+        "node_time_ms": 331500
+      },
+      "payload": {
+        "zone_code": 2,
+        "feature_window_ms": 10000,
+        "sample_profile": 0,
+        "synthetic_hr_enabled": 1,
+        "reserved": 0
+      },
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "physio_crc_corrupted",
+    "note": "Negative vector: one payload bit flipped after CRC; must be rejected.",
+    "length": 50,
+    "hex": "b50101014130310001000d00000078de0100ab08f902ffffa3040000ffffffff6100ffffffff0f00000000001027010094dc",
+    "expected": {
+      "header": {
+        "magic": 181,
+        "version": 1,
+        "source_class": 1,
+        "frame_type": 1,
+        "device_id": "A01",
+        "boot_id": 1,
+        "sequence": 13,
+        "node_time_ms": 122488
+      },
+      "payload": {
+        "skin_temp": 2219,
+        "hr": 761,
+        "spo2": null,
+        "ppg_ir_mean": 1187,
+        "ppg_red_mean_div16": null,
+        "ppg_valid_permille": null,
+        "motion_rms_mg": 97,
+        "gsr_mv": null,
+        "quality_pct": null,
+        "battery_pct": null,
+        "channel_flags": 15,
+        "artifact_flags": 0,
+        "n_ppg_samples": 0,
+        "n_imu_samples": 0,
+        "window_ms": 10000,
+        "fw_build": 1
+      },
+      "crc_ok": false
+    }
+  },
+  {
+    "name": "compact_stage2",
+    "note": "20-byte COMPACT packet (no fragment header) with Stage-2 card values.",
+    "length": 20,
+    "hex": "c50101020300040035278e082003060181ff7e58",
+    "expected": {
+      "magic": 197,
+      "node_index": 1,
+      "seq": 513,
+      "vib_peak_cg": 3,
+      "tilt_ddeg": 4,
+      "pressure_dhpa": 10037,
+      "temp": 2190,
+      "gas_mv": 800,
+      "sound_index": 262,
+      "flags": 129,
+      "battery_pct": null,
+      "crc_ok": true
+    }
+  },
+  {
+    "name": "compact_nulls_wrap",
+    "note": "COMPACT with null sentinels and seq at the u16 wrap point.",
+    "length": 20,
+    "hex": "c503ffffffff0080ffff0080ffffffff023797c2",
+    "expected": {
+      "magic": 197,
+      "node_index": 3,
+      "seq": 65535,
+      "vib_peak_cg": null,
+      "tilt_ddeg": null,
+      "pressure_dhpa": null,
+      "temp": null,
+      "gas_mv": null,
+      "sound_index": null,
+      "flags": 2,
+      "battery_pct": 55,
+      "crc_ok": true
+    }
+  }
+]

@@ -1,0 +1,309 @@
+{
+  "policy_id": "umsf-default-command-policy",
+  "policy_version": "1.0.0",
+  "_note": "DEFAULTS FOR SIMULATION. Incident command owns and edits this file. Urgency h_j and priority p_j are command-assigned policy values, not survival probabilities and not medical triage categories (Sec. 3.9.1).",
+  "decision_authority": {
+    "urgent_personnel_assistance": [
+      "rescue_coordinator",
+      "emergency_coordinator"
+    ],
+    "rescue_task_assignment": [
+      "rescue_coordinator",
+      "incident_command"
+    ],
+    "personnel_accounting": [
+      "incident_coordination_team"
+    ],
+    "structural_access_status": [
+      "qualified_assessor",
+      "incident_command"
+    ],
+    "essential_service_preservation": [
+      "infrastructure_operator"
+    ],
+    "recovery_scheduling": [
+      "recovery_management"
+    ],
+    "physiological_group_warning": [
+      "occupational_health",
+      "site_safety_officer"
+    ]
+  },
+  "group_rule": {
+    "n_min": 3,
+    "c_min": 0.7,
+    "m_min": 2,
+    "theta": 0.5,
+    "_note": "development parameters for the synthetic demo; the paper's illustrative values are n_min 6, C_min 0.70, m_min 3, theta 0.30 (Sec. 4.1)"
+  },
+  "physio": {
+    "features": {
+      "hr_bpm": 0.5,
+      "skin_temp_c": 0.5
+    },
+    "eps": {
+      "hr_bpm": 1.0,
+      "skin_temp_c": 0.1
+    },
+    "z_max": 6.0,
+    "tau": 3.0,
+    "rho": 0.6,
+    "L": 5,
+    "v_min": 3,
+    "window_s": 60,
+    "freshness_s": 60,
+    "quality_min": 0.8,
+    "min_records_per_window": 3,
+    "min_reference_windows": 8,
+    "motion_context_threshold_g": 0.15,
+    "accept_synthetic_hr": true
+  },
+  "freshness_s": {
+    "personnel_observation": 60,
+    "station_current": 60,
+    "mechanical_excursion": 1800,
+    "hazard_alarm": 600,
+    "presence_cue": 300,
+    "responder_report": 1800,
+    "operator_report": 1800,
+    "asset_status": 3600,
+    "external_alert": 7200,
+    "link_gap_threshold": 60
+  },
+  "rescue": {
+    "planning_interval_s": 900,
+    "travel_speed_m_per_s": 1.2,
+    "task_kinds": {
+      "assist_sos": {
+        "h": 1,
+        "p": 100,
+        "setup_s": 120,
+        "competencies": [
+          "first_aid",
+          "search"
+        ],
+        "teams_required": 1,
+        "label_uk": "Допомога за сигналом SOS"
+      },
+      "assist_help_request": {
+        "h": 1,
+        "p": 90,
+        "setup_s": 120,
+        "competencies": [
+          "first_aid"
+        ],
+        "teams_required": 1,
+        "label_uk": "Допомога за запитом допомоги"
+      },
+      "locate_unaccounted": {
+        "h": 1,
+        "p": 70,
+        "setup_s": 300,
+        "competencies": [
+          "search"
+        ],
+        "teams_required": 1,
+        "label_uk": "Встановлення місцеперебування неврахованої особи"
+      },
+      "check_presence_cue": {
+        "h": 0,
+        "p": 40,
+        "setup_s": 300,
+        "competencies": [
+          "search"
+        ],
+        "teams_required": 1,
+        "label_uk": "Перевірка можливої ознаки присутності (не ознака життя)"
+      },
+      "group_physiological_review": {
+        "h": 0,
+        "p": 30,
+        "setup_s": 300,
+        "competencies": [
+          "first_aid"
+        ],
+        "teams_required": 1,
+        "label_uk": "Перевірка можливої групової фізіологічної події"
+      }
+    },
+    "hazard_ppe": {
+      "gas": [
+        "gas_monitor",
+        "scba"
+      ],
+      "impact_unassessed": [
+        "helmet"
+      ]
+    },
+    "unknown_hazard_requires_ppe": true,
+    "multi_team_task_kinds": []
+  },
+  "recovery": {
+    "task_templates": {
+      "structural_inspection": {
+        "title_uk": "Обстеження конструкцій кваліфікованим експертом",
+        "competencies": [
+          "structural_assessment"
+        ],
+        "equipment": {},
+        "duration_s": 2700,
+        "priority": 90,
+        "entry": true,
+        "requires_hazard_clearance": true
+      },
+      "gas_hazard_check": {
+        "title_uk": "Перевірка газової небезпеки сертифікованим приладом",
+        "competencies": [
+          "gas_detection"
+        ],
+        "equipment": {
+          "certified_gas_detector": 1
+        },
+        "duration_s": 1200,
+        "priority": 95,
+        "entry": true,
+        "requires_hazard_clearance": false
+      },
+      "debris_clearance": {
+        "title_uk": "Розчищення уламків",
+        "competencies": [
+          "debris_clearance"
+        ],
+        "equipment": {
+          "loader": 1
+        },
+        "duration_s": 5400,
+        "priority": 50,
+        "entry": true,
+        "requires_hazard_clearance": true
+      },
+      "temporary_power_path": {
+        "title_uk": "Підготовка тимчасової схеми живлення (комутацію виконує уповноважений оператор)",
+        "competencies": [
+          "electrical"
+        ],
+        "equipment": {
+          "mobile_generator": 1,
+          "cable_kit": 1
+        },
+        "duration_s": 3600,
+        "priority": 80,
+        "entry": true,
+        "requires_hazard_clearance": true
+      },
+      "comms_restoration": {
+        "title_uk": "Відновлення зв'язку / шлюзу",
+        "competencies": [
+          "comms"
+        ],
+        "equipment": {
+          "spare_gateway": 1
+        },
+        "duration_s": 1800,
+        "priority": 85,
+        "entry": true,
+        "requires_hazard_clearance": true
+      },
+      "water_support_restoration": {
+        "title_uk": "Відновлення водопостачання (підтримка)",
+        "competencies": [
+          "water_systems"
+        ],
+        "equipment": {
+          "pump_kit": 1
+        },
+        "duration_s": 3600,
+        "priority": 70,
+        "entry": true,
+        "requires_hazard_clearance": true
+      },
+      "lighting_restoration": {
+        "title_uk": "Відновлення аварійного освітлення",
+        "competencies": [
+          "electrical"
+        ],
+        "equipment": {
+          "cable_kit": 1
+        },
+        "duration_s": 1800,
+        "priority": 75,
+        "entry": true,
+        "requires_hazard_clearance": true
+      }
+    },
+    "service_restoration_task": {
+      "communications": "comms_restoration",
+      "emergency_lighting": "lighting_restoration",
+      "water_support": "water_support_restoration",
+      "_note": "service_id -> recovery task template"
+    },
+    "actuation_task_kinds": [
+      "restart_production",
+      "switch_power_feed",
+      "operate_ventilation",
+      "unlock_area",
+      "stop_process"
+    ],
+    "crew_roles": [
+      "recovery",
+      "assessment"
+    ]
+  },
+  "llm": {
+    "forbidden_phrases": [
+      "загиб",
+      "загинул",
+      "загинув",
+      "мертв",
+      "смерть",
+      "смерті",
+      "труп",
+      "ракетний удар підтверджено",
+      "підтверджений ракетний удар",
+      "підтверджено ракетн",
+      "будівля зруйнована",
+      "обвал стався",
+      "колапс",
+      "безпечно для входу",
+      "вхід безпечний",
+      "вхід дозволено",
+      "категорія сортування",
+      "тріаж",
+      "триаж",
+      "діагноз",
+      "отруєння",
+      "casualt",
+      "killed",
+      "dead",
+      "collapse",
+      "safe to enter",
+      "missile strike confirmed",
+      "confirmed missile strike",
+      "triage category",
+      "diagnos"
+    ]
+  },
+  "competency_aliases": {
+    "_note": "maps external competency vocabularies (e.g. P1 teams.json) onto task requirements; edited by incident command",
+    "search_and_rescue": [
+      "search"
+    ],
+    "gas_detection_qualified_instrument": [
+      "gas_detection"
+    ],
+    "electrical_isolation": [
+      "electrical"
+    ],
+    "backup_power": [
+      "electrical"
+    ],
+    "utility_restoration": [
+      "water_systems"
+    ],
+    "medical_assessment": [
+      "first_aid"
+    ]
+  },
+  "access": [],
+  "team_overrides": {}
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "site_id": "UMSF-A",
+    "zones": [
+      {
+        "zone_id": "Z1",
+        "name": "Адміністративний блок",
+        "expected_workers": [
+          "W01",
+          "W02"
+        ],
+        "stationary_nodes": [
+          "S01"
+        ]
+      },
+      {
+        "zone_id": "Z2",
+        "name": "Механічний цех",
+        "expected_workers": [
+          "W03",
+          "W04",
+          "W05",
+          "W06",
+          "W07"
+        ],
+        "stationary_nodes": [
+          "S02"
+        ]
+      },
+      {
+        "zone_id": "Z3",
+        "name": "Насосна (підвал)",
+        "expected_workers": [
+          "W08",
+          "W09"
+        ],
+        "stationary_nodes": [
+          "S03"
+        ]
+      },
+      {
+        "zone_id": "Z6",
+        "name": "Пункт збору / укриття",
+        "expected_workers": [],
+        "stationary_nodes": [
+          "S06"
+        ]
+      }
+    ],
+    "device_map": {
+      "A01": "W01",
+      "A02": "W02",
+      "A03": "W03",
+      "A04": "W04",
+      "A05": "W05",
+      "A06": "W06",
+      "A07": "W07",
+      "A08": "W08",
+      "A09": "W09"
+    },
+    "valid_from": "2026-10-14T07:00:00Z",
+    "valid_to": "2026-10-14T17:10:00Z"
+  },
+  {
+    "site_id": "UMSF-B",
+    "zones": [
+      {
+        "zone_id": "Z4",
+        "name": "Диспетчерська",
+        "expected_workers": [
+          "W10",
+          "W11"
+        ],
+        "stationary_nodes": [
+          "S04"
+        ]
+      },
+      {
+        "zone_id": "Z5",
+        "name": "Склад",
+        "expected_workers": [
+          "W12"
+        ],
+        "stationary_nodes": [
+          "S05"
+        ]
+      }
+    ],
+    "device_map": {
+      "A10": "W10",
+      "A11": "W11",
+      "A12": "W12"
+    },
+    "valid_from": "2026-10-14T07:00:00Z",
+    "valid_to": "2026-10-14T17:10:00Z"
+  }
+]

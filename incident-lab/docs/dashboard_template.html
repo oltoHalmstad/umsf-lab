@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UMSF Incident Explorer</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:#203044;font:15px system-ui,sans-serif}main{max-width:1200px;margin:auto;padding:24px}header{border-bottom:1px solid #d4dfe6;margin-bottom:18px}h1{margin:8px 0;font-size:28px;letter-spacing:-.8px}p{line-height:1.5}.eyebrow{font-size:12px;letter-spacing:2px;color:#168a86;font-weight:800}.sub{color:#5d6c7e;font-size:14px}.controls{display:flex;gap:18px;flex-wrap:wrap;background:white;padding:18px;border-radius:12px}label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700;color:#536273}select{padding:9px;border:1px solid #cbd5de;border-radius:6px;font-size:14px;min-width:140px}input{width:260px;accent-color:#168a86}.status{margin-left:auto;align-self:center;padding:9px 14px;border-radius:20px;font-weight:700;background:#dcebe9}.chart{background:white;padding:10px;border-radius:12px;margin-top:16px}svg{width:100%;height:315px;display:block}text{font:12px system-ui;fill:#526578}.foot{font-size:12px;color:#627183}.events{margin-top:15px;background:white;border-radius:12px;padding:15px;max-height:140px;overflow:auto}li{margin:5px 0;font-size:13px}#summary{font-size:13px}#timeLabel{color:#168a86;font-weight:800}.badge{padding:3px 8px;background:#fff0d4;border-radius:4px;color:#805c21;font-size:11px}@media(max-width:600px){main{padding:12px}.controls{gap:10px}h1{font-size:22px}.status{margin-left:0}svg{height:280px}input{width:210px}}
+</style></head><body><main>
+<header><div class="eyebrow">UMSF / EVIDENCE LAB</div><h1>Incident replay explorer</h1>
+<p class="sub"><span class="badge">SYNTHETIC DATA</span> As-of observations with communication gaps preserved. Time origin: 05:00 UTC, 14 October 2026.</p></header>
+<div class="controls"><label>Stationary node<select id="node" aria-label="Stationary node"></select></label>
+<label>Observed channel<select id="channel" aria-label="Observed channel"></select></label>
+<label>Reporting cutoff <span id="timeLabel"></span><input id="time" aria-label="Reporting cutoff in minutes" type="range" min="0" max="30" step="0.5" value="15"></label>
+<div id="status" class="status"></div></div>
+<div class="chart"><svg id="chart" viewBox="0 0 1000 310" role="img" aria-label="Time series limited to records received by cutoff"></svg><p id="summary"></p></div>
+<div class="events"><b>Events reported by this cutoff, for the selected site</b><ul id="events"></ul></div>
+<p class="foot">Gas voltage is uncalibrated. Link loss means unknown evidence. This replay does not infer casualties, collapse, or gas concentration. Historical records may remain visible while current evidence is unknown. No data are sent anywhere.</p>
+</main><script>
+const D=__DATA__;
+if(D.columns){const c=D.columns,f=Object.keys(D.fields);D.records=c.s.map((s,i)=>{const r={node:D.nodes[c.node[i]],s,arrival:c.arrival[i]};for(const k of f)r[k]=c[k][i];return r});delete D.columns}
+const el=id=>document.getElementById(id), ns='http://www.w3.org/2000/svg';
+for(const n of D.nodes){const o=document.createElement('option');o.value=n;o.textContent=n;el('node').append(o)}
+for(const [key,label] of Object.entries(D.fields)){const o=document.createElement('option');o.value=key;o.textContent=label;el('channel').append(o)}
+function svg(tag,attrs={},text=''){const e=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(text)e.textContent=text;el('chart').append(e);return e}
+function draw(){
+ const node=el('node').value,channel=el('channel').value,minute=Number(el('time').value),cutoff=minute*60;
+ el('timeLabel').textContent=minute.toFixed(1)+' min';
+ const state=D.snapshots[Math.round(minute*2)][node]||'unknown';
+ el('status').textContent='Evidence: '+state;el('status').style.background=state==='current'?'#dceee9':state==='stale'?'#fff0d4':'#e0e5eb';
+ const rows=D.records.filter(r=>r.node===node&&r.s<=cutoff&&r.arrival<=cutoff&&r[channel]!==null&&Number.isFinite(r[channel])).sort((a,b)=>a.s-b.s);
+ const chart=el('chart');chart.replaceChildren();
+ const left=75,right=975,top=30,bottom=260;
+ let low=rows.length?Math.min(...rows.map(r=>r[channel])):0,high=rows.length?Math.max(...rows.map(r=>r[channel])):1;
+ const pad=high===low?Math.max(Math.abs(high)*.05,.1):(high-low)*.1;low-=pad;high+=pad;
+ const X=s=>left+s/1800*(right-left),Y=v=>bottom-(v-low)/(high-low)*(bottom-top);
+ for(let i=0;i<=5;i++){const v=low+(high-low)*i/5,y=Y(v);svg('line',{x1:left,x2:right,y1:y,y2:y,stroke:'#e7edf2'});svg('text',{x:left-9,y:y+4,'text-anchor':'end'},v.toFixed(2))}
+ for(let m=0;m<=30;m+=5){svg('text',{x:X(m*60),y:282,'text-anchor':'middle'},String(m));svg('line',{x1:X(m*60),x2:X(m*60),y1:top,y2:bottom,stroke:'#f0f3f5'})}
+ svg('text',{x:left,y:17},D.fields[channel]);svg('text',{x:520,y:305,'text-anchor':'middle'},'Minutes since scenario start (UTC)');
+ let path='';for(let i=0;i<rows.length;i++){const r=rows[i],gap=i===0||r.s-rows[i-1].s>1.5;path+=(gap?'M':'L')+X(r.s).toFixed(2)+' '+Y(r[channel]).toFixed(2)+' '}
+ svg('path',{d:path,fill:'none',stroke:'#168a86','stroke-width':2});
+ if(rows.length===1)svg('circle',{cx:X(rows[0].s),cy:Y(rows[0][channel]),r:3,fill:'#168a86'});
+ svg('line',{x1:X(cutoff),x2:X(cutoff),y1:top,y2:bottom,stroke:'#dd922d','stroke-dasharray':'5 4'});
+ if(!rows.length)svg('text',{x:520,y:140,'text-anchor':'middle'},'No received observations available at this cutoff');
+ const latest=rows.at(-1);
+ el('summary').textContent=rows.length+' available samples. '+(latest?'Last received observation: '+(latest.s/60).toFixed(2)+' min; '+D.fields[channel]+' = '+latest[channel]+'.':'No measurement is replaced by zero.')+' Missing one-second intervals remain gaps. The vertical scale adapts to the available values.';
+ const site=node.startsWith('SA')?'SITE-A':'SITE-B';el('events').replaceChildren();
+ for(const event of D.events.filter(e=>e.site===site&&e.reported<=cutoff).sort((a,b)=>a.reported-b.reported)){const li=document.createElement('li');li.textContent=(event.reported/60).toFixed(2)+' min | '+event.type.replaceAll('_',' ')+' | '+event.source.replaceAll('_',' ');el('events').append(li)}
+ if(!el('events').children.length){const li=document.createElement('li');li.textContent='No events reported by this cutoff.';el('events').append(li)}
+ window.UMSF_REPLAY_STATE={node,channel,minute,status:state,samples:rows.length,events:el('events').children.length};
+}
+for(const id of ['node','channel','time'])el(id).addEventListener('input',draw);draw();
+</script></body></html>

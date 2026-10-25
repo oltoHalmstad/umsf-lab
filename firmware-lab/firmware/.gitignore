@@ -1,0 +1,6 @@
+.pio/
+test/host/build/
+include/secrets.h
+data/*.pem
+data/*.crt
+data/*.key

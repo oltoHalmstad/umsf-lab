@@ -1,0 +1,43 @@
+TITLE
+UMSF Incident Lab: standalone Colab notebook for evidence-aware multisensor analysis
+
+VERSION
+1.2.0
+
+RESOURCE TYPE
+Software
+
+LANGUAGE
+English (eng)
+
+DESCRIPTION
+UMSF Incident Lab is a self-contained English research notebook for reproducible analysis of multisensor monitoring and incident-support data. The notebook embeds the original Python analytical core, schemas, tests and example data in a SHA-256-verified payload. It runs without an external dataset download, a GitHub repository, API credentials or mounted Google Drive. Missing analysis dependencies are installed by the setup section. After the three setup cells, every analysis cell is self-sufficient: shared results are computed on first use and cached, so any cell can be run alone, in any order, or after a kernel restart.
+
+The project includes 67 notebook cells, of which 34 are executable, and 30 figure sets exported in PNG and SVG. Analyses cover data provenance, missing channels, arrival delays, activity-conditioned synthetic baselines, detector confusion matrices, false-negative decomposition, threshold and seed sensitivity, roster-based monitoring coverage, deduplication, conflicting-identity quarantine, and arrival-cutoff-aware summaries. A browser-native offline explorer provides node, channel and reporting-time controls for the simulated incident scenario. Additional sections demonstrate bench-record interpretation, binary protocol decoding and fragmentation, host-side cryptographic checks, capacity-constrained service allocation and analytical storage sizing.
+
+The supplied incident scenario comprises 2,024 physiological records, 7,660 stationary records and 30 events. Study A generates 40,320 synthetic feature records and evaluates 4,800 zone-minutes. Study B processes 2,173 input lines and exports 2,159 nonconflicting records. Local execution verified all 34 executable cells in one sequential run and each of the 31 analysis cells alone in a fresh kernel, all 58 original tests and all 25 reference-comparison rows. Execution evidence, environment versions and checksums are included. Hosted Google Colab frontend execution has not been independently tested.
+
+Study A and Study B are synthetic re-implementations constructed to reproduce supplied manuscript aggregates; matching these values is not independent empirical validation. Stage 1 is a supplied bench transcription with a synthetic HR test field, and Stage 2 is a synthetic re-enactment. No human-subject data are included. Missing observations remain missing; uncalibrated gas voltage is not interpreted as gas concentration, and communication loss is not treated as evidence of injury or collapse. The software makes no clinical, structural or certified safety claims and performs no actuation or responder dispatch. Notebook release 1.2.0 preserves analytical core version 1.0.0.
+
+KEYWORDS
+critical infrastructure; multisensor monitoring; incident support; data quality; monitoring coverage; evidence provenance; physiological monitoring; building-state monitoring; gas channel; BLE; SQLite; synthetic data; reproducibility; Google Colab; Jupyter notebook; visual analytics
+
+CREATORS (retained from supplied metadata)
+1. Torstensson, Olga — Halmstad University — ORCID: 0009-0007-2169-6851
+2. Prokopovych-Tkachenko, Dmytro — University of Customs and Finance — ORCID: 0000-0002-6590-3898
+3. Adilzhanova, Saltanat — Almaty Technological University — ORCID: 0000-0003-1768-064X
+4. Tykhonenko, Mariia — University of Customs and Finance — ORCID: 0009-0000-5192-3241
+5. Beketova, Gulzhanat — Almaty University of Energy and Communications — ORCID: 0000-0001-7160-1514
+6. Sydybayeva, Madina — Satbayev University — ORCID: 0000-0002-8950-5421
+
+LICENSE
+MIT
+
+RELEASE DATE
+2026-10-14
+
+DOI
+Not assigned in this package. Add the actual DOI reserved or issued for your Zenodo record.
+
+DEPOSIT STATUS
+Prepared for deposit; this package does not publish or create a Zenodo record.

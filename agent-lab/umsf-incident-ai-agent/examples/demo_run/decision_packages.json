@@ -1,0 +1,1173 @@
+{
+  "as_of": "2026-10-14T09:10:00Z",
+  "auto_approve_for_simulation": false,
+  "packages": [
+    {
+      "package_id": "PKG-urgent_personnel_assistance-c21bce43a6",
+      "domain": "urgent_personnel_assistance",
+      "title_uk": "Термінова допомога персоналу",
+      "authorising_roles": [
+        "rescue_coordinator",
+        "emergency_coordinator"
+      ],
+      "authorising_roles_uk": [
+        "координатор рятувальних робіт",
+        "координатор надзвичайних ситуацій"
+      ],
+      "status": "awaiting_authorisation",
+      "proposal": true,
+      "scenario_time": "2026-10-14T08:53:00Z",
+      "created_at": "2026-10-14T04:07:34.442Z",
+      "input_sha256": "f0043c96b84890ef5f219fdc523b62cd74df52c0b55ee578d6bc8bd8a18ccfc7",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "direct pass-through of assistance requests",
+        "status": "n/a"
+      },
+      "content": {
+        "requests": [
+          {
+            "worker": "W10",
+            "event_id": "E013",
+            "type": "help_request",
+            "observed_at": "2026-10-14T08:37:05Z",
+            "zone_id": "Z4",
+            "ack_state": "unacknowledged",
+            "last_confirmed_context": {
+              "zone_id": "Z4",
+              "basis": "assistance request zone",
+              "at": "2026-10-14T08:37:05Z"
+            }
+          },
+          {
+            "worker": null,
+            "device": "S03",
+            "event_id": "E009",
+            "type": "sos (stationary button, person unknown)",
+            "zone_id": "Z3",
+            "observed_at": "2026-10-14T08:34:50Z",
+            "ack_state": "unacknowledged"
+          }
+        ]
+      },
+      "context": {
+        "age_s": {
+          "E013": 955.0,
+          "E009": 1090.0
+        }
+      },
+      "content_sha256": "c21bce43a67979d2fa67a306a8c6feab54792b85275b736b95bccdc25a9511e5",
+      "limitations": [
+        "request location may be uncertain",
+        "acknowledgement is not proof of assistance"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-urgent_personnel_assistance-565f79e5ea",
+      "authorisation": null
+    },
+    {
+      "package_id": "PKG-rescue_task_assignment-2f69aa684c",
+      "domain": "rescue_task_assignment",
+      "title_uk": "Розподіл рятувальних завдань",
+      "authorising_roles": [
+        "rescue_coordinator",
+        "incident_command"
+      ],
+      "authorising_roles_uk": [
+        "координатор рятувальних робіт",
+        "штаб реагування (incident command)"
+      ],
+      "status": "rejected",
+      "proposal": true,
+      "scenario_time": "2026-10-14T08:59:00Z",
+      "created_at": "2026-10-14T04:07:34.683Z",
+      "input_sha256": "6c4aad8dc96266caabfb00b81c86bd943020ee518c5e136ace709737204523f9",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "lexicographic Eq. (9) via exact max-weight bipartite matching (Hungarian / Kuhn-Munkres, integer scaled weights)",
+        "exact": true,
+        "teams": 7,
+        "single_team_tasks": 4,
+        "multi_team_tasks": 0,
+        "eligible_pairs": 8,
+        "status": "OPTIMAL"
+      },
+      "content": {
+        "assignments": [
+          {
+            "team_id": "RT1",
+            "task_id": "RT-assist_help_request-W10",
+            "kind": "assist_help_request",
+            "zone_id": "Z4",
+            "urgent": true,
+            "priority": 90,
+            "delta_s": 1495,
+            "delta_label": "qualified estimate (zone distance / speed + setup); not a validated route",
+            "ppe_required": []
+          },
+          {
+            "team_id": "RT4",
+            "task_id": "RT-locate_unaccounted-W12",
+            "kind": "locate_unaccounted",
+            "zone_id": "Z5",
+            "urgent": true,
+            "priority": 70,
+            "delta_s": 300,
+            "delta_label": "qualified estimate (zone distance / speed + setup); not a validated route",
+            "ppe_required": []
+          },
+          {
+            "team_id": "RT2",
+            "task_id": "RT-check_presence_cue-Z2",
+            "kind": "check_presence_cue",
+            "zone_id": "Z2",
+            "urgent": false,
+            "priority": 40,
+            "delta_s": 377,
+            "delta_label": "qualified estimate (zone distance / speed + setup); not a validated route",
+            "ppe_required": [
+              "helmet"
+            ]
+          }
+        ],
+        "unassigned": [
+          {
+            "task_id": "RT-assist_sos-S03",
+            "kind": "assist_sos",
+            "zone_id": "Z3",
+            "urgent": true,
+            "priority": 100,
+            "limiting_constraints": [
+              "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+            ],
+            "status": "unresolved task requiring review (not low priority, not abandoned)"
+          }
+        ],
+        "active_limiting_constraints": [
+          "one-team-per-task / one-task-per-team capacity (Eq. 8)",
+          "access authorisation x_rj <= a_j (unknown or restricted access)",
+          "PPE requirement for hazard zones (eligibility e_rj)",
+          "competency requirement (eligibility e_rj)"
+        ],
+        "escalations": [
+          {
+            "task_id": "RT-assist_sos-S03",
+            "type": "access",
+            "detail": "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+          }
+        ],
+        "objective": {
+          "urgent_assigned": 2,
+          "total_priority": 200,
+          "total_estimated_time_s": 2172
+        },
+        "tasks": [
+          {
+            "task_id": "RT-assist_help_request-W10",
+            "kind": "assist_help_request",
+            "zone_id": "Z4",
+            "h": 1,
+            "p": 90,
+            "competencies": [
+              "first_aid"
+            ],
+            "ppe": [],
+            "teams_required": 1
+          },
+          {
+            "task_id": "RT-assist_sos-S03",
+            "kind": "assist_sos",
+            "zone_id": "Z3",
+            "h": 1,
+            "p": 100,
+            "competencies": [
+              "first_aid",
+              "search"
+            ],
+            "ppe": [
+              "gas_monitor",
+              "scba"
+            ],
+            "teams_required": 1
+          },
+          {
+            "task_id": "RT-locate_unaccounted-W12",
+            "kind": "locate_unaccounted",
+            "zone_id": "Z5",
+            "h": 1,
+            "p": 70,
+            "competencies": [
+              "search"
+            ],
+            "ppe": [],
+            "teams_required": 1
+          },
+          {
+            "task_id": "RT-check_presence_cue-Z2",
+            "kind": "check_presence_cue",
+            "zone_id": "Z2",
+            "h": 0,
+            "p": 40,
+            "competencies": [
+              "search"
+            ],
+            "ppe": [
+              "helmet"
+            ],
+            "teams_required": 1
+          }
+        ]
+      },
+      "context": {},
+      "content_sha256": "2f69aa684c47435c3b0e5e22dccb53551e390a315ee281b2f8a55868a7e27f31",
+      "limitations": [
+        "coefficients h_j, p_j are command policy values, not survival probabilities",
+        "delta_rj is a qualified estimate, not a validated route; no entry route is selected",
+        "not calibrated or evaluated against actual rescue operations"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-rescue_task_assignment-6c4f6258a5",
+      "authorisation": {
+        "decision": "rejected",
+        "role": "incident_command",
+        "actor": "demo-commander-01 (SYNTHETIC demonstration)",
+        "reason": "Z3 SOS must be addressed first: command will issue a Z3 rescue access decision with SCBA conditions and re-plan; presence-cue check in Z2 deferred.",
+        "seq": 165,
+        "recorded_at": "2026-10-14T04:07:45.615Z"
+      }
+    },
+    {
+      "package_id": "PKG-personnel_accounting-0b4929afc9",
+      "domain": "personnel_accounting",
+      "title_uk": "Облік персоналу",
+      "authorising_roles": [
+        "incident_coordination_team"
+      ],
+      "authorising_roles_uk": [
+        "уповноважена група координації інциденту"
+      ],
+      "status": "awaiting_authorisation",
+      "proposal": true,
+      "scenario_time": "2026-10-14T08:59:00Z",
+      "created_at": "2026-10-14T04:07:34.683Z",
+      "input_sha256": "6c4aad8dc96266caabfb00b81c86bd943020ee518c5e136ace709737204523f9",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "explicit identity and time reconciliation rules",
+        "status": "n/a"
+      },
+      "content": {
+        "counts": {
+          "known": 5,
+          "observed_not_location_confirmed": 5,
+          "assistance_requested": 1,
+          "unaccounted": 1
+        },
+        "records": [
+          {
+            "worker": "W01",
+            "expected_zone": "Z1",
+            "status": "responder_confirmed",
+            "category": "known",
+            "notes": [],
+            "last_confirmed_zone": "Z6",
+            "last_confirmed_basis": "responder_report (last confirmed)"
+          },
+          {
+            "worker": "W02",
+            "expected_zone": "Z1",
+            "status": "responder_confirmed",
+            "category": "known",
+            "notes": [],
+            "last_confirmed_zone": "Z6",
+            "last_confirmed_basis": "responder_report (last confirmed)"
+          },
+          {
+            "worker": "W03",
+            "expected_zone": "Z2",
+            "status": "responder_confirmed",
+            "category": "known",
+            "notes": [],
+            "last_confirmed_zone": "Z6",
+            "last_confirmed_basis": "responder_report (last confirmed)"
+          },
+          {
+            "worker": "W04",
+            "expected_zone": "Z2",
+            "status": "responder_confirmed",
+            "category": "known",
+            "notes": [],
+            "last_confirmed_zone": "Z6",
+            "last_confirmed_basis": "responder_report (last confirmed)"
+          },
+          {
+            "worker": "W05",
+            "expected_zone": "Z2",
+            "status": "responder_confirmed",
+            "category": "known",
+            "notes": [],
+            "last_confirmed_zone": "Z6",
+            "last_confirmed_basis": "responder_report (last confirmed)"
+          },
+          {
+            "worker": "W06",
+            "expected_zone": "Z2",
+            "status": "recent_device_observation",
+            "category": "observed_not_location_confirmed",
+            "notes": [],
+            "last_confirmed_zone": "Z2",
+            "last_confirmed_basis": "last device telemetry (gateway/device location is not the person's current position)"
+          },
+          {
+            "worker": "W07",
+            "expected_zone": "Z2",
+            "status": "recent_device_observation",
+            "category": "observed_not_location_confirmed",
+            "notes": [],
+            "last_confirmed_zone": "Z2",
+            "last_confirmed_basis": "last device telemetry (gateway/device location is not the person's current position)"
+          },
+          {
+            "worker": "W08",
+            "expected_zone": "Z3",
+            "status": "recent_device_observation",
+            "category": "observed_not_location_confirmed",
+            "notes": [],
+            "last_confirmed_zone": "Z3",
+            "last_confirmed_basis": "last device telemetry (gateway/device location is not the person's current position)"
+          },
+          {
+            "worker": "W09",
+            "expected_zone": "Z3",
+            "status": "recent_device_observation",
+            "category": "observed_not_location_confirmed",
+            "notes": [],
+            "last_confirmed_zone": "Z3",
+            "last_confirmed_basis": "last device telemetry (gateway/device location is not the person's current position)"
+          },
+          {
+            "worker": "W10",
+            "expected_zone": "Z4",
+            "status": "assistance_requested",
+            "category": "assistance_requested",
+            "notes": [],
+            "last_confirmed_zone": "Z4",
+            "last_confirmed_basis": "assistance request zone"
+          },
+          {
+            "worker": "W11",
+            "expected_zone": "Z4",
+            "status": "recent_device_observation",
+            "category": "observed_not_location_confirmed",
+            "notes": [],
+            "last_confirmed_zone": "Z4",
+            "last_confirmed_basis": "last device telemetry (gateway/device location is not the person's current position)"
+          },
+          {
+            "worker": "W12",
+            "expected_zone": "Z5",
+            "status": "unaccounted",
+            "category": "unaccounted",
+            "notes": [
+              "no recent observation and no current responder confirmation; silence is not evidence of injury or death"
+            ],
+            "last_confirmed_zone": "Z5",
+            "last_confirmed_basis": "last device telemetry (gateway/device location is not the person's current position)"
+          }
+        ]
+      },
+      "context": {
+        "last_confirmed_at": {
+          "W01": "2026-10-14T08:45:00Z",
+          "W02": "2026-10-14T08:45:00Z",
+          "W03": "2026-10-14T08:45:00Z",
+          "W04": "2026-10-14T08:45:00Z",
+          "W05": "2026-10-14T08:52:00Z",
+          "W06": "2026-10-14T08:58:50Z",
+          "W07": "2026-10-14T08:58:50Z",
+          "W08": "2026-10-14T08:58:50Z",
+          "W09": "2026-10-14T08:58:50Z",
+          "W10": "2026-10-14T08:37:05Z",
+          "W11": "2026-10-14T08:58:50Z",
+          "W12": "2026-10-14T08:49:50Z"
+        }
+      },
+      "content_sha256": "0b4929afc9c5e00f0886b22ab482ad64dc8a02600146e24c058269be466a6b12",
+      "limitations": [
+        "no sensor-only casualty inference",
+        "device/gateway location is not the person's position"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-personnel_accounting-7eb6aa31ad",
+      "authorisation": null
+    },
+    {
+      "package_id": "PKG-structural_access_status-1ccbfbb0ff",
+      "domain": "structural_access_status",
+      "title_uk": "Стан конструкцій і доступу",
+      "authorising_roles": [
+        "qualified_assessor",
+        "incident_command"
+      ],
+      "authorising_roles_uk": [
+        "кваліфікований експерт",
+        "штаб реагування (incident command)"
+      ],
+      "status": "awaiting_authorisation",
+      "proposal": true,
+      "scenario_time": "2026-10-14T08:59:00Z",
+      "created_at": "2026-10-14T04:07:34.683Z",
+      "input_sha256": "6c4aad8dc96266caabfb00b81c86bd943020ee518c5e136ace709737204523f9",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "source-linked assertions; explicit unknown",
+        "status": "n/a"
+      },
+      "content": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "structural": {
+              "state": "no_restriction_observed",
+              "assessor": "QA-1",
+              "method": "visual inspection",
+              "scope": "Z1 ground floor and corridor",
+              "valid_until": "2026-10-14T12:00:00Z",
+              "assertion_id": "A-E018"
+            },
+            "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+            "flags": {
+              "impact_evidence": false,
+              "possible_impact_local": false,
+              "gas_evidence": false,
+              "gas_alarm_current": false,
+              "observation_gap": false,
+              "structural_unknown": false,
+              "presence_cue_current": false,
+              "assistance_request_open": false
+            },
+            "rescue_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            },
+            "recovery_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            }
+          },
+          {
+            "zone_id": "Z2",
+            "structural": {
+              "state": "unknown",
+              "assessor": null,
+              "note": "no current qualified structural assessment (no automated building clearance)"
+            },
+            "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+            "flags": {
+              "impact_evidence": true,
+              "possible_impact_local": true,
+              "gas_evidence": false,
+              "gas_alarm_current": false,
+              "observation_gap": false,
+              "structural_unknown": true,
+              "presence_cue_current": true,
+              "assistance_request_open": true
+            },
+            "rescue_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": [
+                "helmet",
+                "two-person rule"
+              ]
+            },
+            "recovery_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            }
+          },
+          {
+            "zone_id": "Z3",
+            "structural": {
+              "state": "unknown",
+              "assessor": null,
+              "note": "no current qualified structural assessment (no automated building clearance)"
+            },
+            "hazard_state": "alarm_history_no_current_alarm (uncalibrated channel; not cleared)",
+            "flags": {
+              "impact_evidence": false,
+              "possible_impact_local": false,
+              "gas_evidence": true,
+              "gas_alarm_current": false,
+              "observation_gap": false,
+              "structural_unknown": true,
+              "presence_cue_current": false,
+              "assistance_request_open": true
+            },
+            "rescue_access": {
+              "status": "unknown",
+              "authorised_by": null,
+              "conditions": []
+            },
+            "recovery_access": {
+              "status": "unknown",
+              "authorised_by": null,
+              "conditions": []
+            }
+          },
+          {
+            "zone_id": "Z4",
+            "structural": {
+              "state": "unknown",
+              "assessor": null,
+              "note": "no current qualified structural assessment (no automated building clearance)"
+            },
+            "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+            "flags": {
+              "impact_evidence": false,
+              "possible_impact_local": false,
+              "gas_evidence": false,
+              "gas_alarm_current": false,
+              "observation_gap": false,
+              "structural_unknown": true,
+              "presence_cue_current": false,
+              "assistance_request_open": true
+            },
+            "rescue_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            },
+            "recovery_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            }
+          },
+          {
+            "zone_id": "Z5",
+            "structural": {
+              "state": "unknown",
+              "assessor": null,
+              "note": "no current qualified structural assessment (no automated building clearance)"
+            },
+            "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+            "flags": {
+              "impact_evidence": false,
+              "possible_impact_local": false,
+              "gas_evidence": false,
+              "gas_alarm_current": false,
+              "observation_gap": false,
+              "structural_unknown": true,
+              "presence_cue_current": true,
+              "assistance_request_open": false
+            },
+            "rescue_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            },
+            "recovery_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            }
+          },
+          {
+            "zone_id": "Z6",
+            "structural": {
+              "state": "unknown",
+              "assessor": null,
+              "note": "no current qualified structural assessment (no automated building clearance)"
+            },
+            "hazard_state": "no_alarm_from_uncalibrated_channel (not a clearance)",
+            "flags": {
+              "impact_evidence": false,
+              "possible_impact_local": false,
+              "gas_evidence": false,
+              "gas_alarm_current": false,
+              "observation_gap": false,
+              "structural_unknown": true,
+              "presence_cue_current": false,
+              "assistance_request_open": false
+            },
+            "rescue_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            },
+            "recovery_access": {
+              "status": "authorised",
+              "authorised_by": "incident command",
+              "conditions": []
+            }
+          }
+        ],
+        "strike_statement_en": "An authoritative external source reported a strike (observed 2026-10-14T08:36:40Z, reported 2026-10-14T08:41:00Z). Local possible_impact_local composites remain UNVERIFIED; association with the external report requires an operational report retaining both provenance chains."
+      },
+      "context": {},
+      "content_sha256": "1ccbfbb0ffe8bdff90cfab4dc9ad583a93bfac4cd44704cb774fa0bb4bb3879f",
+      "limitations": [
+        "no automated building clearance",
+        "local channel values are uncalibrated"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-structural_access_status-735a38439b",
+      "authorisation": null
+    },
+    {
+      "package_id": "PKG-essential_service_preservation-bead1ffdc8",
+      "domain": "essential_service_preservation",
+      "title_uk": "Збереження життєво важливих сервісів",
+      "authorising_roles": [
+        "infrastructure_operator"
+      ],
+      "authorising_roles_uk": [
+        "відповідальний оператор інфраструктури"
+      ],
+      "status": "approved",
+      "proposal": true,
+      "scenario_time": "2026-10-14T08:40:00Z",
+      "created_at": "2026-10-14T04:07:33.889Z",
+      "input_sha256": "77126549c0bbb1b4e9d2d24aab0cabf09c470f12d6514f450791e18577d11eff",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "exact enumeration over 64 candidates",
+        "status": "OPTIMAL",
+        "horizon_h": 4.0
+      },
+      "content": {
+        "status": "OPTIMAL",
+        "y": {
+          "communications": 1,
+          "emergency_lighting": 1,
+          "fire_water_pump": 1,
+          "water_support": 0,
+          "production": 0,
+          "process_monitoring": 1
+        },
+        "Q_pct": 81.48148148148148,
+        "objective": 22.0,
+        "infeasibility_reasons": [],
+        "binding_resources": [
+          "energy_kwh",
+          "power_kw",
+          "staff"
+        ],
+        "resource_capacity": {
+          "energy_kwh": 200.0,
+          "power_kw": 60.0,
+          "radio_channels": 4.0,
+          "staff": 6.0
+        },
+        "unused": {
+          "energy_kwh": 40.0,
+          "power_kw": 20.0,
+          "radio_channels": 1.0,
+          "staff": 2.0
+        },
+        "excluded_inadmissible": [
+          "water_support"
+        ],
+        "options_for_review": []
+      },
+      "context": {
+        "capacity_provenance": [
+          {
+            "resource_id": "energy_kwh",
+            "asset_id": "fuel_tank_G1",
+            "lower_bound": 200,
+            "basis": "fuel for >= 200 kWh at generator efficiency over 4 h horizon (operator estimate)",
+            "source": "operator_report A-E015B at 2026-10-14T08:39:30Z"
+          },
+          {
+            "resource_id": "energy_kwh",
+            "asset_id": "grid_feed_A",
+            "lower_bound": 0,
+            "basis": "grid feed A lost; no residual capacity can be justified",
+            "source": "operator_report A-E011 at 2026-10-14T08:36:00Z"
+          },
+          {
+            "resource_id": "power_kw",
+            "asset_id": "generator_G1",
+            "lower_bound": 60,
+            "basis": "generator G1 verified running; 75 kW rating derated to 60 kW justified lower bound",
+            "source": "operator_report A-E015 at 2026-10-14T08:39:00Z"
+          },
+          {
+            "resource_id": "power_kw",
+            "asset_id": "grid_feed_A",
+            "lower_bound": 0,
+            "basis": "grid feed A lost; no residual capacity can be justified",
+            "source": "operator_report A-E011 at 2026-10-14T08:36:00Z"
+          },
+          {
+            "resource_id": "radio_channels",
+            "asset_id": null,
+            "lower_bound": 4,
+            "basis": "licensed site radio channels",
+            "source": "asset register"
+          },
+          {
+            "resource_id": "staff",
+            "asset_id": null,
+            "lower_bound": 6,
+            "basis": "operators present on shift roster and accounted",
+            "source": "asset register"
+          }
+        ]
+      },
+      "content_sha256": "bead1ffdc8a3c0c893dc6fa10bf7e296a061585757948c6a3a23a85f61ec1df4",
+      "limitations": [
+        "Q is weighted service coverage under assumed weights, not people rescued or facility restored",
+        "no switching, startup transients or network flow modelled; no actuation",
+        "mandatory life-safety services are constraints and are never relaxed"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-essential_service_preservation-f1abd37871",
+      "authorisation": {
+        "decision": "approved",
+        "role": "infrastructure_operator",
+        "actor": "demo-operator-01 (SYNTHETIC demonstration)",
+        "reason": "Generator G1 and fuel lower bounds checked against operator log; mandatory services retained; production stays off.",
+        "seq": 164,
+        "recorded_at": "2026-10-14T04:07:45.548Z"
+      }
+    },
+    {
+      "package_id": "PKG-recovery_scheduling-9d4b5ac38c",
+      "domain": "recovery_scheduling",
+      "title_uk": "Графік ліквідації наслідків",
+      "authorising_roles": [
+        "recovery_management"
+      ],
+      "authorising_roles_uk": [
+        "уповноважене керівництво відновленням"
+      ],
+      "status": "awaiting_authorisation",
+      "proposal": true,
+      "scenario_time": "2026-10-14T08:59:00Z",
+      "created_at": "2026-10-14T04:07:34.683Z",
+      "input_sha256": "6c4aad8dc96266caabfb00b81c86bd943020ee518c5e136ace709737204523f9",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "CPM (earliest/latest start) + serial schedule-generation scheme, priority rule min-LS / max-priority / id",
+        "exact": false,
+        "note": "heuristic candidate schedule (resource-constrained scheduling is NP-hard); prerequisites are hard constraints",
+        "status": "CANDIDATE"
+      },
+      "content": {
+        "tasks": [
+          {
+            "task_id": "RC-gas_hazard_check-Z2",
+            "kind": "gas_hazard_check",
+            "zone_id": "Z2",
+            "status": "scheduled_candidate",
+            "crew": "RC2",
+            "prerequisites": [],
+            "blocked_reasons": [],
+            "priority": 95,
+            "critical": true
+          },
+          {
+            "task_id": "RC-temporary_power_path-Z1",
+            "kind": "temporary_power_path",
+            "zone_id": "Z1",
+            "status": "scheduled_candidate",
+            "crew": "RC1",
+            "prerequisites": [],
+            "blocked_reasons": [],
+            "priority": 100,
+            "critical": false
+          },
+          {
+            "task_id": "RC-gas_hazard_check-Z3",
+            "kind": "gas_hazard_check",
+            "zone_id": "Z3",
+            "status": "scheduled_candidate",
+            "crew": "RC2",
+            "prerequisites": [],
+            "blocked_reasons": [],
+            "priority": 95,
+            "critical": false
+          },
+          {
+            "task_id": "RC-structural_inspection-Z2",
+            "kind": "structural_inspection",
+            "zone_id": "Z2",
+            "status": "scheduled_candidate",
+            "crew": "ST1",
+            "prerequisites": [
+              "RC-gas_hazard_check-Z2"
+            ],
+            "blocked_reasons": [],
+            "priority": 90,
+            "critical": true
+          },
+          {
+            "task_id": "RC-debris_clearance-Z2",
+            "kind": "debris_clearance",
+            "zone_id": "Z2",
+            "status": "scheduled_candidate",
+            "crew": "RC2",
+            "prerequisites": [
+              "RC-gas_hazard_check-Z2",
+              "RC-structural_inspection-Z2"
+            ],
+            "blocked_reasons": [],
+            "priority": 50,
+            "critical": true
+          },
+          {
+            "task_id": "RC-water_support_restoration-Z3",
+            "kind": "water_support_restoration",
+            "zone_id": "Z3",
+            "status": "blocked",
+            "crew": null,
+            "prerequisites": [
+              "RC-gas_hazard_check-Z3"
+            ],
+            "blocked_reasons": [
+              "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)",
+              "equipment 'pump_kit' unavailable or unknown (need 1, verified 0)"
+            ],
+            "priority": 110,
+            "critical": false
+          }
+        ],
+        "unresolved_prerequisites": [
+          {
+            "task_id": "RC-water_support_restoration-Z3",
+            "prerequisite": "access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)"
+          },
+          {
+            "task_id": "RC-water_support_restoration-Z3",
+            "prerequisite": "equipment 'pump_kit' unavailable or unknown (need 1, verified 0)"
+          }
+        ],
+        "excluded_actuation": [
+          {
+            "service_id": "production",
+            "kind": "restart_production",
+            "reason": "restoration requires industrial actuation: outside this service; authorised operator procedure only"
+          }
+        ],
+        "restoration_order": [
+          {
+            "service_id": "(capacity) power_kw",
+            "mandatory": false,
+            "weight": null,
+            "reason": "raises the justified lower bound of usable power",
+            "task": "RC-temporary_power_path-Z1"
+          },
+          {
+            "service_id": "water_support",
+            "mandatory": false,
+            "weight": 4,
+            "reason": "service not supported in continuity proposal",
+            "task": "RC-water_support_restoration-Z3"
+          },
+          {
+            "service_id": "production",
+            "mandatory": false,
+            "weight": 1,
+            "reason": "service not supported in continuity proposal",
+            "task": "excluded (actuation)"
+          }
+        ]
+      },
+      "context": {
+        "times": {
+          "RC-gas_hazard_check-Z2": {
+            "start": "2026-10-14T08:59:00Z",
+            "finish": "2026-10-14T09:19:00Z",
+            "start_offset_min": 0.0,
+            "finish_offset_min": 20.0
+          },
+          "RC-temporary_power_path-Z1": {
+            "start": "2026-10-14T08:59:00Z",
+            "finish": "2026-10-14T09:59:00Z",
+            "start_offset_min": 0.0,
+            "finish_offset_min": 60.0
+          },
+          "RC-gas_hazard_check-Z3": {
+            "start": "2026-10-14T09:19:00Z",
+            "finish": "2026-10-14T09:39:00Z",
+            "start_offset_min": 20.0,
+            "finish_offset_min": 40.0
+          },
+          "RC-structural_inspection-Z2": {
+            "start": "2026-10-14T09:19:00Z",
+            "finish": "2026-10-14T10:04:00Z",
+            "start_offset_min": 20.0,
+            "finish_offset_min": 65.0
+          },
+          "RC-debris_clearance-Z2": {
+            "start": "2026-10-14T10:04:00Z",
+            "finish": "2026-10-14T11:34:00Z",
+            "start_offset_min": 65.0,
+            "finish_offset_min": 155.0
+          },
+          "RC-water_support_restoration-Z3": {
+            "start": null,
+            "finish": null,
+            "start_offset_min": null,
+            "finish_offset_min": null
+          }
+        },
+        "makespan_min": 155.0
+      },
+      "content_sha256": "9d4b5ac38c81bb88d6175726836cd176da7f6fd47c67cc637d8eeee570e1506b",
+      "limitations": [
+        "candidate schedule; durations are planning assumptions",
+        "industrial actuation excluded"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-recovery_scheduling-51c4a97eb5",
+      "authorisation": null
+    },
+    {
+      "package_id": "PKG-physiological_group_warning-8c9dbd166f",
+      "domain": "physiological_group_warning",
+      "title_uk": "Фізіологічне групове попередження",
+      "authorising_roles": [
+        "occupational_health",
+        "site_safety_officer"
+      ],
+      "authorising_roles_uk": [
+        "фахівець з гігієни праці",
+        "відповідальний з безпеки об'єкта"
+      ],
+      "status": "awaiting_authorisation",
+      "proposal": true,
+      "scenario_time": "2026-10-14T09:00:00Z",
+      "created_at": "2026-10-14T04:07:34.736Z",
+      "input_sha256": "ed789cc6df09e3b13edef3fb4ccdc8bd52ff119be0052dd1bc5dac50f58246fd",
+      "policy_sha256": "1597d2b8d3b3b2368730a0a4c096306a65638d33fd3e23477dfc2194c89f86c6",
+      "versions": {
+        "agent": "1.0.0",
+        "rule_version": "umsf-rules-1.0",
+        "policy_version": "1.0.0",
+        "schemas": [
+          "1.0",
+          "st-1.0",
+          "ev-1.0"
+        ]
+      },
+      "solver": {
+        "method": "Eq. (1)-(5) deterministic",
+        "status": "n/a"
+      },
+      "content": {
+        "zones": [
+          {
+            "zone_id": "Z1",
+            "states": [
+              "insufficient_monitoring_evidence"
+            ],
+            "label_uk": "Недостатньо даних для групового висновку",
+            "N": 2,
+            "n": 2,
+            "m": 0,
+            "coverage_pct": 100.0,
+            "affected_pct": 0.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": true,
+              "m>=m_min": false,
+              "p>=theta": false
+            },
+            "urgent_requests": 0,
+            "feasibility": "requires 3 eligible workers but roster has 2: no group warning feasible"
+          },
+          {
+            "zone_id": "Z2",
+            "states": [
+              "possible_group_event"
+            ],
+            "label_uk": "Можлива групова подія",
+            "N": 5,
+            "n": 4,
+            "m": 3,
+            "coverage_pct": 80.0,
+            "affected_pct": 75.0,
+            "conditions": {
+              "n>=n_min": true,
+              "C>=C_min": true,
+              "m>=m_min": true,
+              "p>=theta": true
+            },
+            "urgent_requests": 0,
+            "feasibility": "group gate needs >= 4 eligible of 5 (effective coverage >= 80.0%) and >= 2 flags at n=4"
+          },
+          {
+            "zone_id": "Z3",
+            "states": [
+              "insufficient_monitoring_evidence"
+            ],
+            "label_uk": "Недостатньо даних для групового висновку",
+            "N": 2,
+            "n": 2,
+            "m": 0,
+            "coverage_pct": 100.0,
+            "affected_pct": 0.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": true,
+              "m>=m_min": false,
+              "p>=theta": false
+            },
+            "urgent_requests": 0,
+            "feasibility": "requires 3 eligible workers but roster has 2: no group warning feasible"
+          },
+          {
+            "zone_id": "Z4",
+            "states": [
+              "insufficient_monitoring_evidence"
+            ],
+            "label_uk": "Термінова індивідуальна допомога; груповий тригер відсутній; недостатньо даних для групового висновку",
+            "N": 2,
+            "n": 2,
+            "m": 0,
+            "coverage_pct": 100.0,
+            "affected_pct": 0.0,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": true,
+              "m>=m_min": false,
+              "p>=theta": false
+            },
+            "urgent_requests": 1,
+            "feasibility": "requires 3 eligible workers but roster has 2: no group warning feasible"
+          },
+          {
+            "zone_id": "Z5",
+            "states": [
+              "insufficient_monitoring_evidence"
+            ],
+            "label_uk": "Недостатньо даних для групового висновку",
+            "N": 1,
+            "n": 0,
+            "m": 0,
+            "coverage_pct": 0.0,
+            "affected_pct": null,
+            "conditions": {
+              "n>=n_min": false,
+              "C>=C_min": false,
+              "m>=m_min": false,
+              "p>=theta": null
+            },
+            "urgent_requests": 0,
+            "feasibility": "requires 3 eligible workers but roster has 1: no group warning feasible"
+          },
+          {
+            "zone_id": "Z6",
+            "states": [
+              "insufficient_monitoring_evidence"
+            ],
+            "label_uk": "Недостатньо даних для групового висновку",
+            "N": 0,
+            "n": 0,
+            "m": 0,
+            "coverage_pct": null,
+            "affected_pct": null,
+            "conditions": {
+              "n>=n_min": null,
+              "C>=C_min": null,
+              "m>=m_min": null,
+              "p>=theta": null
+            },
+            "urgent_requests": 0,
+            "feasibility": "roster unavailable or empty: coverage not calculated; no group conclusion allowed"
+          }
+        ],
+        "params": {
+          "n_min": 3,
+          "c_min": 0.7,
+          "m_min": 2,
+          "theta": 0.5
+        }
+      },
+      "context": {},
+      "content_sha256": "8c9dbd166fcf76ca2053bc6b9f966f0782efbeb452660a0380c2e7059d0c941f",
+      "limitations": [
+        "a group warning is a request for investigation, not a diagnosis or exposure identification",
+        "insufficient coverage is not absence of concern",
+        "thresholds are development parameters"
+      ],
+      "boundary_uk": "Це ПРОПОЗИЦІЯ системи підтримки рішень. Вона не виконує жодних дій, не керує обладнанням, не ставить діагнозів, не призначає категорій медичного сортування і не обирає маршрути входу до будівель. Потрібне затвердження або відхилення з обґрунтуванням уповноваженою роллю.",
+      "data_origin": "synthetic",
+      "supersedes": "PKG-physiological_group_warning-ec9f311480",
+      "authorisation": null
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "available": true,
+  "algorithms": "Ed25519 signature inside AES-256-GCM",
+  "freshness_s": 120,
+  "ordinary_records": 40320,
+  "ordinary_verified": 40320,
+  "note": "demonstration keys and nonce state; not operational provisioning",
+  "negative": {
+    "ciphertext_alteration": {
+      "cases": 1000,
+      "rejected": 1000,
+      "expected_reason": "aead_authentication_failed"
+    },
+    "retained_signature_modification": {
+      "cases": 1000,
+      "rejected": 1000,
+      "expected_reason": "signature_invalid"
+    },
+    "replay": {
+      "cases": 1000,
+      "rejected": 1000,
+      "expected_reason": "replay"
+    },
+    "delivery_180s_vs_120s_freshness": {
+      "cases": 1000,
+      "rejected": 1000,
+      "expected_reason": "stale_beyond_freshness"
+    }
+  }
+}

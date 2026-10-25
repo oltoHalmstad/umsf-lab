@@ -1,0 +1,62 @@
+{
+ "SITE-A": {
+  "site_id": "SITE-A",
+  "zones": [
+   {
+    "zone_id": "SITE-A-Z1",
+    "name": "Synthetic zone 1",
+    "expected_workers": [
+     "WA01",
+     "WA02",
+     "WA03",
+     "WA04",
+     "WA05",
+     "WA06"
+    ],
+    "stationary_nodes": [
+     "SA1"
+    ]
+   }
+  ],
+  "device_map": {
+   "A01": "WA01",
+   "A02": "WA02",
+   "A03": "WA03",
+   "A04": "WA04",
+   "A05": "WA05",
+   "A06": "WA06"
+  },
+  "valid_from": "2026-09-08T00:00:00Z",
+  "valid_to": "2026-09-09T00:00:00Z"
+ },
+ "SITE-B": {
+  "site_id": "SITE-B",
+  "zones": [
+   {
+    "zone_id": "SITE-B-Z1",
+    "name": "Synthetic zone 1",
+    "expected_workers": [
+     "WB01",
+     "WB02",
+     "WB03",
+     "WB04",
+     "WB05",
+     "WB06"
+    ],
+    "stationary_nodes": [
+     "SB1"
+    ]
+   }
+  ],
+  "device_map": {
+   "B01": "WB01",
+   "B02": "WB02",
+   "B03": "WB03",
+   "B04": "WB04",
+   "B05": "WB05",
+   "B06": "WB06"
+  },
+  "valid_from": "2026-09-08T00:00:00Z",
+  "valid_to": "2026-09-09T00:00:00Z"
+ }
+}

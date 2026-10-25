@@ -1,0 +1,81 @@
+# Оперативна довідка для керівника реагування
+
+_Детерміновано згенерований текст (без мовної моделі). Усі висновки є пропозиціями і потребують затвердження._
+
+> **СИНТЕТИЧНІ ДАНІ — сконструйований сценарій; не реальний об'єкт, люди, атака чи виміряна фізіологія** (data_origin = `synthetic`)
+
+- Час стану: 2026-10-14T09:10:00Z UTC = 12:10:00 (Київ)
+- Інцидент: `INC-umsf-p3-post-impact-demo-v1`; SHA-256 вхідних даних: `1b9de68044812198…`
+
+## 1. Зовнішні сповіщення та атрибуція
+- UMSF-A: air_raid_alert — чинне; джерело: regional emergency information service (SYNTHETIC); спостереження 11:30:00 (Київ), повідомлено 11:30:01 (Київ)
+- UMSF-B: air_raid_alert — чинне; джерело: regional emergency information service (SYNTHETIC); спостереження 11:30:00 (Київ), повідомлено 11:30:01 (Київ)
+- UMSF-A: external_strike_report — чинне; джерело: regional emergency information service (SYNTHETIC); спостереження 11:36:40 (Київ), повідомлено 11:41:00 (Київ)
+- Уповноважене зовнішнє джерело (regional emergency information service (SYNTHETIC)) повідомило про удар (спостереження 2026-10-14T08:36:40Z, повідомлено 2026-10-14T08:41:00Z). Локальні складені ознаки possible_impact_local залишаються НЕПІДТВЕРДЖЕНИМИ; зв'язок між ними та зовнішнім повідомленням встановлюється лише оперативним звітом.
+- Відхилено як атрибуцію: `A-E014` від `operator_report` (relayed phone call) — не є уповноваженим джерелом.
+
+## 2. Термінові запити допомоги (без групових порогів)
+- **HELP_REQUEST** від `W10`, зона Z4, 32 хв тому; стан підтвердження: unacknowledged; останній підтверджений контекст: Z4 (assistance request zone).
+- **SOS** зі стаціонарної кнопки `S03`, зона Z3 — особа невідома; 35 хв тому.
+
+## 3. Облік персоналу (звірка зі списком)
+- запит допомоги: 1
+- враховані (підтвердження рятувальників або звірка координації): 5
+- є свіжа телеметрія пристрою (місце не підтверджено): 5
+- не враховані (місцеперебування не встановлено): 1
+  - `W12`: не враховані (місцеперебування не встановлено); останнє підтверджене місце Z5 (last device telemetry (gateway/device location is not the person's current position), 11:49:50 (Київ)). Відсутність телеметрії не свідчить про травму чи загибель.
+
+## 4. Стан зон S_z = (M, H, P, F, U)
+| Зона | Конструкції | Небезпеки | Прогалини спостереження | Ознаки присутності |
+|---|---|---|---|---|
+| Z1 Адміністративний блок | no_restriction_observed (експерт QA-1, до 15:00:00 (Київ)) | no_alarm_from_uncalibrated_channel (not a clearance) | 0 | 0 (можливі ознаки, не ознаки життя) |
+| Z2 Механічний цех | невідомо | no_alarm_from_uncalibrated_channel (not a clearance) | 0 | 1 (можливі ознаки, не ознаки життя) |
+| Z3 Насосна (підвал) | невідомо | alarm_history_no_current_alarm (uncalibrated channel; not cleared) | 0 | 0 (можливі ознаки, не ознаки життя) |
+| Z4 Диспетчерська | невідомо | no_alarm_from_uncalibrated_channel (not a clearance) | 0 | 0 (можливі ознаки, не ознаки життя) |
+| Z5 Склад | невідомо | no_alarm_from_uncalibrated_channel (not a clearance) | 0 | 1 (можливі ознаки, не ознаки життя) |
+| Z6 Пункт збору / укриття | невідомо | no_alarm_from_uncalibrated_channel (not a clearance) | 0 | 0 (можливі ознаки, не ознаки життя) |
+
+## 5. Фізіологічна групова оцінка (лише агреговано)
+- Z1: Недостатньо даних для групового висновку — дійсні 2/2 (покриття 100,0%), стійкі прапорці 0 (частка 0,0%). requires 3 eligible workers but roster has 2: no group warning feasible
+- Z2: Можлива групова подія — дійсні 4/5 (покриття 80,0%), стійкі прапорці 3 (частка 75,0%). group gate needs >= 4 eligible of 5 (effective coverage >= 80.0%) and >= 2 flags at n=4
+- Z3: Недостатньо даних для групового висновку — дійсні 2/2 (покриття 100,0%), стійкі прапорці 0 (частка 0,0%). requires 3 eligible workers but roster has 2: no group warning feasible
+- Z4: Термінова індивідуальна допомога; груповий тригер відсутній; недостатньо даних для групового висновку — дійсні 2/2 (покриття 100,0%), стійкі прапорці 0 (частка 0,0%). requires 3 eligible workers but roster has 2: no group warning feasible
+- Z5: Недостатньо даних для групового висновку — дійсні 0/1 (покриття 0,0%), стійкі прапорці 0 (частка —). requires 3 eligible workers but roster has 1: no group warning feasible
+- Z6: Недостатньо даних для групового висновку — дійсні 0/0 (покриття —), стійкі прапорці 0 (частка —). roster unavailable or empty: coverage not calculated; no group conclusion allowed
+- Групове попередження — це запит на розслідування, а не діагноз чи ідентифікація речовини.
+
+## 6. Рятувальна логістика — пропозиція розподілу (рівняння 8–9)
+- RT1 → RT-assist_help_request-W10 (зона Z4, термінове, пріоритет 90, оцінка часу ≈ 24 хв — кваліфікована оцінка, не маршрут)
+- RT4 → RT-locate_unaccounted-W12 (зона Z5, термінове, пріоритет 70, оцінка часу ≈ 5 хв — кваліфікована оцінка, не маршрут)
+- RT2 → RT-check_presence_cue-Z2 (зона Z2, нетермінове, пріоритет 40, оцінка часу ≈ 6 хв — кваліфікована оцінка, не маршрут)
+- **НЕ ПРИЗНАЧЕНО** (ТЕРМІНОВЕ): RT-assist_sos-S03 — access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned)
+- Активні обмеження: one-team-per-task / one-task-per-team capacity (Eq. 8); access authorisation x_rj <= a_j (unknown or restricted access); PPE requirement for hazard zones (eligibility e_rj); competency requirement (eligibility e_rj)
+- Ціль (лексикографічно): термінових призначено 2, сумарний пріоритет 200, сумарний час 36 хв.
+
+## 7. Безперервність сервісів (рівняння 10–11)
+- Статус: оптимальний розв'язок.
+- Підтримуються: communications, emergency_lighting, fire_water_pump, process_monitoring; не підтримуються: water_support, production; Q = 81,5% (зважене покриття сервісів, не частка врятованих людей).
+- Обмежувальні ресурси: energy_kwh, power_kw, staff; недопустимі/невідомі: water_support.
+
+## 8. Ліквідація наслідків — кандидатний графік
+- 12:10:00 (Київ)–12:30:00 (Київ): Перевірка газової небезпеки сертифікованим приладом [Z2], бригада RC2 — критичний шлях
+- 12:10:00 (Київ)–13:10:00 (Київ): Підготовка тимчасової схеми живлення (комутацію виконує уповноважений оператор) [Z1], бригада RC1
+- 12:30:00 (Київ)–12:50:00 (Київ): Перевірка газової небезпеки сертифікованим приладом [Z3], бригада RC2
+- 12:30:00 (Київ)–13:15:00 (Київ): Обстеження конструкцій кваліфікованим експертом [Z2], бригада ST1 — критичний шлях
+- 13:15:00 (Київ)–14:45:00 (Київ): Розчищення уламків [Z2], бригада RC2 — критичний шлях
+- **ЗАБЛОКОВАНО**: Відновлення водопостачання (підтримка) [Z3] — access authorisation for zone Z3 unknown: incident command decision required; task retained (not abandoned); equipment 'pump_kit' unavailable or unknown (need 1, verified 0)
+- Поза межами сервісу (керування обладнанням): production — restoration requires industrial actuation: outside this service; authorised operator procedure only
+
+## 9. Рішення, що очікують затвердження людиною (Таблиця 9)
+- `PKG-urgent_personnel_assistance-c21bce43a6` — Термінова допомога персоналу; уповноважена роль: координатор рятувальних робіт, координатор надзвичайних ситуацій; статус: очікує
+- `PKG-rescue_task_assignment-2f69aa684c` — Розподіл рятувальних завдань; уповноважена роль: координатор рятувальних робіт, штаб реагування (incident command); статус: rejected (incident_command, demo-commander-01 (SYNTHETIC demonstration): Z3 SOS must be addressed first: command will issue a Z3 rescue access decision with SCBA conditions and re-plan; presence-cue check in Z2 deferred.)
+- `PKG-personnel_accounting-0b4929afc9` — Облік персоналу; уповноважена роль: уповноважена група координації інциденту; статус: очікує
+- `PKG-structural_access_status-1ccbfbb0ff` — Стан конструкцій і доступу; уповноважена роль: кваліфікований експерт, штаб реагування (incident command); статус: очікує
+- `PKG-essential_service_preservation-bead1ffdc8` — Збереження життєво важливих сервісів; уповноважена роль: відповідальний оператор інфраструктури; статус: approved (infrastructure_operator, demo-operator-01 (SYNTHETIC demonstration): Generator G1 and fuel lower bounds checked against operator log; mandatory services retained; production stays off.)
+- `PKG-recovery_scheduling-9d4b5ac38c` — Графік ліквідації наслідків; уповноважена роль: уповноважене керівництво відновленням; статус: очікує
+- `PKG-physiological_group_warning-8c9dbd166f` — Фізіологічне групове попередження; уповноважена роль: фахівець з гігієни праці, відповідальний з безпеки об'єкта; статус: очікує
+
+## 10. Межі
+- Арифметика, допустимість, сповіщення та плани детерміновані; система не керує обладнанням, не ставить діагнозів, не призначає категорій сортування, не обирає маршрутів входу.
+- Відсутні дані = невідомо, ніколи не «норма». Акустичні/PIR-сигнали — лише можливі ознаки присутності.
+- Коефіцієнти не є ймовірностями виживання; система не валідована на реальних рятувальних операціях.

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "original_tests": 116,
+  "skipped_tests": 0,
+  "analytical_checks": 44,
+  "figures": 30,
+  "replay_snapshots_per_variant": 41,
+  "source_and_fixture_files_verified": 77,
+  "synthetic_data": true,
+  "external_llm_called": false,
+  "hosted_colab_session_tested": false,
+  "operationally_validated": false,
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  }
+}

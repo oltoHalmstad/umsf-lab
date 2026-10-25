@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "UMSF Bench Prototype: ESP32 sensor firmware and local monitoring interface"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Adilzhanova
+    given-names: Saltanat
+    affiliation: "Almaty Technological University, Almaty, Kazakhstan"
+  - family-names: Torstensson
+    given-names: Olga
+    affiliation: "Halmstad University, Halmstad, Sweden"
+    email: olga.torstensson@hh.se
+  - family-names: Prokopovych-Tkachenko
+    given-names: Dmytro
+    affiliation: "University of Customs and Finance, Dnipro, Ukraine"
+  - family-names: Tykhonenko
+    given-names: Mariia
+    affiliation: "University of Customs and Finance, Dnipro, Ukraine; Kharkiv National University of Radio Electronics, Kharkiv, Ukraine"
+  - family-names: Beketova
+    given-names: Gulzhanat
+    affiliation: "Almaty University of Energy and Communications named after G. Daukeev, Almaty, Kazakhstan"
+  - family-names: Sydybayeva
+    given-names: Madina
+    affiliation: "Satbayev University, Almaty, Kazakhstan"
+keywords:
+  - ESP32
+  - ESP-NOW
+  - firmware
+  - wearable sensor
+  - photoplethysmography
+  - structural monitoring
+  - incident monitoring
+  - critical infrastructure
+references:
+  - type: software
+    title: "UMSF Incident Lab: a self-contained reproducible notebook for evidence-aware multisensor monitoring in critical infrastructure incident support"
+    version: 1.2.0
+    doi: 10.5281/zenodo.23380282
+    authors:
+      - family-names: Adilzhanova
+        given-names: Saltanat

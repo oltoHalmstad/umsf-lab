@@ -1,0 +1,8 @@
+case,quality,artifacts,channels,hr,spo2
+missing,255,0,0,65535,65535
+clean,100,0,7,65535,65535
+no_contact,0,2,7,65535,65535
+saturated,0,4,7,65535,65535
+sample_gap,50,8,7,65535,65535
+motion,50,1,7,65535,65535
+synthetic_hr,100,0,15,770,65535

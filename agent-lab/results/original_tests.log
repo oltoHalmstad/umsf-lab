@@ -1,0 +1,189 @@
+===== test_agent =====
+test_audit_chain_and_contents (test_agent.TestAgentRun.test_audit_chain_and_contents) ... ok
+test_briefing_has_no_forbidden_conclusions (test_agent.TestAgentRun.test_briefing_has_no_forbidden_conclusions) ... ok
+test_every_package_is_a_proposal_with_table9_role (test_agent.TestAgentRun.test_every_package_is_a_proposal_with_table9_role) ... ok
+test_outputs_written (test_agent.TestAgentRun.test_outputs_written) ... ok
+test_tamper_detected (test_agent.TestAgentRun.test_tamper_detected) ... ok
+test_cli_approve_and_reject_with_reason (test_agent.TestAuthorisation.test_cli_approve_and_reject_with_reason) ... ok
+test_interactive_prompt (test_agent.TestAuthorisation.test_interactive_prompt) ... ok
+test_wrong_role_or_missing_reason_refused (test_agent.TestAuthorisation.test_wrong_role_or_missing_reason_refused) ... ok
+test_demo_offline_with_llm_flag (test_agent.TestCLI.test_demo_offline_with_llm_flag) ... ok
+test_reproduce_paper_exit_zero (test_agent.TestCLI.test_reproduce_paper_exit_zero) ... ok
+test_infeasible_never_relaxed (test_agent.TestNoBackupPowerVariant.test_infeasible_never_relaxed) ... ok
+test_auto_approve_is_marked_simulated (test_agent.TestSimulationAndReplay.test_auto_approve_is_marked_simulated) ... ok
+test_change_detection (test_agent.TestSimulationAndReplay.test_change_detection) ... ok
+test_replay_reproposes_on_new_events (test_agent.TestSimulationAndReplay.test_replay_reproposes_on_new_events) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 4.852s
+
+OK
+
+===== test_assignment =====
+test_exact_against_brute_force_random (test_assignment.TestLexicographicAssignment.test_exact_against_brute_force_random) ... ok
+test_forbidden_pairs_never_used (test_assignment.TestLexicographicAssignment.test_forbidden_pairs_never_used) ... ok
+test_max_urgent_count_over_priority_sum (test_assignment.TestLexicographicAssignment.test_max_urgent_count_over_priority_sum) ... ok
+test_priority_dominates_time (test_assignment.TestLexicographicAssignment.test_priority_dominates_time) ... ok
+test_time_breaks_ties (test_assignment.TestLexicographicAssignment.test_time_breaks_ties) ... ok
+test_urgent_dominates_priority (test_assignment.TestLexicographicAssignment.test_urgent_dominates_priority) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.610s
+
+OK
+
+===== test_continuity =====
+test_reports_replace_contributions (test_continuity.TestCapacityProvenance.test_reports_replace_contributions) ... ok
+test_stale_report_removes_guarantee (test_continuity.TestCapacityProvenance.test_stale_report_removes_guarantee) ... ok
+test_auto_switches_to_bnb_beyond_20 (test_continuity.TestExactSolvers.test_auto_switches_to_bnb_beyond_20) ... ok
+test_dependency_respected (test_continuity.TestExactSolvers.test_dependency_respected) ... ok
+test_enumeration_and_bnb_match_bruteforce (test_continuity.TestExactSolvers.test_enumeration_and_bnb_match_bruteforce) ... ok
+test_mandatory_inadmissible_is_infeasible_never_relaxed (test_continuity.TestExactSolvers.test_mandatory_inadmissible_is_infeasible_never_relaxed) ... ok
+test_power_and_energy_are_separate_constraints (test_continuity.TestExactSolvers.test_power_and_energy_are_separate_constraints) ... ok
+test_unknown_admissibility_excludes (test_continuity.TestExactSolvers.test_unknown_admissibility_excludes) ... ok
+test_unknown_capacity_is_zero (test_continuity.TestExactSolvers.test_unknown_capacity_is_zero) ... ok
+test_capacity_boundaries (test_continuity.TestSection49.test_capacity_boundaries) ... ok
+test_fig14_table (test_continuity.TestSection49.test_fig14_table) ... ok
+test_q_metric (test_continuity.TestSection49.test_q_metric) ... ok
+test_text_details (test_continuity.TestSection49.test_text_details) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.602s
+
+OK
+
+===== test_incident_state =====
+test_point_interval_unqualified (test_incident_state.TestDelay.test_point_interval_unqualified) ... ok
+test_attachment_uncertain_withdraws_structural_interpretation (test_incident_state.TestIncidentState.test_attachment_uncertain_withdraws_structural_interpretation) ... ok
+test_freshness_stale_history (test_incident_state.TestIncidentState.test_freshness_stale_history) ... ok
+test_layers_are_typed_records_not_scores (test_incident_state.TestIncidentState.test_layers_are_typed_records_not_scores) ... ok
+test_link_loss_creates_gap_and_removes_current_authority (test_incident_state.TestIncidentState.test_link_loss_creates_gap_and_removes_current_authority) ... ok
+test_link_restored_closes_gap (test_incident_state.TestIncidentState.test_link_restored_closes_gap) ... ok
+test_packets_have_required_fields (test_incident_state.TestIncidentState.test_packets_have_required_fields) ... ok
+test_possible_impact_local_is_unverified (test_incident_state.TestIncidentState.test_possible_impact_local_is_unverified) ... ok
+test_presence_cue_semantics (test_incident_state.TestIncidentState.test_presence_cue_semantics) ... ok
+test_stationary_nodes_not_workers (test_incident_state.TestIncidentState.test_stationary_nodes_not_workers) ... ok
+test_strike_attribution_only_from_authoritative_source (test_incident_state.TestIncidentState.test_strike_attribution_only_from_authoritative_source) ... ok
+test_structural_assessment_qualified_with_validity (test_incident_state.TestIncidentState.test_structural_assessment_qualified_with_validity) ... ok
+test_timing_eq7 (test_incident_state.TestIncidentState.test_timing_eq7) ... ok
+test_versioning_supersession (test_incident_state.TestIncidentState.test_versioning_supersession) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.036s
+
+OK
+
+===== test_ingest =====
+test_dedup_conflict_invalid_range (test_ingest.TestIngest.test_dedup_conflict_invalid_range) ... ok
+test_roster_missing_is_tolerated (test_ingest.TestIngest.test_roster_missing_is_tolerated) ... ok
+test_scenario_loads (test_ingest.TestIngest.test_scenario_loads) ... ok
+test_snapshot_uses_arrival_time (test_ingest.TestIngest.test_snapshot_uses_arrival_time) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.683s
+
+OK
+
+===== test_llm =====
+test_agent_writes_labelled_ai_briefing (test_llm.TestLLMLayer.test_agent_writes_labelled_ai_briefing) ... ok
+test_api_error_falls_back (test_llm.TestLLMLayer.test_api_error_falls_back) ... ok
+test_forbidden_claim_rejected (test_llm.TestLLMLayer.test_forbidden_claim_rejected) ... ok
+test_max_tokens_truncation_falls_back (test_llm.TestLLMLayer.test_max_tokens_truncation_falls_back) ... ok
+test_model_env_override (test_llm.TestLLMLayer.test_model_env_override) ... ok
+test_no_sdk_offline_fallback (test_llm.TestLLMLayer.test_no_sdk_offline_fallback) ... ok
+test_pause_turn_is_resumed (test_llm.TestLLMLayer.test_pause_turn_is_resumed) ... ok
+test_refusal_falls_back (test_llm.TestLLMLayer.test_refusal_falls_back) ... ok
+test_tool_loop_and_request_shape (test_llm.TestLLMLayer.test_tool_loop_and_request_shape) ... ok
+test_tools_are_minimised (test_llm.TestLLMLayer.test_tools_are_minimised) ... ok
+test_unknown_tool_returns_error_result (test_llm.TestLLMLayer.test_unknown_tool_returns_error_result) ... ok
+test_unsupported_number_rejected (test_llm.TestLLMLayer.test_unsupported_number_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.756s
+
+OK
+
+===== test_p1_compat =====
+test_association_reported_without_attribution (test_p1_compat.TestP1Mini.test_association_reported_without_attribution) ... ok
+test_eta_used_as_delta (test_p1_compat.TestP1Mini.test_eta_used_as_delta) ... ok
+test_normalisation (test_p1_compat.TestP1Mini.test_normalisation) ... ok
+test_personnel_and_restricted_access (test_p1_compat.TestP1Mini.test_personnel_and_restricted_access) ... ok
+test_resource_report_replaces_register_bound (test_p1_compat.TestP1Mini.test_resource_report_replaces_register_bound) ... ok
+test_a_z1_access_restricted (test_p1_compat.TestRealP1Dataset.test_a_z1_access_restricted) ... ok
+test_attribution (test_p1_compat.TestRealP1Dataset.test_attribution) ... ok
+test_continuity_q (test_p1_compat.TestRealP1Dataset.test_continuity_q) ... ok
+test_loads (test_p1_compat.TestRealP1Dataset.test_loads) ... ok
+test_sa1_zone_observation_gap (test_p1_compat.TestRealP1Dataset.test_sa1_zone_observation_gap) ... ok
+test_sos_w01_and_help_w05_tasks (test_p1_compat.TestRealP1Dataset.test_sos_w01_and_help_w05_tasks) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.553s
+
+OK
+
+===== test_physio_rules =====
+test_median_mad_scaling (test_physio_rules.TestEq1RobustZ.test_median_mad_scaling) ... ok
+test_missing_value_is_not_zero (test_physio_rules.TestEq1RobustZ.test_missing_value_is_not_zero) ... ok
+test_scale_floor_epsilon (test_physio_rules.TestEq1RobustZ.test_scale_floor_epsilon) ... ok
+test_uncalibrated_when_reference_insufficient (test_physio_rules.TestEq1RobustZ.test_uncalibrated_when_reference_insufficient) ... ok
+test_missing_channel_makes_score_undefined (test_physio_rules.TestEq2Score.test_missing_channel_makes_score_undefined) ... ok
+test_weighted_capped (test_physio_rules.TestEq2Score.test_weighted_capped) ... ok
+test_weights_must_sum_to_one (test_physio_rules.TestEq2Score.test_weights_must_sum_to_one) ... ok
+test_ineligible_windows_omitted_from_ratio (test_physio_rules.TestEq3PersistentFlag.test_ineligible_windows_omitted_from_ratio) ... ok
+test_lookback_limited_to_L (test_physio_rules.TestEq3PersistentFlag.test_lookback_limited_to_L) ... ok
+test_unavailable_not_zero_when_current_ineligible (test_physio_rules.TestEq3PersistentFlag.test_unavailable_not_zero_when_current_ineligible) ... ok
+test_unavailable_when_too_few_eligible_windows (test_physio_rules.TestEq3PersistentFlag.test_unavailable_when_too_few_eligible_windows) ... ok
+test_duplicates_count_once (test_physio_rules.TestGroupSemantics.test_duplicates_count_once) ... ok
+test_empty_roster (test_physio_rules.TestGroupSemantics.test_empty_roster) ... ok
+test_losing_unaffected_worker_raises_p_but_lowers_C (test_physio_rules.TestGroupSemantics.test_losing_unaffected_worker_raises_p_but_lowers_C) ... ok
+test_no_deviation_never_labelled_safe (test_physio_rules.TestGroupSemantics.test_no_deviation_never_labelled_safe) ... ok
+test_roster_unavailable_no_group_conclusion (test_physio_rules.TestGroupSemantics.test_roster_unavailable_no_group_conclusion) ... ok
+test_unobserved_workers_stay_in_denominator (test_physio_rules.TestGroupSemantics.test_unobserved_workers_stay_in_denominator) ... ok
+test_urgent_bypasses_group_rule_even_with_no_coverage (test_physio_rules.TestGroupSemantics.test_urgent_bypasses_group_rule_even_with_no_coverage) ... ok
+test_ceil_robust_to_float (test_physio_rules.TestSec43Integer.test_ceil_robust_to_float) ... ok
+test_infeasible_configuration_reported (test_physio_rules.TestSec43Integer.test_infeasible_configuration_reported) ... ok
+test_integer_reformulation_equals_eq5_exhaustively (test_physio_rules.TestSec43Integer.test_integer_reformulation_equals_eq5_exhaustively) ... ok
+test_study_a_note (test_physio_rules.TestSec43Integer.test_study_a_note) ... ok
+test_case_A (test_physio_rules.TestTable10.test_case_A) ... ok
+test_case_B (test_physio_rules.TestTable10.test_case_B) ... ok
+test_case_C (test_physio_rules.TestTable10.test_case_C) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.458s
+
+OK
+
+===== test_recovery =====
+test_actuation_never_scheduled (test_recovery.TestRecoveryPlan.test_actuation_never_scheduled) ... ok
+test_command_supplied_actuation_task_excluded (test_recovery.TestRecoveryPlan.test_command_supplied_actuation_task_excluded) ... ok
+test_continuity_drives_power_task (test_recovery.TestRecoveryPlan.test_continuity_drives_power_task) ... ok
+test_crew_capacity_no_overlap (test_recovery.TestRecoveryPlan.test_crew_capacity_no_overlap) ... ok
+test_entry_prerequisites_are_hard (test_recovery.TestRecoveryPlan.test_entry_prerequisites_are_hard) ... ok
+test_future_access_gives_release_time (test_recovery.TestRecoveryPlan.test_future_access_gives_release_time) ... ok
+test_unknown_access_blocks_and_propagates (test_recovery.TestRecoveryPlan.test_unknown_access_blocks_and_propagates) ... ok
+test_cpm_and_equipment_capacity (test_recovery.TestSGS.test_cpm_and_equipment_capacity) ... ok
+test_cycle_detected (test_recovery.TestSGS.test_cycle_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.384s
+
+OK
+
+===== test_rescue =====
+test_access_for_unknown_zone (test_rescue.TestRescue.test_access_for_unknown_zone) ... ok
+test_access_granted_later_allows_assignment (test_rescue.TestRescue.test_access_granted_later_allows_assignment) ... ok
+test_assignment_respects_eq8 (test_rescue.TestRescue.test_assignment_respects_eq8) ... ok
+test_personnel_reconciliation_states (test_rescue.TestRescue.test_personnel_reconciliation_states) ... ok
+test_policy_override_and_multi_team (test_rescue.TestRescue.test_policy_override_and_multi_team) ... ok
+test_ppe_required_in_gas_zone (test_rescue.TestRescue.test_ppe_required_in_gas_zone) ... ok
+test_tasks_from_requests_unaccounted_and_cues (test_rescue.TestRescue.test_tasks_from_requests_unaccounted_and_cues) ... ok
+test_unknown_access_is_escalated_not_abandoned (test_rescue.TestRescue.test_unknown_access_is_escalated_not_abandoned) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.293s
+
+OK
+
+===== SUMMARY =====
+Ran 116 tests in 10 parallel module processes
+OK

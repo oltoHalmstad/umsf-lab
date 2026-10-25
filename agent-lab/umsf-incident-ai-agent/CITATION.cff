@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "umsf-incident-ai-agent: evidence-aware AI decision-support agent for rescue and consequence-liquidation logistics"
+version: 1.0.0
+date-released: 2026-10-14
+license: MIT
+authors:
+  - family-names: Torstensson
+    given-names: Olga
+    affiliation: Halmstad University
+    orcid: "https://orcid.org/0009-0007-2169-6851"
+  - family-names: Prokopovych-Tkachenko
+    given-names: Dmytro
+    affiliation: University of Customs and Finance
+    orcid: "https://orcid.org/0000-0002-6590-3898"
+  - family-names: Adilzhanova
+    given-names: Saltanat
+    affiliation: Almaty Technological University
+    orcid: "https://orcid.org/0000-0003-1768-064X"
+  - family-names: Tykhonenko
+    given-names: Mariia
+    affiliation: University of Customs and Finance
+    orcid: "https://orcid.org/0009-0000-5192-3241"
+  - family-names: Beketova
+    given-names: Gulzhanat
+    affiliation: Almaty University of Energy and Communications
+    orcid: "https://orcid.org/0000-0001-7160-1514"
+  - family-names: Sydybayeva
+    given-names: Madina
+    affiliation: Satbayev University
+    orcid: "https://orcid.org/0000-0002-8950-5421"
+abstract: >-
+  Research software implementing the decision-support layer of "Evidence-Aware Multisensor Monitoring
+  for Critical Infrastructure Incident Support" (Torstensson et al., 2026). An agent ingests a
+  multisensor incident dataset, applies coverage-aware physiological rules (Eq. 1-5) and a
+  source-qualified zone incident state (Eq. 6-7), and plans rescue logistics (personnel accounting,
+  exact lexicographic team-task assignment, Eq. 8-9) and consequence-liquidation logistics (exact
+  service-continuity allocation, Eq. 10-11, and a resource-constrained recovery schedule). All plans
+  are deterministic proposals requiring human authorisation by the roles of Table 9, recorded in a
+  hash-chained audit log. An optional language-model layer only summarises minimised aggregates.
+  Reproduces Table 10 and Section 4.9 exactly. Not validated against real rescue operations.
+keywords:
+  - critical infrastructure
+  - incident support
+  - rescue logistics
+  - recovery scheduling
+  - service continuity
+  - decision support
+  - monitoring coverage
+  - evidence provenance
+  - human authorisation
+  - constrained allocation
+references:
+  - type: article
+    title: "Evidence-Aware Multisensor Monitoring for Critical Infrastructure Incident Support: System architecture and preliminary verification using synthetic evaluations and bench demonstrations"
+    authors:
+      - family-names: Torstensson
+        given-names: Olga
+      - family-names: Prokopovych-Tkachenko
+        given-names: Dmytro
+      - family-names: Adilzhanova
+        given-names: Saltanat
+      - family-names: Tykhonenko
+        given-names: Mariia
+      - family-names: Beketova
+        given-names: Gulzhanat
+      - family-names: Sydybayeva
+        given-names: Madina
+    year: 2026
+    journal: "Results in Engineering"

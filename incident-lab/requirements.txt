@@ -1,0 +1,10 @@
+# Broad compatible ranges for current Colab; exact tested versions are in results/environment.json.
+numpy>=1.24,<3
+pandas>=2.0,<4
+matplotlib>=3.7,<4
+seaborn>=0.12,<1
+cryptography>=41
+nbformat>=5.9,<6
+nbclient>=0.9,<1
+nbconvert>=7,<8
+ipykernel>=6,<8

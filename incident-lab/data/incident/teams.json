@@ -1,0 +1,116 @@
+{
+ "teams": [
+  {
+   "team_id": "RT-1",
+   "name": "Site fire and rescue unit",
+   "site_id": "SITE-A",
+   "members": 4,
+   "competencies": [
+    "search_and_rescue",
+    "first_aid",
+    "casualty_extraction"
+   ],
+   "available": true,
+   "eta_min": {
+    "A-Z1": 3,
+    "A-Z2": 2,
+    "A-Z3": 4,
+    "B-Z1": 22,
+    "B-Z2": 24
+   }
+  },
+  {
+   "team_id": "RT-2",
+   "name": "Medical first responders",
+   "site_id": "SITE-A",
+   "members": 2,
+   "competencies": [
+    "first_aid",
+    "medical_assessment",
+    "medical_evacuation"
+   ],
+   "available": true,
+   "eta_min": {
+    "A-Z1": 3,
+    "A-Z2": 2,
+    "A-Z3": 4,
+    "B-Z1": 22,
+    "B-Z2": 24
+   }
+  },
+  {
+   "team_id": "RT-3",
+   "name": "Gas and hazmat response",
+   "site_id": "SITE-B",
+   "members": 3,
+   "competencies": [
+    "gas_detection_qualified_instrument",
+    "hazmat",
+    "ventilation_assessment"
+   ],
+   "available": true,
+   "eta_min": {
+    "A-Z1": 21,
+    "A-Z2": 22,
+    "A-Z3": 20,
+    "B-Z1": 2,
+    "B-Z2": 3
+   }
+  },
+  {
+   "team_id": "RT-4",
+   "name": "Electrical and utilities restoration",
+   "site_id": "SITE-B",
+   "members": 3,
+   "competencies": [
+    "electrical_isolation",
+    "utility_restoration",
+    "backup_power"
+   ],
+   "available": true,
+   "eta_min": {
+    "A-Z1": 21,
+    "A-Z2": 22,
+    "A-Z3": 20,
+    "B-Z1": 2,
+    "B-Z2": 3
+   }
+  },
+  {
+   "team_id": "RT-5",
+   "name": "Structural assessment engineer",
+   "site_id": "SITE-A",
+   "members": 1,
+   "competencies": [
+    "structural_assessment"
+   ],
+   "available": false,
+   "available_from_min": 15,
+   "eta_min": {
+    "A-Z1": 3,
+    "A-Z2": 2,
+    "A-Z3": 4,
+    "B-Z1": 22,
+    "B-Z2": 24
+   }
+  }
+ ],
+ "competency_catalog": [
+  "backup_power",
+  "casualty_extraction",
+  "electrical_isolation",
+  "first_aid",
+  "gas_detection_qualified_instrument",
+  "hazmat",
+  "medical_assessment",
+  "medical_evacuation",
+  "search_and_rescue",
+  "structural_assessment",
+  "utility_restoration",
+  "ventilation_assessment"
+ ],
+ "notes": [
+  "eta_min values are qualified assignment-time estimates (delta_rj) for the illustrative planner; not measured travel times.",
+  "Task priorities, access restrictions and approvals belong to incident command."
+ ]
+}

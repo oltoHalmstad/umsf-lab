@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "original_native_tests": {
+    "cases": 43,
+    "passed": 43,
+    "failed": 0,
+    "checks": 475,
+    "failed_checks": 0
+  },
+  "supplied_vectors": 19,
+  "expected_bad_crc_vectors": 1,
+  "single_bit_mutations_rejected": 400,
+  "physio_sweep_rows": 1155,
+  "station_windows": 260,
+  "native_events": 8,
+  "figures": 30,
+  "source_files_unchanged": 57,
+  "esp32_images_compiled": false,
+  "hardware_tested": false,
+  "hosted_colab_session_tested": false,
+  "synthetic_experiments_only": true,
+  "versions": {
+    "python": "3.13.16",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+    "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  }
+}

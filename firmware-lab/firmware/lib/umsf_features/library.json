@@ -1,0 +1,9 @@
+{
+  "name": "umsf_features",
+  "version": "1.0.0",
+  "description": "Portable feature extraction and local threshold detectors for UMSF nodes",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "build": { "srcDir": "src", "includeDir": "src" }
+}

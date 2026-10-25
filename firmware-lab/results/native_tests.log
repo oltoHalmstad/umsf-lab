@@ -1,0 +1,58 @@
+cc -std=c99 -O2 -Wall -Wextra -Werror -pedantic -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c ../../lib/umsf_proto/src/umsf_frag.c -o build/lib/umsf_proto/src/umsf_frag.o
+cc -std=c99 -O2 -Wall -Wextra -Werror -pedantic -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c ../../lib/umsf_proto/src/umsf_json.c -o build/lib/umsf_proto/src/umsf_json.o
+cc -std=c99 -O2 -Wall -Wextra -Werror -pedantic -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c ../../lib/umsf_proto/src/umsf_proto.c -o build/lib/umsf_proto/src/umsf_proto.o
+cc -std=c99 -O2 -Wall -Wextra -Werror -pedantic -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c ../../lib/umsf_proto/src/umsf_text.c -o build/lib/umsf_proto/src/umsf_text.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c ../../lib/umsf_features/src/umsf_features.cpp -o build/lib/umsf_features/src/umsf_features.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c test_buffer.cpp -o build/test_buffer.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c test_features.cpp -o build/test_features.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c test_frag.cpp -o build/test_frag.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c test_gwcore.cpp -o build/test_gwcore.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c test_main.cpp -o build/test_main.o
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -I../../lib/umsf_proto/src -I../../lib/umsf_buffer/src -I../../lib/umsf_features/src -I../../lib/umsf_gwcore/src -I. -c test_proto.cpp -o build/test_proto.o
+g++ build/lib/umsf_proto/src/umsf_frag.o build/lib/umsf_proto/src/umsf_json.o build/lib/umsf_proto/src/umsf_proto.o build/lib/umsf_proto/src/umsf_text.o build/lib/umsf_features/src/umsf_features.o build/test_buffer.o build/test_features.o build/test_frag.o build/test_gwcore.o build/test_main.o build/test_proto.o -o build/umsf_tests -lm
+./build/umsf_tests
+[PASS] buffer_capacity_minimums
+[PASS] buffer_cumulative_ack
+[PASS] buffer_oldest_eviction_is_reported
+[PASS] buffer_priority_and_resend
+[PASS] buffer_gateway_multi_source
+[PASS] buffer_eviction_spares_urgent_events
+[PASS] physio_clean_window
+[PASS] physio_no_contact_saturation_gap_motion
+[PASS] physio_synthetic_hr_flagged
+[PASS] physio_unvalidated_pulse_estimator
+[PASS] button_debounce_latch_reset
+[PASS] station_impact_excursion
+[PASS] station_tilt_63deg
+[PASS] station_gas_preheat_hysteresis
+[PASS] station_pressure_transient
+[PASS] station_loud_sound_and_composite
+[PASS] station_pir_presence_hold
+[PASS] station_sos_and_unknown_channels
+[PASS] event_names_never_attribute_strike
+[PASS] frag_single_notification_at_mtu247
+[PASS] frag_default_mtu_out_of_order
+[PASS] frag_timeout_2s
+[PASS] frag_512_limit
+[PASS] frag_three_concurrent_and_eviction
+[PASS] frag_malformed
+[PASS] gw_link_loss_and_restore
+[PASS] gw_parse_site_ack
+[PASS] gw_allowlist
+[PASS] proto_crc_known_vector
+[PASS] proto_lengths
+[PASS] proto_header_layout
+[PASS] proto_roundtrip_physio
+[PASS] proto_roundtrip_station
+[PASS] proto_roundtrip_event_status_ack_config
+[PASS] proto_null_sentinels
+[PASS] proto_decode_errors
+[PASS] proto_compact_roundtrip
+[PASS] text_paper_example_exact
+[PASS] text_nulls_station_event
+[PASS] json_physio_fields
+[PASS] json_station_event
+[PASS] json_iso8601
+[PASS] timemap_min_offset_and_resend
+
+43 test cases, 43 passed, 0 failed; 475 checks, 0 failed checks

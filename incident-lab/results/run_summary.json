@@ -1,0 +1,125 @@
+{
+  "notebook_release": "1.2.0",
+  "analytical_core": "1.0.0",
+  "figures": 30,
+  "study_a": {
+    "records": 40320,
+    "baseline_records": 11520,
+    "evaluation_records": 28800,
+    "zone_minutes": 4800,
+    "target_zone_minutes": 400,
+    "strong_detected": 10,
+    "strong_total": 10,
+    "weak_detected": 0,
+    "weak_total": 5,
+    "episodes_detected": 10,
+    "episodes_total": 15,
+    "TP": 280,
+    "FP": 0,
+    "FN": 120,
+    "TN": 4400,
+    "precision": 1.0,
+    "recall": 0.7,
+    "F1": 0.824,
+    "degraded_zone_minutes": 50,
+    "degraded_intervals_injected": 10,
+    "fn_in_weak": 100,
+    "fn_strong_confirmation_lag": 20,
+    "strong_detection_delay_min": {
+      "min": 2,
+      "max": 2
+    },
+    "states": {
+      "no_configured_deviation": 4470,
+      "individual_review": 0,
+      "possible_group_event": 280,
+      "insufficient_monitoring_evidence": 50
+    }
+  },
+  "study_b": {
+    "input_lines": 2173,
+    "unique_identities": 2160,
+    "duplicates": 6,
+    "conflicts": 1,
+    "rejected": 6,
+    "exported": 2159,
+    "summaries": 12,
+    "windows_per_site": {
+      "SITE-A": 6,
+      "SITE-B": 6
+    },
+    "expected_per_window": [
+      180
+    ],
+    "fresh_expected": [
+      36
+    ],
+    "fresh_good_range": [
+      33,
+      36
+    ],
+    "min_fresh_devices_good": 6,
+    "selfchecks_passed": 10,
+    "selfchecks_failed": 0,
+    "manifest_exports": 6
+  },
+  "verification": {
+    "original_test_returncode": 0,
+    "original_tests_line": "Ran 58 tests in 15.232s",
+    "reference_rows": 25,
+    "reference_all_ok": true,
+    "semantic_checks": [
+      {
+        "Check": "Measured origin rejected by default",
+        "Passed": true
+      },
+      {
+        "Check": "Out-of-range HR rejected",
+        "Passed": true
+      },
+      {
+        "Check": "Local source cannot assert external strike report",
+        "Passed": true
+      },
+      {
+        "Check": "Incident SpO2 remains null",
+        "Passed": true
+      },
+      {
+        "Check": "Link loss produces unknown station evidence",
+        "Passed": true
+      }
+    ],
+    "protocol_checks": {
+      "decoded_frames": 179,
+      "all_crc_valid": true,
+      "reassembly_exact": true,
+      "compact_bytes": 20,
+      "corruption_detected": true
+    },
+    "crypto_verified": 40320,
+    "incident_records_valid": true,
+    "source_files_verified": 66,
+    "verification_elapsed_s": 15.468
+  },
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux",
+    "sqlite": "3.45.1",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "matplotlib": "3.11.2",
+      "seaborn": "0.13.2",
+      "cryptography": "50.0.2"
+    },
+    "notebook_release": "1.2.0",
+    "analytical_core": "1.0.0",
+    "payload_sha256": "8339a1288d2be6559db5654267d1b13158337dd0530fe7488c5729bac7f2fab4"
+  },
+  "limitations": [
+    "synthetic re-implementation, not empirical validation",
+    "hosted Colab interface requires separate interactive verification",
+    "physical hardware and production key management not tested"
+  ]
+}

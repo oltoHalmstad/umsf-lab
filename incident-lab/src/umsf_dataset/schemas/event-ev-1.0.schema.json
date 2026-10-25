@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:umsf:schema:event:ev-1.0",
+  "title": "UMSF source-qualified event record, schema ev-1.0",
+  "description": "PROTOCOL.md 5.3. A strike is only ever reported by source_class authoritative_external_alert (event_type external_strike_report); the local composite is possible_impact_local (unverified). Optional keys (boot_id, sequence, gateway_id, frame_hex, incident_id, related_event_ids, details) are an implementation extension.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "data_origin",
+    "scenario_id",
+    "site_id",
+    "zone_id",
+    "event_id",
+    "source_class",
+    "device_id",
+    "event_type",
+    "level",
+    "value",
+    "unit",
+    "observed_at",
+    "reported_at",
+    "time_uncertainty_s",
+    "rule_version",
+    "quality",
+    "ack_state",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "ev-1.0"
+    },
+    "data_origin": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "synthetic_payload_physical_transport",
+        "bench_transcription",
+        "measured"
+      ]
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "site_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "zone_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "source_class": {
+      "type": "string",
+      "enum": [
+        "personnel_node",
+        "stationary_node",
+        "gateway",
+        "operator_report",
+        "responder_report",
+        "authoritative_external_alert"
+      ]
+    },
+    "device_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "sos",
+        "sos_reset",
+        "impact_excursion",
+        "loud_sound",
+        "gas_channel_alarm",
+        "tilt_change",
+        "pressure_transient",
+        "presence",
+        "link_loss",
+        "possible_impact_local",
+        "help_request",
+        "link_restored",
+        "buffer_eviction",
+        "external_strike_report",
+        "air_raid_alert",
+        "air_raid_all_clear",
+        "structural_assessment",
+        "personnel_accounting",
+        "asset_status"
+      ]
+    },
+    "level": {
+      "enum": [
+        "info",
+        "notice",
+        "warning",
+        "urgent",
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": -2147483.648,
+      "maximum": 2147483.647
+    },
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 32
+    },
+    "observed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "reported_at": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 32
+    },
+    "time_uncertainty_s": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 86400
+    },
+    "rule_version": {
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ],
+      "maxLength": 32,
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "quality": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ack_state": {
+      "type": "string",
+      "enum": [
+        "unacknowledged",
+        "acknowledged",
+        "resolved"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "method"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "method": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "assessor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 256
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "boot_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "sequence": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "gateway_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Za-z0-9_.:-]{1,64}$"
+    },
+    "frame_hex": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([0-9a-fA-F]{2}){0,512}$"
+    },
+    "incident_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 128
+    },
+    "related_event_ids": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "string",
+        "maxLength": 128
+      }
+    },
+    "details": {
+      "type": "object",
+      "maxProperties": 64
+    }
+  }
+}

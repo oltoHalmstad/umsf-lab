@@ -1,0 +1,6 @@
+Gateway LittleFS image (pio run -e gateway -t uploadfs).
+Place here, never commit them:
+  ca.pem       - site CA certificate that signed the broker certificate
+  client.crt   - this gateway's client certificate (CN = gateway id, e.g. AG1)
+  client.key   - this gateway's private key
+If absent, the PEM strings in include/secrets.h are used; if those are empty, MQTT stays disabled.

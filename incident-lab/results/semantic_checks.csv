@@ -1,0 +1,6 @@
+Check,Passed
+Measured origin rejected by default,True
+Out-of-range HR rejected,True
+Local source cannot assert external strike report,True
+Incident SpO2 remains null,True
+Link loss produces unknown station evidence,True

@@ -1,0 +1,61 @@
+{
+  "upload_type": "software",
+  "title": "UMSF Firmware Laboratory: A Self-Contained Colab Companion for ESP32/BLE Protocols and Native Logic",
+  "version": "1.2.0",
+  "publication_date": "2026-10-14",
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Torstensson, Olga",
+      "affiliation": "Halmstad University",
+      "orcid": "0009-0007-2169-6851"
+    },
+    {
+      "name": "Prokopovych-Tkachenko, Dmytro",
+      "affiliation": "University of Customs and Finance",
+      "orcid": "0000-0002-6590-3898"
+    },
+    {
+      "name": "Adilzhanova, Saltanat",
+      "affiliation": "Almaty Technological University",
+      "orcid": "0000-0003-1768-064X"
+    },
+    {
+      "name": "Tykhonenko, Mariia",
+      "affiliation": "University of Customs and Finance",
+      "orcid": "0009-0000-5192-3241"
+    },
+    {
+      "name": "Beketova, Gulzhanat",
+      "affiliation": "Almaty University of Energy and Communications",
+      "orcid": "0000-0001-7160-1514"
+    },
+    {
+      "name": "Sydybayeva, Madina",
+      "affiliation": "Satbayev University",
+      "orcid": "0000-0002-8950-5421"
+    }
+  ],
+  "description": "<p>An English, self-contained computational laboratory accompanying umsf-ble-firmware 1.0.0. The notebook embeds the original source and builds its portable C/C++ libraries, runs all original host tests and supplied protocol vectors, and generates 30 explanatory figures with PNG/SVG exports. Controlled native experiments examine physiological feature quality, null sentinels, explicitly synthetic HR, stationary detector rules, gas warmup and hysteresis, tilt uncertainty, SOS debounce, link freshness, RAM-buffer priorities and application acknowledgements. Protocol experiments inspect CRC corruption and native BLE fragmentation. Includes clean and executed notebooks, a rendered HTML report, CSV traces, source provenance, validation evidence, citation metadata and MIT license. All experimental sensor inputs are synthetic. ESP32 firmware images are not compiled or hardware-validated in this release; hosted Google Colab frontend execution has not been directly tested. After a three-cell setup, every analysis cell is self-sufficient and can run alone, in any order or after a kernel restart. The notebook is verified locally in a fresh Jupyter kernel with only the notebook supplied, and each analysis cell alone in its own fresh kernel. Thresholds are uncalibrated; no clinical, gas-concentration, structural-safety or causal-attribution claims are made.</p>",
+  "keywords": [
+    "ESP32",
+    "Bluetooth Low Energy",
+    "NimBLE",
+    "MQTT",
+    "TLS",
+    "firmware",
+    "physiological monitoring",
+    "building-state monitoring",
+    "critical infrastructure",
+    "incident support",
+    "dataset acquisition",
+    "Google Colab",
+    "Jupyter notebook",
+    "reproducibility",
+    "native testing",
+    "synthetic experiments"
+  ],
+  "notes": "Notebook companion 1.2.0 (optimized; every analysis cell self-sufficient); original firmware source 1.0.0 preserved byte-for-byte. See results/VALIDATION_REPORT.json. No DOI assigned by this package."
+}

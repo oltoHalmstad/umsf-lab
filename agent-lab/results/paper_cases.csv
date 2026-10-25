@@ -1,0 +1,4 @@
+case,expected,eligible,flagged,coverage_pct,flagged_pct,group_trigger,interpretation
+A,12,10,4,83.3,40.0,1,Possible group event
+B,12,4,3,33.3,75.0,0,Insufficient group evidence; individual review
+C,12,10,1,83.3,10.0,0,Urgent individual assistance; no group trigger

@@ -1,0 +1,90 @@
+{
+ "records": 40320,
+ "baseline_records": 11520,
+ "evaluation_records": 28800,
+ "zone_minutes": 4800,
+ "target_zone_minutes": 400,
+ "strong_detected": 10,
+ "strong_total": 10,
+ "weak_detected": 0,
+ "weak_total": 5,
+ "episodes_detected": 10,
+ "episodes_total": 15,
+ "TP": 280,
+ "FP": 0,
+ "FN": 120,
+ "TN": 4400,
+ "precision": 1.0,
+ "recall": 0.7,
+ "F1": 0.824,
+ "degraded_zone_minutes": 50,
+ "degraded_intervals_injected": 10,
+ "fn_in_weak": 100,
+ "fn_strong_confirmation_lag": 20,
+ "strong_detection_delay_min": {
+  "min": 2,
+  "max": 2
+ },
+ "states": {
+  "no_configured_deviation": 4470,
+  "individual_review": 0,
+  "possible_group_event": 280,
+  "insufficient_monitoring_evidence": 50
+ },
+ "seed": 20260908,
+ "parameters": {
+  "hr_sigma": 3.0,
+  "spo2_sigma": 0.3,
+  "z_threshold": 3.0,
+  "persist_min": 3,
+  "quality_min": 0.8,
+  "n_min": 5,
+  "c_min": 0.7,
+  "m_min": 3,
+  "theta": 0.5,
+  "strong": {
+   "n": 10,
+   "hr": 24.0,
+   "spo2": -2.4,
+   "minutes": 30,
+   "workers": 3
+  },
+  "weak": {
+   "n": 5,
+   "hr": 7.0,
+   "spo2": -0.6,
+   "minutes": 20,
+   "workers": 3
+  }
+ },
+ "protection": {
+  "available": true,
+  "algorithms": "Ed25519 signature inside AES-256-GCM",
+  "freshness_s": 120,
+  "ordinary_records": 40320,
+  "ordinary_verified": 40320,
+  "note": "demonstration keys and nonce state; not operational provisioning",
+  "negative": {
+   "ciphertext_alteration": {
+    "cases": 1000,
+    "rejected": 1000,
+    "expected_reason": "aead_authentication_failed"
+   },
+   "retained_signature_modification": {
+    "cases": 1000,
+    "rejected": 1000,
+    "expected_reason": "signature_invalid"
+   },
+   "replay": {
+    "cases": 1000,
+    "rejected": 1000,
+    "expected_reason": "replay"
+   },
+   "delivery_180s_vs_120s_freshness": {
+    "cases": 1000,
+    "rejected": 1000,
+    "expected_reason": "stale_beyond_freshness"
+   }
+  }
+ }
+}

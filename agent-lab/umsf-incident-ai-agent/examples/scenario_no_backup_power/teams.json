@@ -1,0 +1,226 @@
+{
+  "schema_version": "tm-1.0",
+  "scenario_id": "umsf-p3-post-impact-demo-v1-no_backup_power",
+  "data_origin": "synthetic",
+  "travel_speed_m_per_s": 1.2,
+  "zone_distance_m": {
+    "Z1": {
+      "Z2": 82,
+      "Z3": 108,
+      "Z6": 155,
+      "Z4": 1800,
+      "Z5": 1854
+    },
+    "Z2": {
+      "Z1": 82,
+      "Z3": 73,
+      "Z6": 92,
+      "Z4": 1720,
+      "Z5": 1773
+    },
+    "Z3": {
+      "Z1": 108,
+      "Z2": 73,
+      "Z6": 158,
+      "Z4": 1742,
+      "Z5": 1790
+    },
+    "Z6": {
+      "Z1": 155,
+      "Z2": 92,
+      "Z3": 158,
+      "Z4": 1650,
+      "Z5": 1708
+    },
+    "Z4": {
+      "Z1": 1800,
+      "Z2": 1720,
+      "Z3": 1742,
+      "Z6": 1650,
+      "Z5": 130
+    },
+    "Z5": {
+      "Z1": 1854,
+      "Z2": 1773,
+      "Z3": 1790,
+      "Z6": 1708,
+      "Z4": 130
+    }
+  },
+  "teams": [
+    {
+      "team_id": "RT1",
+      "name": "Рятувальна ланка 1",
+      "role": "rescue",
+      "location_zone": "Z6",
+      "competencies": [
+        "search",
+        "first_aid",
+        "rope_rescue"
+      ],
+      "ppe": [
+        "scba",
+        "gas_monitor",
+        "helmet"
+      ]
+    },
+    {
+      "team_id": "RT2",
+      "name": "Рятувальна ланка 2",
+      "role": "rescue",
+      "location_zone": "Z6",
+      "competencies": [
+        "search",
+        "first_aid"
+      ],
+      "ppe": [
+        "helmet"
+      ]
+    },
+    {
+      "team_id": "RT3",
+      "name": "Медична ланка (майданчик Б)",
+      "role": "rescue",
+      "location_zone": "Z4",
+      "competencies": [
+        "first_aid",
+        "medical_support"
+      ],
+      "ppe": [],
+      "available_until": "2026-10-14T08:55:00Z",
+      "note": "committed to medical point after 08:55"
+    },
+    {
+      "team_id": "RT4",
+      "name": "Пошукова ланка (майданчик Б)",
+      "role": "rescue",
+      "location_zone": "Z5",
+      "competencies": [
+        "search",
+        "gas_detection"
+      ],
+      "ppe": [
+        "scba",
+        "gas_monitor",
+        "helmet"
+      ],
+      "available_from": "2026-10-14T08:50:00Z"
+    },
+    {
+      "team_id": "ST1",
+      "name": "Кваліфікований експерт з конструкцій",
+      "role": "assessment",
+      "location_zone": "Z6",
+      "competencies": [
+        "structural_assessment"
+      ],
+      "ppe": [
+        "helmet"
+      ]
+    },
+    {
+      "team_id": "RC1",
+      "name": "Бригада електриків/зв'язку",
+      "role": "recovery",
+      "location_zone": "Z1",
+      "competencies": [
+        "electrical",
+        "comms"
+      ],
+      "ppe": [
+        "helmet"
+      ]
+    },
+    {
+      "team_id": "RC2",
+      "name": "Бригада ліквідації наслідків",
+      "role": "recovery",
+      "location_zone": "Z6",
+      "competencies": [
+        "gas_detection",
+        "debris_clearance",
+        "water_systems"
+      ],
+      "ppe": [
+        "scba",
+        "gas_monitor",
+        "helmet"
+      ]
+    }
+  ],
+  "access": [
+    {
+      "zone_id": "Z1",
+      "status": "authorised",
+      "scope": [
+        "all"
+      ],
+      "authorised_by": "incident command",
+      "valid_from": "2026-10-14T08:00:00Z"
+    },
+    {
+      "zone_id": "Z6",
+      "status": "authorised",
+      "scope": [
+        "all"
+      ],
+      "authorised_by": "incident command",
+      "valid_from": "2026-10-14T08:00:00Z"
+    },
+    {
+      "zone_id": "Z4",
+      "status": "authorised",
+      "scope": [
+        "all"
+      ],
+      "authorised_by": "incident command",
+      "valid_from": "2026-10-14T08:00:00Z"
+    },
+    {
+      "zone_id": "Z5",
+      "status": "authorised",
+      "scope": [
+        "all"
+      ],
+      "authorised_by": "incident command",
+      "valid_from": "2026-10-14T08:00:00Z"
+    },
+    {
+      "zone_id": "Z2",
+      "status": "authorised",
+      "scope": [
+        "rescue"
+      ],
+      "authorised_by": "incident command",
+      "conditions": [
+        "helmet",
+        "two-person rule"
+      ],
+      "valid_from": "2026-10-14T08:36:00Z"
+    },
+    {
+      "zone_id": "Z2",
+      "status": "authorised",
+      "scope": [
+        "recovery",
+        "assessment"
+      ],
+      "authorised_by": "incident command",
+      "valid_from": "2026-10-14T08:55:00Z"
+    },
+    {
+      "zone_id": "Z3",
+      "status": "authorised",
+      "scope": [
+        "gas_hazard_check"
+      ],
+      "authorised_by": "incident command",
+      "conditions": [
+        "scba",
+        "certified gas detector"
+      ],
+      "valid_from": "2026-10-14T09:15:00Z"
+    }
+  ],
+  "_note": "Z3 rescue/structural access deliberately left UNKNOWN to exercise escalation records."
+}

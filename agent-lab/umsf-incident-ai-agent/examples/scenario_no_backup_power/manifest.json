@@ -1,0 +1,31 @@
+{
+  "dataset_id": "umsf-p3-post-impact-demo-v1-no_backup_power",
+  "scenario_id": "umsf-p3-post-impact-demo-v1-no_backup_power",
+  "variant": "no_backup_power",
+  "variant_description": "same storyline, but no backup power is ever verified: mandatory life-safety demand exceeds justified capacity, so continuity is INFEASIBLE (never relaxed)",
+  "data_origin": "synthetic",
+  "label": "SYNTHETIC — constructed scenario; no real site, persons, attack or measured physiology",
+  "generator": "umsf_agent.scenario",
+  "seed": 20261014,
+  "start": "2026-10-14T08:00:00Z",
+  "end": "2026-10-14T09:10:00Z",
+  "baseline_end": "2026-10-14T08:30:00Z",
+  "sites": [
+    "UMSF-A",
+    "UMSF-B"
+  ],
+  "timezone_display": "Europe/Kyiv",
+  "notes": [
+    "station records are synthetic 10 s summaries",
+    "HR is a synthetic interface field",
+    "one duplicate and one conflicting physio record are included on purpose"
+  ],
+  "files": {
+    "assets.json": "f2439ec8a30a7948149374935466c84b51b550e7aa4bfe1de5ad8b8e76507b1f",
+    "events.jsonl": "ed3f6f211754e1033a0ab9932154c784adb5a5e38961a59293f1733cb3552b25",
+    "physio.jsonl": "a2dc5243ceffdd93dd3e6e8878e7b5272714d7a15b1ba91a070a0f9c0cffa97a",
+    "roster.json": "2d99371eb7096ebac866267e2d8267d6f0ca65230f74fb3fb87c08d7491c631d",
+    "station.jsonl": "6fc6754b430d15944a1cbc58d981718e2ac2c14a19819e179edd4c5691bc642c",
+    "teams.json": "8abae35cf45a94bfb760ca9242f8bc1aaa03a47991e30036beeea061269e165b"
+  }
+}

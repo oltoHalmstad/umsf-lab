@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "notebook_release": "1.2.0",
+  "notebook_cells": 67,
+  "code_cells_executed": 34,
+  "error_outputs": 0,
+  "stderr_outputs": 0,
+  "run_all_elapsed_seconds": 57.0,
+  "execution_engine": "jupyter (nbclient)",
+  "fresh_kernel": true,
+  "isolated_working_directory": true,
+  "only_notebook_supplied": true,
+  "cell_self_sufficiency": {
+    "performed": true,
+    "method": "setup cells once, then each code cell alone in a new kernel, reverse notebook order, shared working directory",
+    "cells_checked": 31,
+    "cells_failed": 0,
+    "cells": [
+      {
+        "cell_index": 65,
+        "seconds": 27.44
+      },
+      {
+        "cell_index": 62,
+        "seconds": 25.49
+      },
+      {
+        "cell_index": 60,
+        "seconds": 13.1
+      },
+      {
+        "cell_index": 58,
+        "seconds": 2.65
+      },
+      {
+        "cell_index": 56,
+        "seconds": 2.24
+      },
+      {
+        "cell_index": 54,
+        "seconds": 2.09
+      },
+      {
+        "cell_index": 52,
+        "seconds": 2.55
+      },
+      {
+        "cell_index": 50,
+        "seconds": 2.67
+      },
+      {
+        "cell_index": 48,
+        "seconds": 2.9
+      },
+      {
+        "cell_index": 46,
+        "seconds": 1.66
+      },
+      {
+        "cell_index": 44,
+        "seconds": 2.88
+      },
+      {
+        "cell_index": 42,
+        "seconds": 3.47
+      },
+      {
+        "cell_index": 40,
+        "seconds": 3.16
+      },
+      {
+        "cell_index": 38,
+        "seconds": 3.83
+      },
+      {
+        "cell_index": 36,
+        "seconds": 2.82
+      },
+      {
+        "cell_index": 34,
+        "seconds": 3.71
+      },
+      {
+        "cell_index": 32,
+        "seconds": 3.01
+      },
+      {
+        "cell_index": 30,
+        "seconds": 2.99
+      },
+      {
+        "cell_index": 28,
+        "seconds": 2.04
+      },
+      {
+        "cell_index": 26,
+        "seconds": 7.02
+      },
+      {
+        "cell_index": 24,
+        "seconds": 3.14
+      },
+      {
+        "cell_index": 22,
+        "seconds": 2.48
+      },
+      {
+        "cell_index": 20,
+        "seconds": 2.75
+      },
+      {
+        "cell_index": 19,
+        "seconds": 2.46
+      },
+      {
+        "cell_index": 17,
+        "seconds": 3.31
+      },
+      {
+        "cell_index": 15,
+        "seconds": 2.78
+      },
+      {
+        "cell_index": 13,
+        "seconds": 2.97
+      },
+      {
+        "cell_index": 11,
+        "seconds": 4.04
+      },
+      {
+        "cell_index": 10,
+        "seconds": 2.67
+      },
+      {
+        "cell_index": 8,
+        "seconds": 1.8
+      },
+      {
+        "cell_index": 6,
+        "seconds": 1.43
+      }
+    ]
+  },
+  "hosted_google_colab_session_tested": false,
+  "png_figures": 30,
+  "svg_figures": 30,
+  "verification": {
+    "original_test_returncode": 0,
+    "original_tests_line": "Ran 58 tests in 15.232s",
+    "reference_rows": 25,
+    "reference_all_ok": true,
+    "semantic_checks": [
+      {
+        "Check": "Measured origin rejected by default",
+        "Passed": true
+      },
+      {
+        "Check": "Out-of-range HR rejected",
+        "Passed": true
+      },
+      {
+        "Check": "Local source cannot assert external strike report",
+        "Passed": true
+      },
+      {
+        "Check": "Incident SpO2 remains null",
+        "Passed": true
+      },
+      {
+        "Check": "Link loss produces unknown station evidence",
+        "Passed": true
+      }
+    ],
+    "protocol_checks": {
+      "decoded_frames": 179,
+      "all_crc_valid": true,
+      "reassembly_exact": true,
+      "compact_bytes": 20,
+      "corruption_detected": true
+    },
+    "crypto_verified": 40320,
+    "incident_records_valid": true,
+    "source_files_verified": 66,
+    "verification_elapsed_s": 15.468
+  }
+}

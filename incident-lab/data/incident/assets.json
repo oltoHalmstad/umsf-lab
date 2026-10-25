@@ -1,0 +1,121 @@
+{
+ "facility_id": "FAC-DEMO",
+ "site_id": "SITE-A",
+ "planning_interval_min": 60,
+ "resources": [
+  {
+   "resource_id": "backup_power_units",
+   "unit": "illustrative units",
+   "capacity_lower_bound": 6,
+   "capacity_upper_bound": 8,
+   "pre_event_rating": 10,
+   "source": "operator report (synthetic)",
+   "as_of": "2026-10-14T05:10:05Z"
+  }
+ ],
+ "services": [
+  {
+   "service_id": "communications",
+   "name": "Communications",
+   "demand_units": 1,
+   "weight": 6,
+   "mandatory": true,
+   "prerequisites": [],
+   "demand": {
+    "backup_power_units": 1
+   },
+   "admissible": true,
+   "status": "available"
+  },
+  {
+   "service_id": "emergency_lighting",
+   "name": "Emergency lighting",
+   "demand_units": 2,
+   "weight": 5,
+   "mandatory": true,
+   "prerequisites": [],
+   "demand": {
+    "backup_power_units": 2
+   },
+   "admissible": true,
+   "status": "available"
+  },
+  {
+   "service_id": "water_support",
+   "name": "Water support",
+   "demand_units": 3,
+   "weight": 4,
+   "mandatory": false,
+   "prerequisites": [],
+   "demand": {
+    "backup_power_units": 3
+   },
+   "admissible": true,
+   "status": "available"
+  },
+  {
+   "service_id": "production",
+   "name": "Production",
+   "demand_units": 4,
+   "weight": 1,
+   "mandatory": false,
+   "prerequisites": [
+    "communications"
+   ],
+   "demand": {
+    "backup_power_units": 4
+   },
+   "admissible": true,
+   "status": "unavailable"
+  }
+ ],
+ "reference_solutions": [
+  {
+   "capacity_units": 2,
+   "feasible": false,
+   "allocation": null,
+   "Q_percent": null
+  },
+  {
+   "capacity_units": 4,
+   "feasible": true,
+   "allocation": {
+    "communications": 1,
+    "emergency_lighting": 1,
+    "water_support": 0,
+    "production": 0
+   },
+   "priority_sum": 11,
+   "Q_percent": 68.75
+  },
+  {
+   "capacity_units": 6,
+   "feasible": true,
+   "allocation": {
+    "communications": 1,
+    "emergency_lighting": 1,
+    "water_support": 1,
+    "production": 0
+   },
+   "priority_sum": 15,
+   "Q_percent": 93.75
+  },
+  {
+   "capacity_units": 10,
+   "feasible": true,
+   "allocation": {
+    "communications": 1,
+    "emergency_lighting": 1,
+    "water_support": 1,
+    "production": 1
+   },
+   "priority_sum": 16,
+   "Q_percent": 100.0
+  }
+ ],
+ "notes": [
+  "Table 16 inputs (manuscript Sec. 4.9); weights are illustrative, not survival probabilities.",
+  "Q is weighted service coverage, not fraction of personnel rescued or facility restored.",
+  "Mandatory life-safety services are constraints; infeasible means no valid Q."
+ ]
+}

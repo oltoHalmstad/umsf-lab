@@ -1,0 +1,1641 @@
+[
+  {
+    "as_of": "2026-10-14T08:30:00Z",
+    "changed_domains": [
+      "urgent_personnel_assistance",
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "structural_access_status",
+      "essential_service_preservation",
+      "recovery_scheduling",
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 0,
+    "rescue_tasks": 0,
+    "assigned": 0,
+    "unassigned_urgent": 0,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 12
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 0,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:31:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 0,
+    "rescue_tasks": 0,
+    "assigned": 0,
+    "unassigned_urgent": 0,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 12
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 0,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:32:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 0,
+    "rescue_tasks": 0,
+    "assigned": 0,
+    "unassigned_urgent": 0,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 12
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 0,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:33:00Z",
+    "changed_domains": [
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 0,
+    "rescue_tasks": 0,
+    "assigned": 0,
+    "unassigned_urgent": 0,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 12
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "no_configured_deviation_detected_under_adequate_monitoring"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 0,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:34:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 0,
+    "rescue_tasks": 0,
+    "assigned": 0,
+    "unassigned_urgent": 0,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 12
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "no_configured_deviation_detected_under_adequate_monitoring"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 0,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:35:00Z",
+    "changed_domains": [
+      "urgent_personnel_assistance",
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "structural_access_status",
+      "recovery_scheduling",
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 2,
+    "assigned": 0,
+    "unassigned_urgent": 2,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 11,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "no_configured_deviation_detected_under_adequate_monitoring"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 4,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:36:00Z",
+    "changed_domains": [
+      "rescue_task_assignment",
+      "structural_access_status"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 2,
+    "assigned": 1,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 11,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "no_configured_deviation_detected_under_adequate_monitoring"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 4,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T08:37:00Z",
+    "changed_domains": [
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "structural_access_status",
+      "essential_service_preservation",
+      "recovery_scheduling",
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 1,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 9,
+      "assistance_requested": 1,
+      "unaccounted": 2
+    },
+    "continuity_status": "INFEASIBLE",
+    "Q_pct": null,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 7,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:38:00Z",
+    "changed_domains": [
+      "urgent_personnel_assistance",
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "structural_access_status",
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "INFEASIBLE",
+    "Q_pct": null,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 7,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:39:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "INFEASIBLE",
+    "Q_pct": null,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 7,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:40:00Z",
+    "changed_domains": [
+      "essential_service_preservation",
+      "recovery_scheduling"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:41:00Z",
+    "changed_domains": [
+      "personnel_accounting",
+      "structural_access_status"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:42:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:43:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:44:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 5,
+    "assigned": 2,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:45:00Z",
+    "changed_domains": [
+      "rescue_task_assignment",
+      "structural_access_status"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "observed_not_location_confirmed": 8,
+      "assistance_requested": 2,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:46:00Z",
+    "changed_domains": [
+      "personnel_accounting"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 4,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:47:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 4,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:48:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 4,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:49:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 4,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:50:00Z",
+    "changed_domains": [
+      "rescue_task_assignment"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 4,
+      "unaccounted": 2
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:51:00Z",
+    "changed_domains": [
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "structural_access_status",
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 7,
+    "assigned": 4,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:52:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 2,
+    "rescue_tasks": 7,
+    "assigned": 4,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 4,
+      "assistance_requested": 2,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:53:00Z",
+    "changed_domains": [
+      "urgent_personnel_assistance",
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:54:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:55:00Z",
+    "changed_domains": [
+      "structural_access_status",
+      "recovery_scheduling"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:56:00Z",
+    "changed_domains": [
+      "rescue_task_assignment"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:57:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:58:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 6,
+    "assigned": 3,
+    "unassigned_urgent": 3,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 3,
+      "unaccounted": 3,
+      "assistance_requested": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 2,
+    "observation_gaps": 1
+  },
+  {
+    "as_of": "2026-10-14T08:59:00Z",
+    "changed_domains": [
+      "rescue_task_assignment",
+      "personnel_accounting",
+      "structural_access_status",
+      "recovery_scheduling"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:00:00Z",
+    "changed_domains": [
+      "physiological_group_warning"
+    ],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:01:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:02:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:03:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:04:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:05:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:06:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:07:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:08:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:09:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  },
+  {
+    "as_of": "2026-10-14T09:10:00Z",
+    "changed_domains": [],
+    "open_assistance_requests": 1,
+    "rescue_tasks": 4,
+    "assigned": 3,
+    "unassigned_urgent": 1,
+    "personnel_counts": {
+      "known": 5,
+      "observed_not_location_confirmed": 5,
+      "assistance_requested": 1,
+      "unaccounted": 1
+    },
+    "continuity_status": "OPTIMAL",
+    "Q_pct": 81.48148148148148,
+    "group_states": {
+      "Z1": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z2": [
+        "possible_group_event"
+      ],
+      "Z3": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z4": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z5": [
+        "insufficient_monitoring_evidence"
+      ],
+      "Z6": [
+        "insufficient_monitoring_evidence"
+      ]
+    },
+    "recovery_scheduled": 5,
+    "recovery_blocked": 1,
+    "observation_gaps": 0
+  }
+]

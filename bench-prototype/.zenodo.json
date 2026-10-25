@@ -1,0 +1,68 @@
+{
+  "upload_type": "software",
+  "title": "UMSF Bench Prototype: ESP32 sensor firmware and local monitoring interface",
+  "version": "1.0.0",
+  "creators": [
+    {
+      "name": "Adilzhanova, Saltanat",
+      "affiliation": "Almaty Technological University, Almaty, Kazakhstan"
+    },
+    {
+      "name": "Torstensson, Olga",
+      "affiliation": "Halmstad University, Halmstad, Sweden"
+    },
+    {
+      "name": "Prokopovych-Tkachenko, Dmytro",
+      "affiliation": "University of Customs and Finance, Dnipro, Ukraine"
+    },
+    {
+      "name": "Tykhonenko, Mariia",
+      "affiliation": "University of Customs and Finance, Dnipro, Ukraine; Kharkiv National University of Radio Electronics, Kharkiv, Ukraine"
+    },
+    {
+      "name": "Beketova, Gulzhanat",
+      "affiliation": "Almaty University of Energy and Communications named after G. Daukeev, Almaty, Kazakhstan"
+    },
+    {
+      "name": "Sydybayeva, Madina",
+      "affiliation": "Satbayev University, Almaty, Kazakhstan"
+    }
+  ],
+  "description": "<p>Source code of the ESP32 bench prototype of the UMSF project (University of Customs and Finance, Dnipro): firmware of the gateway AG1 and of the wearable sensor nodes W01&ndash;W03, the local web monitoring interface served by the gateway, and documentation of the hardware, ESP-NOW packet formats and the HTTP API.</p><ul><li><b>Gateway AG1</b>: receives ESP-NOW broadcasts from fixed and wearable nodes, runs a Wi-Fi access point and serves a dashboard at http://192.168.4.1 that works without internet (personnel, structural monitoring, signs of life, situation assessment, event log, latched alarms with operator reset).</li><li><b>Wearable node</b>: on-node heart-rate estimation from a MAX30102 PPG sensor (adaptive peak detection, motion gating, median of beat-to-beat intervals), impact/fall detection with an MPU-6050, skin temperature (DS18B20) and an SOS button. Simulated heart-rate values are flagged in every packet.</li><li><b>Interface simulator</b>: a Python script that serves the unchanged dashboard with synthetic data, so the interface can be inspected without hardware.</li></ul><p>This prototype motivated the record fields, event types and evidence states of UMSF Incident Lab (Appendix A of the accompanying software paper). It is archived for provenance and reuse. Readings are uncalibrated, the heart-rate algorithm is not validated against a reference device, and the prototype is neither a medical device nor a certified safety system. The fixed (structural) node firmware is not included in this version; its packet contract is documented.</p>",
+  "access_right": "open",
+  "license": "MIT",
+  "language": "eng",
+  "keywords": [
+    "ESP32",
+    "ESP-NOW",
+    "firmware",
+    "wearable sensor",
+    "photoplethysmography",
+    "heart rate",
+    "structural monitoring",
+    "incident monitoring",
+    "critical infrastructure",
+    "local web dashboard"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23380282",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.23380523",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.23380409",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Bench prototype for provenance and reuse. All readings uncalibrated. The interface simulator uses synthetic data only."
+}

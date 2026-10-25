@@ -1,0 +1,5 @@
+# Core package: Python >= 3.10 standard library only. Everything below is optional.
+cryptography>=41     # Study A host-side protection demo (Ed25519 + AES-GCM); skipped if absent
+paho-mqtt>=1.6       # adapters/mqtt_ingest.py (live MQTT/TLS ingestion)
+bleak>=0.21          # adapters/ble_direct.py (bench BLE central)
+pyserial>=3.5        # adapters/serial_gateway.py with a real serial port (stdin/files need nothing)

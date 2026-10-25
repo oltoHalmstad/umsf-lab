@@ -1,0 +1,93 @@
+{
+ "facility_id": "FAC-DEMO",
+ "valid_from": "2026-10-14T00:00:00Z",
+ "valid_to": "2026-10-15T00:00:00Z",
+ "sites": [
+  {
+   "site_id": "SITE-A",
+   "zones": [
+    {
+     "zone_id": "A-Z1",
+     "name": "Workshop No. 1, north wing",
+     "expected_workers": [
+      "W01",
+      "W02",
+      "W03"
+     ],
+     "stationary_nodes": [
+      "SA1"
+     ]
+    },
+    {
+     "zone_id": "A-Z2",
+     "name": "Control room",
+     "expected_workers": [
+      "W04",
+      "W05",
+      "W06"
+     ],
+     "stationary_nodes": [
+      "SA2"
+     ]
+    },
+    {
+     "zone_id": "A-Z3",
+     "name": "Electrical room (no rostered workers)",
+     "expected_workers": [],
+     "stationary_nodes": [
+      "SA3"
+     ]
+    }
+   ],
+   "device_map": {
+    "A01": "W01",
+    "A02": "W02",
+    "A03": "W03",
+    "A04": "W04",
+    "A05": "W05",
+    "A06": "W06"
+   },
+   "valid_from": "2026-10-14T00:00:00Z",
+   "valid_to": "2026-10-15T00:00:00Z"
+  },
+  {
+   "site_id": "SITE-B",
+   "zones": [
+    {
+     "zone_id": "B-Z1",
+     "name": "Water treatment hall",
+     "expected_workers": [
+      "W07",
+      "W08",
+      "W09"
+     ],
+     "stationary_nodes": [
+      "SB1"
+     ]
+    },
+    {
+     "zone_id": "B-Z2",
+     "name": "Warehouse",
+     "expected_workers": [
+      "W10",
+      "W11",
+      "W12"
+     ],
+     "stationary_nodes": [
+      "SB2"
+     ]
+    }
+   ],
+   "device_map": {
+    "B01": "W07",
+    "B02": "W08",
+    "B03": "W09",
+    "B04": "W10",
+    "B05": "W11",
+    "B06": "W12"
+   },
+   "valid_from": "2026-10-14T00:00:00Z",
+   "valid_to": "2026-10-15T00:00:00Z"
+  }
+ ]
+}

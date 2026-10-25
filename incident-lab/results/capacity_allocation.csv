@@ -1,0 +1,14 @@
+capacity_units,feasible,Q_percent,priority_sum
+0,False,,
+1,False,,
+2,False,,
+3,True,68.75,11.0
+4,True,68.75,11.0
+5,True,68.75,11.0
+6,True,93.75,15.0
+7,True,93.75,15.0
+8,True,93.75,15.0
+9,True,93.75,15.0
+10,True,100.0,16.0
+11,True,100.0,16.0
+12,True,100.0,16.0

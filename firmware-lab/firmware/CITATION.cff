@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use this firmware, please cite it as below."
+type: software
+title: "umsf-ble-firmware: ESP32 firmware for dataset acquisition assemblies and merging nodes into a Bluetooth channel"
+version: 1.0.0
+date-released: 2026-10-14
+license: MIT
+abstract: >-
+  ESP32 firmware (personnel node, stationary building-state node, BLE gateway) for the UMSF
+  evidence-aware multisensor monitoring pilot. Portable C/C++ libraries implement the shared
+  protocol v1.0 framing, fragmentation, RAM buffering with application acknowledgement,
+  feature extraction and uncalibrated local detectors, and are host unit-tested. The ESP32
+  firmware images are uncompiled and untested on hardware in this release. Not a certified
+  safety or medical device.
+keywords:
+  - ESP32
+  - Bluetooth Low Energy
+  - NimBLE
+  - MQTT
+  - firmware
+  - physiological monitoring
+  - critical infrastructure
+  - incident support
+  - dataset acquisition
+authors:
+  - given-names: Olga
+    family-names: Torstensson
+    affiliation: Halmstad University
+    orcid: "https://orcid.org/0009-0007-2169-6851"
+  - given-names: Dmytro
+    family-names: Prokopovych-Tkachenko
+    affiliation: University of Customs and Finance
+    orcid: "https://orcid.org/0000-0002-6590-3898"
+  - given-names: Saltanat
+    family-names: Adilzhanova
+    affiliation: Almaty Technological University
+    orcid: "https://orcid.org/0000-0003-1768-064X"
+  - given-names: Mariia
+    family-names: Tykhonenko
+    affiliation: University of Customs and Finance
+    orcid: "https://orcid.org/0009-0000-5192-3241"
+  - given-names: Gulzhanat
+    family-names: Beketova
+    affiliation: Almaty University of Energy and Communications
+    orcid: "https://orcid.org/0000-0001-7160-1514"
+  - given-names: Madina
+    family-names: Sydybayeva
+    affiliation: Satbayev University
+    orcid: "https://orcid.org/0000-0002-8950-5421"

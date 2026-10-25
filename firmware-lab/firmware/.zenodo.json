@@ -1,0 +1,20 @@
+{
+  "upload_type": "software",
+  "title": "umsf-ble-firmware: ESP32 firmware for dataset acquisition assemblies and merging nodes into a Bluetooth channel",
+  "version": "1.0.0",
+  "publication_date": "2026-10-14",
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {"name": "Torstensson, Olga", "affiliation": "Halmstad University", "orcid": "0009-0007-2169-6851"},
+    {"name": "Prokopovych-Tkachenko, Dmytro", "affiliation": "University of Customs and Finance", "orcid": "0000-0002-6590-3898"},
+    {"name": "Adilzhanova, Saltanat", "affiliation": "Almaty Technological University", "orcid": "0000-0003-1768-064X"},
+    {"name": "Tykhonenko, Mariia", "affiliation": "University of Customs and Finance", "orcid": "0009-0000-5192-3241"},
+    {"name": "Beketova, Gulzhanat", "affiliation": "Almaty University of Energy and Communications", "orcid": "0000-0001-7160-1514"},
+    {"name": "Sydybayeva, Madina", "affiliation": "Satbayev University", "orcid": "0000-0002-8950-5421"}
+  ],
+  "description": "<p>ESP32 firmware for the UMSF evidence-aware multisensor monitoring pilot (project P2 of the companion deposit to <em>Evidence-Aware Multisensor Monitoring for Critical Infrastructure Incident Support</em>, 2026): a personnel node (MAX30102, DS18B20, MPU-6050, help button, optional GSR; one feature record per 10 s), a stationary building-state node (MPU-6050 200 Hz ±16 g, BMP280, MQ-2, microphone, PIR, SOS; local page at 192.168.4.1) and a BLE gateway that merges up to three nodes into one ordered uplink stream with per-source identity, publishing JSON records over MQTT QoS 1 with mutually authenticated TLS. Records are released from RAM buffers only by an application acknowledgement after the site agent's durable commit.</p><p>All non-hardware logic (protocol v1.0 codec, CRC-16/CCITT-FALSE, fragmentation with 512 B limit and 2 s timeout, ring buffer, feature extraction, uncalibrated detectors, link supervision) is portable C/C++ with host unit tests; test vectors are included. <strong>Evidence boundary:</strong> the ESP32 firmware images were not compiled and are untested on hardware in this release; heart rate is a flagged synthetic test field or null, SpO2 is null, thresholds are uncalibrated, the local composite possible_impact_local is unverified and never a strike attribution; the target COSE profile and the patent No. 38233 keystream method are not implemented. Not a certified safety or medical device.</p>",
+  "keywords": ["ESP32", "Bluetooth Low Energy", "NimBLE", "MQTT", "TLS", "firmware", "physiological monitoring", "building-state monitoring", "critical infrastructure", "incident support", "dataset acquisition"],
+  "notes": "Uncompiled and untested on hardware; see README evidence boundaries."
+}

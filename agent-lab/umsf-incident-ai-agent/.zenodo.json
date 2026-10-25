@@ -1,0 +1,34 @@
+{
+  "upload_type": "software",
+  "title": "umsf-incident-ai-agent: evidence-aware AI decision-support agent for rescue and consequence-liquidation logistics",
+  "version": "1.0.0",
+  "publication_date": "2026-10-14",
+  "license": "MIT",
+  "access_right": "open",
+  "language": "ukr",
+  "creators": [
+    {"name": "Torstensson, Olga", "affiliation": "Halmstad University", "orcid": "0009-0007-2169-6851"},
+    {"name": "Prokopovych-Tkachenko, Dmytro", "affiliation": "University of Customs and Finance", "orcid": "0000-0002-6590-3898"},
+    {"name": "Adilzhanova, Saltanat", "affiliation": "Almaty Technological University", "orcid": "0000-0003-1768-064X"},
+    {"name": "Tykhonenko, Mariia", "affiliation": "University of Customs and Finance", "orcid": "0009-0000-5192-3241"},
+    {"name": "Beketova, Gulzhanat", "affiliation": "Almaty University of Energy and Communications", "orcid": "0000-0001-7160-1514"},
+    {"name": "Sydybayeva, Madina", "affiliation": "Satbayev University", "orcid": "0000-0002-8950-5421"}
+  ],
+  "description": "<p>Research software implementing the decision-support layer of <em>Evidence-Aware Multisensor Monitoring for Critical Infrastructure Incident Support</em> (Torstensson et al., 2026). An AI agent ingests a multisensor incident dataset (personnel wearables, stationary building-state nodes, gateway, operator, responder and authoritative external reports), assesses it with coverage-aware physiological rules (Eq. 1-5) and a source-qualified zone incident state S_z = (M, H, P, F, U) (Eq. 6-7), and plans two logistics tracks: <strong>rescue logistics</strong> (personnel accounting and exact lexicographic team-task assignment, Eq. 8-9) and <strong>consequence-liquidation logistics</strong> (exact service-continuity allocation, Eq. 10-11, and a resource-constrained recovery schedule with hard prerequisites).</p><p>All arithmetic, eligibility, alerts and plans are deterministic. Every output is a proposal for the authorising role of Table 9 (rescue coordinator, incident coordination team, qualified assessor, infrastructure operator, recovery management) and is recorded with approvals/rejections and reasons in a hash-chained audit log. An optional Claude language-model layer only summarises minimised read-only aggregates and falls back to a deterministic Ukrainian briefing. The software does not diagnose, issue triage categories, select building entry routes or actuate equipment. It reproduces Table 10 and Section 4.9 / Table 16 / Fig. 14 of the paper exactly and ships a synthetic two-site post-impact scenario. It has not been validated against real rescue operations; coefficients are policy values, not survival probabilities.</p><p>Програмний проєкт обробки даних агентом штучного інтелекту з прийняттям рішень згідно з отриманими даними: логістика рятування людей і логістика ліквідації наслідків удару.</p>",
+  "keywords": [
+    "critical infrastructure",
+    "incident support",
+    "AI agent",
+    "decision support",
+    "rescue logistics",
+    "consequence liquidation",
+    "recovery scheduling",
+    "service continuity",
+    "monitoring coverage",
+    "evidence provenance",
+    "human authorisation",
+    "constrained allocation"
+  ],
+  "related_identifiers": [],
+  "notes": "Python >= 3.10; core uses the standard library only; optional dependency: anthropic. All shipped data are synthetic."
+}

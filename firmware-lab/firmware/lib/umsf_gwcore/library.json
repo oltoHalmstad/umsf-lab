@@ -1,0 +1,9 @@
+{
+  "name": "umsf_gwcore",
+  "version": "1.0.0",
+  "description": "Portable gateway link supervision, site ACK parsing and allowlist",
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "build": { "srcDir": "src", "includeDir": "src" }
+}

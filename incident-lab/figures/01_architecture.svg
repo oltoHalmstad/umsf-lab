@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="872.39952pt" height="382.79952pt" viewBox="0 0 872.39952 382.79952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 382.79952 
+L 872.39952 382.79952 
+L 872.39952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 21.499992 180.146198 
+L 271.749852 180.146198 
+Q 277.469849 180.146198 277.469849 175.436479 
+L 277.469849 98.903552 
+Q 277.469849 94.193834 271.749852 94.193834 
+L 21.499992 94.193834 
+Q 15.779995 94.193834 15.779995 98.903552 
+L 15.779995 175.436479 
+Q 15.779995 180.146198 21.499992 180.146198 
+z
+" clip-path="url(#pfc19399a77)" style="fill: #2463a4"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 307.499832 180.146198 
+L 557.749692 180.146198 
+Q 563.469689 180.146198 563.469689 175.436479 
+L 563.469689 98.903552 
+Q 563.469689 94.193834 557.749692 94.193834 
+L 307.499832 94.193834 
+Q 301.779835 94.193834 301.779835 98.903552 
+L 301.779835 175.436479 
+Q 301.779835 180.146198 307.499832 180.146198 
+z
+" clip-path="url(#pfc19399a77)" style="fill: #168a86"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 593.499672 180.146198 
+L 843.749532 180.146198 
+Q 849.469529 180.146198 849.469529 175.436479 
+L 849.469529 98.903552 
+Q 849.469529 94.193834 843.749532 94.193834 
+L 593.499672 94.193834 
+Q 587.779675 94.193834 587.779675 98.903552 
+L 587.779675 175.436479 
+Q 587.779675 180.146198 593.499672 180.146198 
+z
+" clip-path="url(#pfc19399a77)" style="fill: #2463a4"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 307.499832 333.212053 
+L 557.749692 333.212053 
+Q 563.469689 333.212053 563.469689 328.502334 
+L 563.469689 251.969407 
+Q 563.469689 247.259688 557.749692 247.259688 
+L 307.499832 247.259688 
+Q 301.779835 247.259688 301.779835 251.969407 
+L 301.779835 328.502334 
+Q 301.779835 333.212053 307.499832 333.212053 
+z
+" clip-path="url(#pfc19399a77)" style="fill: #dd922d"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 593.499672 333.212053 
+L 843.749532 333.212053 
+Q 849.469529 333.212053 849.469529 328.502334 
+L 849.469529 251.969407 
+Q 849.469529 247.259688 843.749532 247.259688 
+L 593.499672 247.259688 
+Q 587.779675 247.259688 587.779675 251.969407 
+L 587.779675 328.502334 
+Q 587.779675 333.212053 593.499672 333.212053 
+z
+" clip-path="url(#pfc19399a77)" style="fill: #168a86"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(93.883516 133.766696)">Embedded records</text>
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(78.681172 145.76943)">physio / station / events</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(359.936481 133.766696)">Schema + identity checks</text>
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(360.651324 145.76943)">validation / deduplication</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(669.479289 133.766696)">Accepted records</text>
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(661.161321 145.76943)">SQLite / CSV / JSONL</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(390.522418 286.83255)">Audit evidence</text>
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(352.221637 298.835284)">rejects + conflict quarantine</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(655.939446 286.83255)">Roster + arrival cutoff</text>
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; fill: #ffffff" transform="translate(650.807414 298.835284)">summaries and analysis</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 280.897692 137.170016 
+Q 289.624087 137.170016 296.114414 137.170016 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 292.114414 135.170016 
+L 296.114414 137.170016 
+L 292.114414 139.170016 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 566.897532 137.170016 
+Q 575.623927 137.170016 582.114254 137.170016 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 578.114254 135.170016 
+L 582.114254 137.170016 
+L 578.114254 139.170016 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 432.624762 183.327572 
+Q 432.624762 213.703307 432.624762 241.842974 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 434.624762 237.842974 
+L 432.624762 241.842974 
+L 430.624762 237.842974 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 718.624602 183.327572 
+Q 718.624602 213.703307 718.624602 241.842974 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 720.624602 237.842974 
+L 718.624602 241.842974 
+L 716.624602 237.842974 
+" style="fill: none; stroke: #203044; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', 'Bitstream Vera Sans', sans-serif; text-anchor: start; fill: #262626" x="7.2" y="16.370625" transform="rotate(-0 7.2 16.370625)">01 | Evidence-aware processing architecture</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfc19399a77">
+   <rect x="7.2" y="22.370625" width="857.99952" height="353.228895"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,145 @@
+{
+ "dataset": "umsf-incident-synthetic",
+ "scenario_id": "incident-synthetic-001",
+ "incident_id": "INC-0001",
+ "facility_id": "FAC-DEMO",
+ "generator": "umsf_dataset.synth.incident",
+ "generator_version": "1.0.0",
+ "seed": 20261014,
+ "data_origin": "synthetic",
+ "t0": "2026-10-14T05:00:00Z",
+ "duration_s": 1800,
+ "physio_interval_s": 10,
+ "station_interval_s": 1,
+ "display_tz": "Europe/Kyiv",
+ "schema_versions": {
+  "physio": "1.0",
+  "station": "st-1.0",
+  "event": "ev-1.0"
+ },
+ "counts": {
+  "physio": 2024,
+  "station": 7660,
+  "events": 30,
+  "events_by_type": {
+   "air_raid_alert": 2,
+   "impact_excursion": 1,
+   "loud_sound": 3,
+   "pressure_transient": 1,
+   "possible_impact_local": 1,
+   "tilt_change": 1,
+   "gas_channel_alarm": 1,
+   "link_loss": 4,
+   "sos": 1,
+   "help_request": 1,
+   "personnel_accounting": 2,
+   "asset_status": 5,
+   "external_strike_report": 1,
+   "link_restored": 2,
+   "buffer_eviction": 1,
+   "structural_assessment": 1,
+   "air_raid_all_clear": 2
+  }
+ },
+ "files": [
+  {
+   "path": "roster.json",
+   "sha256": "fcf29c96ed71f57fd95afa5732408fd181c9e1102246f08436b0816b9cfa0364",
+   "bytes": 1573
+  },
+  {
+   "path": "roster_SITE-A.json",
+   "sha256": "4bbed1a7707fe595784168a36a4a0986b6b8be656a86f9d447df4781296b8eb7",
+   "bytes": 718
+  },
+  {
+   "path": "roster_SITE-B.json",
+   "sha256": "8c516211090edc6d97f041f7663fe39eda8b28487b6d601e4d264601a8a04d28",
+   "bytes": 559
+  },
+  {
+   "path": "physio.jsonl",
+   "sha256": "5d06ed89bd523d55a70b0ba3e7862fbe22eec562b6f2185dfbf2bb2d6181b2e5",
+   "bytes": 929187
+  },
+  {
+   "path": "station.jsonl",
+   "sha256": "70b68db985c6755b0a9d6ca6465bf2837a9dede6cadd585cb2cb0a152a2d8cb2",
+   "bytes": 4378974
+  },
+  {
+   "path": "events.jsonl",
+   "sha256": "18d13835dc07fd63e075ba08354010ea8b9cdcb9405cc7123b05b2cfef65c465",
+   "bytes": 18862
+  },
+  {
+   "path": "assets.json",
+   "sha256": "482edba71421b65503c13112b7b3d2b2f51dfe4914cce4c7848add8f12cefd01",
+   "bytes": 2494
+  },
+  {
+   "path": "teams.json",
+   "sha256": "14d8a90cf41609cc74009c318cbca8122ce3e5f2606dc3e493bd2680a82e4aa1",
+   "bytes": 2218
+  }
+ ],
+ "incident_associations": [
+  {
+   "association_id": "ASSOC-0001",
+   "external_event_id": "INC-0001-EV0023",
+   "local_event_ids": [
+    "INC-0001-EV0004",
+    "INC-0001-EV0005",
+    "INC-0001-EV0006",
+    "INC-0001-EV0007",
+    "INC-0001-EV0008",
+    "INC-0001-EV0009"
+   ],
+   "associated_by": "OP-A (incident coordinator, synthetic)",
+   "associated_at": "2026-10-14T05:14:00Z",
+   "basis": "temporal and spatial coincidence; both provenance chains retained; local events remain unverified and are not themselves a strike attribution"
+  }
+ ],
+ "scenario_script": {
+  "local_impact_zone": "A-Z1",
+  "local_impact_at": "2026-10-14T05:08:00Z",
+  "silent_nodes": {
+   "A03": "from t0+480 s (no restore)",
+   "SA1": "from t0+500 s (no restore)",
+   "A02": "t0+495..840 s, buffered records delivered late, oldest evicted",
+   "SB2": "t0+1020..1060 s"
+  },
+  "urgent_requests": [
+   {
+    "worker": "W01",
+    "zone_id": "A-Z1",
+    "event": "sos"
+   },
+   {
+    "worker": "W05",
+    "zone_id": "A-Z2",
+    "event": "help_request"
+   }
+  ],
+  "unresolved_personnel": [
+   "W03"
+  ],
+  "gas_channel_alarm_zone": "A-Z1",
+  "structural_assessment": {
+   "zone_id": "A-Z1",
+   "status": "restricted_access"
+  },
+  "usable_backup_capacity_lower_bound": 6,
+  "expected_Q_percent_at_lower_bound": 93.75
+ },
+ "evidence_boundaries": [
+  "All records are synthetic; no human data.",
+  "Strike attribution appears only as external_strike_report from authoritative_external_alert.",
+  "possible_impact_local is an unverified local composite.",
+  "gas_v is an uncalibrated MQ-2 channel voltage; gas_channel_alarm is not a concentration.",
+  "Link loss means current evidence unknown; it never implies collapse or casualties.",
+  "Missing measurements are null or absent records; never zero/normal.",
+  "spo2_pct is null by default (no validated estimator).",
+  "Stationary nodes are not workers; attachment_verified is false (no verified structural mounting)."
+ ]
+}

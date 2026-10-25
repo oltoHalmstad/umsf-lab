@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "notebook_release": "1.2.0",
+  "notebook_cells": 62,
+  "code_cells_executed": 31,
+  "error_outputs": 0,
+  "stderr_outputs": 0,
+  "run_all_elapsed_seconds": 27.21,
+  "execution_engine": "jupyter (nbclient)",
+  "fresh_kernel": true,
+  "isolated_working_directory": true,
+  "only_notebook_supplied": true,
+  "cell_self_sufficiency": {
+    "performed": true,
+    "method": "setup cells once, then each code cell alone in a new kernel, reverse notebook order, shared working directory",
+    "cells_checked": 28,
+    "cells_failed": 0,
+    "cells": [
+      {
+        "cell_index": 60,
+        "seconds": 11.01
+      },
+      {
+        "cell_index": 58,
+        "seconds": 3.53
+      },
+      {
+        "cell_index": 56,
+        "seconds": 1.42
+      },
+      {
+        "cell_index": 54,
+        "seconds": 3.76
+      },
+      {
+        "cell_index": 52,
+        "seconds": 4.43
+      },
+      {
+        "cell_index": 50,
+        "seconds": 4.3
+      },
+      {
+        "cell_index": 48,
+        "seconds": 4.03
+      },
+      {
+        "cell_index": 46,
+        "seconds": 4.7
+      },
+      {
+        "cell_index": 44,
+        "seconds": 4.68
+      },
+      {
+        "cell_index": 42,
+        "seconds": 6.91
+      },
+      {
+        "cell_index": 40,
+        "seconds": 2.53
+      },
+      {
+        "cell_index": 38,
+        "seconds": 3.87
+      },
+      {
+        "cell_index": 36,
+        "seconds": 4.74
+      },
+      {
+        "cell_index": 34,
+        "seconds": 3.91
+      },
+      {
+        "cell_index": 32,
+        "seconds": 4.39
+      },
+      {
+        "cell_index": 30,
+        "seconds": 4.8
+      },
+      {
+        "cell_index": 28,
+        "seconds": 4.26
+      },
+      {
+        "cell_index": 26,
+        "seconds": 4.44
+      },
+      {
+        "cell_index": 24,
+        "seconds": 2.27
+      },
+      {
+        "cell_index": 22,
+        "seconds": 2.13
+      },
+      {
+        "cell_index": 20,
+        "seconds": 2.11
+      },
+      {
+        "cell_index": 18,
+        "seconds": 2.56
+      },
+      {
+        "cell_index": 16,
+        "seconds": 2.18
+      },
+      {
+        "cell_index": 14,
+        "seconds": 3.05
+      },
+      {
+        "cell_index": 12,
+        "seconds": 2.27
+      },
+      {
+        "cell_index": 10,
+        "seconds": 1.98
+      },
+      {
+        "cell_index": 8,
+        "seconds": 9.28
+      },
+      {
+        "cell_index": 6,
+        "seconds": 1.44
+      }
+    ]
+  },
+  "hosted_google_colab_session_tested": false,
+  "png_figures": 30,
+  "svg_figures": 30,
+  "verification": {
+    "status": "PASS",
+    "original_tests": 116,
+    "skipped_tests": 0,
+    "analytical_checks": 44,
+    "figures": 30,
+    "replay_snapshots_per_variant": 41,
+    "source_and_fixture_files_verified": 77,
+    "synthetic_data": true,
+    "external_llm_called": false,
+    "hosted_colab_session_tested": false,
+    "operationally_validated": false,
+    "versions": {
+      "python": "3.13.16",
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "matplotlib": "3.11.2"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+ "site_id": "SITE-B",
+ "zones": [
+  {
+   "zone_id": "B-Z1",
+   "name": "Water treatment hall",
+   "expected_workers": [
+    "W07",
+    "W08",
+    "W09"
+   ],
+   "stationary_nodes": [
+    "SB1"
+   ]
+  },
+  {
+   "zone_id": "B-Z2",
+   "name": "Warehouse",
+   "expected_workers": [
+    "W10",
+    "W11",
+    "W12"
+   ],
+   "stationary_nodes": [
+    "SB2"
+   ]
+  }
+ ],
+ "device_map": {
+  "B01": "W07",
+  "B02": "W08",
+  "B03": "W09",
+  "B04": "W10",
+  "B05": "W11",
+  "B06": "W12"
+ },
+ "valid_from": "2026-10-14T00:00:00Z",
+ "valid_to": "2026-10-15T00:00:00Z"
+}
