@@ -97,7 +97,7 @@ Saltanat Adilzhanova, Olga Torstensson, Dmytro Prokopovych-Tkachenko, Mariia Tyk
 
 If you use this software, please cite the archived release (see also [`CITATION.cff`](CITATION.cff)):
 
-> O. Torstensson, D. Prokopovych-Tkachenko, S. Adilzhanova, M. Tykhonenko, G. Beketova, M. Sydybayeva, UMSF Incident Lab, version 1.2.0 [Software], Zenodo, 2026. https://doi.org/10.5281/zenodo.23380282
+> D. Prokopovych-Tkachenko, UMSF Incident Lab: A Self-Contained Reproducible Notebook for Evidence-Aware Multisensor Monitoring in Critical Infrastructure Incident Support, version 1.2.0 [Software], Zenodo, 2026. https://doi.org/10.5281/zenodo.23380282
 
 The bench prototype is cited separately:
 

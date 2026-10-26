@@ -9,22 +9,14 @@ license: MIT
 doi: 10.5281/zenodo.23380282
 repository-code: "https://github.com/oltoHalmstad/umsf-lab"
 authors:
+  - family-names: Prokopovych-Tkachenko
+    given-names: Dmytro
+    affiliation: "University of Customs and Finance"
+contact:
   - family-names: Torstensson
     given-names: Olga
     email: olga.torstensson@hh.se
     affiliation: "Halmstad University"
-  - family-names: Prokopovych-Tkachenko
-    given-names: Dmytro
-    affiliation: "University of Customs and Finance"
-  - family-names: Adilzhanova
-    given-names: Saltanat
-    affiliation: "Almaty Technological University"
-  - family-names: Tykhonenko
-    given-names: Mariia
-  - family-names: Beketova
-    given-names: Gulzhanat
-  - family-names: Sydybayeva
-    given-names: Madina
 identifiers:
   - type: doi
     value: 10.5281/zenodo.23380282
