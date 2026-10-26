@@ -89,11 +89,19 @@ Expected results for v1.2.0: 58/58 and 116/116 unit tests, 25/25 reference rows,
 
 See each release README and the accompanying paper for details.
 
+## Authors
+
+Saltanat Adilzhanova, Olga Torstensson, Dmytro Prokopovych-Tkachenko, Mariia Tykhonenko, Gulzhanat Beketova and Madina Sydybayeva. See [AUTHORS.md](AUTHORS.md) for affiliations and roles.
+
 ## Citation
 
 If you use this software, please cite the archived release (see also [`CITATION.cff`](CITATION.cff)):
 
 > O. Torstensson, D. Prokopovych-Tkachenko, S. Adilzhanova, M. Tykhonenko, G. Beketova, M. Sydybayeva, UMSF Incident Lab, version 1.2.0 [Software], Zenodo, 2026. https://doi.org/10.5281/zenodo.23380282
+
+The bench prototype is cited separately:
+
+> D. Prokopovych-Tkachenko, UMSF Bench Prototype: ESP32 sensor firmware and local monitoring interface, version 1.0.0 [Software], Zenodo, 2026. https://doi.org/10.5281/zenodo.23542153
 
 ## Support
 
